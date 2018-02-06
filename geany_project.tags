@@ -1,0 +1,833 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+A	./SongPatterns.h	17;"	macro
+Adafruit_NeoPixel	./Adafruit_NeoPixel.h	114;"	prototype	signature:(uint16_t n, uint8_t p , neoPixelType t )
+Adafruit_NeoPixel_Begin	./Adafruit_NeoPixel.cpp	67;"	function	signature:(void)
+ADAFRUIT_NEOPIXEL_H	./Adafruit_NeoPixel.h	20;"	macro
+Adafruit_NeoPixel_Init	./Adafruit_NeoPixel.cpp	53;"	function	signature:(uint16_t n, uint8_t p, neoPixelType t)
+Adafruit_NeoPixel_show	./Adafruit_NeoPixel.cpp	121;"	function	signature:(void)
+Adafruit_NeoPixel_updateLength	./Adafruit_NeoPixel.cpp	83;"	function	signature:(uint16_t n)
+Adafruit_NeoPixel_updateType	./Adafruit_NeoPixel.cpp	102;"	function	signature:(neoPixelType t)
+advertising_init	./main.c	663;"	function	file:	signature:(void)
+APP_ADV_INTERVAL	./main.c	106;"	macro	file:
+APP_ADV_TIMEOUT_IN_SECONDS	./main.c	107;"	macro	file:
+APP_BLE_CONN_CFG_TAG	./main.c	97;"	macro	file:
+APP_BLE_OBSERVER_PRIO	./main.c	104;"	macro	file:
+APP_FEATURE_NOT_SUPPORTED	./main.c	99;"	macro	file:
+APP_FIFO_ENABLED	./pca10040/s132/config/sdk_config.h	2029;"	macro
+APP_GPIOTE_ENABLED	./pca10040/s132/config/sdk_config.h	2036;"	macro
+APP_PWM_ENABLED	./pca10040/s132/config/sdk_config.h	2043;"	macro
+APP_SCHEDULER_ENABLED	./pca10040/s132/config/sdk_config.h	2049;"	macro
+APP_SCHEDULER_WITH_PAUSE	./pca10040/s132/config/sdk_config.h	2055;"	macro
+APP_SCHEDULER_WITH_PROFILER	./pca10040/s132/config/sdk_config.h	2062;"	macro
+APP_TIMER_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	2099;"	macro
+APP_TIMER_CONFIG_OP_QUEUE_SIZE	./pca10040/s132/config/sdk_config.h	2109;"	macro
+APP_TIMER_CONFIG_RTC_FREQUENCY	./pca10040/s132/config/sdk_config.h	2082;"	macro
+APP_TIMER_CONFIG_SWI_NUMBER	./pca10040/s132/config/sdk_config.h	2142;"	macro
+APP_TIMER_CONFIG_USE_SCHEDULER	./pca10040/s132/config/sdk_config.h	2116;"	macro
+APP_TIMER_ENABLED	./pca10040/s132/config/sdk_config.h	2070;"	macro
+APP_TIMER_KEEPS_RTC_ACTIVE	./pca10040/s132/config/sdk_config.h	2133;"	macro
+APP_TIMER_WITH_PROFILER	./pca10040/s132/config/sdk_config.h	2123;"	macro
+APP_TWI_ENABLED	./pca10040/s132/config/sdk_config.h	2151;"	macro
+APP_UART_DRIVER_INSTANCE	./pca10040/s132/config/sdk_config.h	2164;"	macro
+APP_UART_ENABLED	./pca10040/s132/config/sdk_config.h	2157;"	macro
+APP_USBD_CDC_ACM_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4590;"	macro
+APP_USBD_CDC_ACM_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4574;"	macro
+APP_USBD_CDC_ACM_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4547;"	macro
+APP_USBD_CDC_ACM_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4558;"	macro
+APP_USBD_CLASS_AUDIO_ENABLED	./pca10040/s132/config/sdk_config.h	2173;"	macro
+APP_USBD_CLASS_CDC_ACM_ENABLED	./pca10040/s132/config/sdk_config.h	2180;"	macro
+APP_USBD_CLASS_HID_ENABLED	./pca10040/s132/config/sdk_config.h	2187;"	macro
+APP_USBD_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	462;"	macro
+APP_USBD_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	446;"	macro
+APP_USBD_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	419;"	macro
+APP_USBD_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	430;"	macro
+APP_USBD_CONFIG_PROVIDE_SOF_TIMESTAMP	./pca10040/s132/config/sdk_config.h	413;"	macro
+APP_USBD_DEVICE_VER_MAJOR	./pca10040/s132/config/sdk_config.h	370;"	macro
+APP_USBD_DEVICE_VER_MINOR	./pca10040/s132/config/sdk_config.h	379;"	macro
+APP_USBD_ENABLED	./pca10040/s132/config/sdk_config.h	344;"	macro
+APP_USBD_EVENT_QUEUE_ENABLE	./pca10040/s132/config/sdk_config.h	390;"	macro
+APP_USBD_EVENT_QUEUE_SIZE	./pca10040/s132/config/sdk_config.h	398;"	macro
+APP_USBD_HID_GENERIC_ENABLED	./pca10040/s132/config/sdk_config.h	2194;"	macro
+APP_USBD_HID_KBD_ENABLED	./pca10040/s132/config/sdk_config.h	2201;"	macro
+APP_USBD_HID_MOUSE_ENABLED	./pca10040/s132/config/sdk_config.h	2208;"	macro
+APP_USBD_MSC_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4641;"	macro
+APP_USBD_MSC_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4625;"	macro
+APP_USBD_MSC_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4598;"	macro
+APP_USBD_MSC_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4609;"	macro
+APP_USBD_MSC_ENABLED	./pca10040/s132/config/sdk_config.h	2215;"	macro
+APP_USBD_PID	./pca10040/s132/config/sdk_config.h	361;"	macro
+APP_USBD_VID	./pca10040/s132/config/sdk_config.h	352;"	macro
+assert_nrf_callback	./main.c	159;"	function	signature:(uint16_t line_num, const uint8_t * p_file_name)
+B	./SongPatterns.h	18;"	macro
+begin	./Adafruit_NeoPixel.h	115;"	prototype	signature:(void)
+begun	./Adafruit_NeoPixel.h	143;"	variable
+BLE_ADVERTISING_ENABLED	./pca10040/s132/config/sdk_config.h	69;"	macro
+BLE_ADV_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5294;"	macro
+BLE_ADV_SOC_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5761;"	macro
+BLE_ANCS_C_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5301;"	macro
+BLE_ANCS_C_ENABLED	./pca10040/s132/config/sdk_config.h	159;"	macro
+BLE_ANS_C_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5308;"	macro
+BLE_ANS_C_ENABLED	./pca10040/s132/config/sdk_config.h	166;"	macro
+BLE_BAS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5315;"	macro
+BLE_BAS_C_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5322;"	macro
+BLE_BAS_C_ENABLED	./pca10040/s132/config/sdk_config.h	173;"	macro
+BLE_BAS_ENABLED	./pca10040/s132/config/sdk_config.h	180;"	macro
+BLE_BPS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5329;"	macro
+BLE_CONN_PARAMS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5336;"	macro
+BLE_CONN_STATE_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5343;"	macro
+BLE_CSCS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5350;"	macro
+BLE_CSCS_ENABLED	./pca10040/s132/config/sdk_config.h	187;"	macro
+BLE_CTS_C_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5357;"	macro
+BLE_CTS_C_ENABLED	./pca10040/s132/config/sdk_config.h	194;"	macro
+BLE_DB_DISC_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5364;"	macro
+BLE_DFU_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5371;"	macro
+BLE_DFU_ENABLED	./pca10040/s132/config/sdk_config.h	322;"	macro
+BLE_DFU_SOC_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5768;"	macro
+BLE_DIS_ENABLED	./pca10040/s132/config/sdk_config.h	201;"	macro
+BLE_DTM_ENABLED	./pca10040/s132/config/sdk_config.h	76;"	macro
+ble_evt_handler	./main.c	379;"	function	file:	signature:(ble_evt_t const * p_ble_evt, void * p_context)
+BLE_GLS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5378;"	macro
+BLE_GLS_ENABLED	./pca10040/s132/config/sdk_config.h	208;"	macro
+BLE_HIDS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5385;"	macro
+BLE_HIDS_ENABLED	./pca10040/s132/config/sdk_config.h	215;"	macro
+BLE_HRS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5392;"	macro
+BLE_HRS_C_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5399;"	macro
+BLE_HRS_C_ENABLED	./pca10040/s132/config/sdk_config.h	222;"	macro
+BLE_HRS_ENABLED	./pca10040/s132/config/sdk_config.h	229;"	macro
+BLE_HTS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5406;"	macro
+BLE_HTS_ENABLED	./pca10040/s132/config/sdk_config.h	236;"	macro
+BLE_IAS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5413;"	macro
+BLE_IAS_C_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5420;"	macro
+BLE_IAS_C_ENABLED	./pca10040/s132/config/sdk_config.h	243;"	macro
+BLE_IAS_ENABLED	./pca10040/s132/config/sdk_config.h	250;"	macro
+BLE_LBS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5427;"	macro
+BLE_LBS_C_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5434;"	macro
+BLE_LBS_C_ENABLED	./pca10040/s132/config/sdk_config.h	257;"	macro
+BLE_LBS_ENABLED	./pca10040/s132/config/sdk_config.h	264;"	macro
+BLE_LLS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5441;"	macro
+BLE_LLS_ENABLED	./pca10040/s132/config/sdk_config.h	271;"	macro
+BLE_LNS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5448;"	macro
+BLE_NUS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5455;"	macro
+BLE_NUS_C_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5462;"	macro
+BLE_NUS_C_ENABLED	./pca10040/s132/config/sdk_config.h	278;"	macro
+BLE_NUS_ENABLED	./pca10040/s132/config/sdk_config.h	285;"	macro
+BLE_OTS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5469;"	macro
+BLE_OTS_C_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5476;"	macro
+BLE_RACP_ENABLED	./pca10040/s132/config/sdk_config.h	83;"	macro
+BLE_RSCS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5483;"	macro
+BLE_RSCS_C_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5490;"	macro
+BLE_RSCS_C_ENABLED	./pca10040/s132/config/sdk_config.h	292;"	macro
+BLE_RSCS_ENABLED	./pca10040/s132/config/sdk_config.h	299;"	macro
+ble_stack_init	./main.c	493;"	function	file:	signature:(void)
+BLE_TPS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5497;"	macro
+BLE_TPS_ENABLED	./pca10040/s132/config/sdk_config.h	306;"	macro
+bOffset	./Adafruit_NeoPixel.h	154;"	variable
+brightness	./Adafruit_NeoPixel.h	150;"	variable
+BSP_BTN_BLE_ENABLED	./pca10040/s132/config/sdk_config.h	56;"	macro
+BSP_BTN_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5504;"	macro
+bsp_event_handler	./main.c	546;"	function	signature:(bsp_event_t event)
+buttons_leds_init	./main.c	694;"	function	file:	signature:(bool * p_erase_bonds)
+BUTTON_ENABLED	./pca10040/s132/config/sdk_config.h	2222;"	macro
+C	./SongPatterns.h	12;"	macro
+C2	./SongPatterns.h	19;"	macro
+canShow	./Adafruit_NeoPixel.h	136;"	function	signature:(void)
+clear	./Adafruit_NeoPixel.cpp	1033;"	function	class:Adafruit_NeoPixel	signature:()
+clear	./Adafruit_NeoPixel.h	122;"	prototype	signature:()
+CLOCK_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3455;"	macro
+CLOCK_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3439;"	macro
+CLOCK_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	507;"	macro
+CLOCK_CONFIG_LF_SRC	./pca10040/s132/config/sdk_config.h	490;"	macro
+CLOCK_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3412;"	macro
+CLOCK_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3423;"	macro
+CLOCK_CONFIG_SOC_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5775;"	macro
+CLOCK_CONFIG_STATE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5679;"	macro
+CLOCK_CONFIG_XTAL_FREQ	./pca10040/s132/config/sdk_config.h	479;"	macro
+CLOCK_ENABLED	./pca10040/s132/config/sdk_config.h	472;"	macro
+CMSIS_CONFIG_TOOL	./pca10040/s132/armgcc/Makefile	299;"	macro
+Color	./Adafruit_NeoPixel.cpp	931;"	function	class:Adafruit_NeoPixel	signature:(uint8_t r, uint8_t g, uint8_t b)
+Color	./Adafruit_NeoPixel.cpp	937;"	function	class:Adafruit_NeoPixel	signature:(uint8_t r, uint8_t g, uint8_t b, uint8_t w)
+Color	./Adafruit_NeoPixel.h	133;"	prototype	signature:(uint8_t r, uint8_t g, uint8_t b)
+Color	./Adafruit_NeoPixel.h	134;"	prototype	signature:(uint8_t r, uint8_t g, uint8_t b, uint8_t w)
+COMMON_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3506;"	macro
+COMMON_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3490;"	macro
+COMMON_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3463;"	macro
+COMMON_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3474;"	macro
+COMP_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3557;"	macro
+COMP_CONFIG_HYST	./pca10040/s132/config/sdk_config.h	554;"	macro
+COMP_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3541;"	macro
+COMP_CONFIG_INPUT	./pca10040/s132/config/sdk_config.h	580;"	macro
+COMP_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	597;"	macro
+COMP_CONFIG_ISOURCE	./pca10040/s132/config/sdk_config.h	565;"	macro
+COMP_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3514;"	macro
+COMP_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3525;"	macro
+COMP_CONFIG_MAIN_MODE	./pca10040/s132/config/sdk_config.h	535;"	macro
+COMP_CONFIG_REF	./pca10040/s132/config/sdk_config.h	526;"	macro
+COMP_CONFIG_SPEED_MODE	./pca10040/s132/config/sdk_config.h	545;"	macro
+COMP_ENABLED	./pca10040/s132/config/sdk_config.h	515;"	macro
+conn_params_error_handler	./main.c	301;"	function	file:	signature:(uint32_t nrf_error)
+conn_params_init	./main.c	309;"	function	file:	signature:(void)
+CONN_SUP_TIMEOUT	./main.c	112;"	macro	file:
+count_duration	./Tone.cpp	41;"	variable
+CRC16_ENABLED	./pca10040/s132/config/sdk_config.h	2229;"	macro
+CRC32_ENABLED	./pca10040/s132/config/sdk_config.h	2236;"	macro
+CTOPVAL	./Adafruit_NeoPixel.cpp	181;"	macro	file:
+CTOPVAL_400KHz	./Adafruit_NeoPixel.cpp	182;"	macro	file:
+CYCLES_400	./Adafruit_NeoPixel.cpp	200;"	macro	file:
+CYCLES_400_T0H	./Adafruit_NeoPixel.cpp	198;"	macro	file:
+CYCLES_400_T1H	./Adafruit_NeoPixel.cpp	199;"	macro	file:
+CYCLES_800	./Adafruit_NeoPixel.cpp	196;"	macro	file:
+CYCLES_800_T0H	./Adafruit_NeoPixel.cpp	194;"	macro	file:
+CYCLES_800_T1H	./Adafruit_NeoPixel.cpp	195;"	macro	file:
+Cyclon	./LedPatterns.c	104;"	function	signature:(void)
+CYCLON	./LedPatterns.h	21;"	macro
+Cyclon	./LedPatterns.h	43;"	prototype	signature:(void)
+D	./SongPatterns.h	13;"	macro
+DEAD_BEEF	./main.c	117;"	macro	file:
+DELAYBOUNCE	./LedPatterns.h	33;"	macro
+DELAYCYCLON	./LedPatterns.h	29;"	macro
+DELAYFADE	./LedPatterns.h	28;"	macro
+DELAYFLASH	./LedPatterns.h	30;"	macro
+DELAYFLASHFADE	./LedPatterns.h	31;"	macro
+DELAYRING	./LedPatterns.h	34;"	macro
+DELAYRINGBOUNCE	./LedPatterns.h	35;"	macro
+DELAYWIPE	./LedPatterns.h	32;"	macro
+delayws2812b	./main.c	141;"	variable
+DEVICE	./pca10040/s132/armgcc/Makefile	11;"	macro
+DEVICE_NAME	./main.c	101;"	macro	file:
+E	./SongPatterns.h	14;"	macro
+ECC_ENABLED	./pca10040/s132/config/sdk_config.h	2243;"	macro
+EGU_ENABLED	./pca10040/s132/config/sdk_config.h	606;"	macro
+endTime	./Adafruit_NeoPixel.h	157;"	variable
+END_SONG	./SongPatterns.h	22;"	macro
+F	./SongPatterns.h	15;"	macro
+FADE	./LedPatterns.h	20;"	macro
+FadeInOut	./LedPatterns.c	54;"	function	signature:(void)
+FadeInOut	./LedPatterns.h	42;"	prototype	signature:(void)
+FDS_BACKEND	./pca10040/s132/config/sdk_config.h	2293;"	macro
+FDS_CRC_CHECK_ON_READ	./pca10040/s132/config/sdk_config.h	2322;"	macro
+FDS_CRC_CHECK_ON_WRITE	./pca10040/s132/config/sdk_config.h	2333;"	macro
+FDS_ENABLED	./pca10040/s132/config/sdk_config.h	2249;"	macro
+FDS_MAX_USERS	./pca10040/s132/config/sdk_config.h	2346;"	macro
+FDS_OP_QUEUE_SIZE	./pca10040/s132/config/sdk_config.h	2306;"	macro
+FDS_VIRTUAL_PAGES	./pca10040/s132/config/sdk_config.h	2261;"	macro
+FDS_VIRTUAL_PAGE_SIZE	./pca10040/s132/config/sdk_config.h	2274;"	macro
+FIRST_CONN_PARAMS_UPDATE_DELAY	./main.c	113;"	macro	file:
+flag_off_leds	./main.c	142;"	variable
+Flash	./LedPatterns.c	131;"	function	signature:(void)
+FLASH	./LedPatterns.h	22;"	macro
+Flash	./LedPatterns.h	44;"	prototype	signature:(void)
+FLASHFADE	./LedPatterns.h	23;"	macro
+FlashFadeInOut	./LedPatterns.c	167;"	function	signature:(void)
+FlashFadeInOut	./LedPatterns.h	45;"	prototype	signature:(void)
+G	./SongPatterns.h	16;"	macro
+gap_params_init	./main.c	170;"	function	file:	signature:(void)
+gatt_evt_handler	./main.c	516;"	function	signature:(nrf_ble_gatt_t * p_gatt, nrf_ble_gatt_evt_t const * p_evt)
+gatt_init	./main.c	530;"	function	signature:(void)
+getBrightness	./Adafruit_NeoPixel.cpp	1029;"	function	class:Adafruit_NeoPixel	signature:(void) const
+getPin	./Adafruit_NeoPixel.h	129;"	function	signature:(void)
+getPixelColor	./Adafruit_NeoPixel.cpp	942;"	function	class:Adafruit_NeoPixel	signature:(uint16_t n) const
+getPixelColor	./Adafruit_NeoPixel.h	135;"	prototype	signature:(uint16_t n)
+getPixels	./Adafruit_NeoPixel.cpp	983;"	function	class:Adafruit_NeoPixel	signature:(void) const
+getPixels	./Adafruit_NeoPixel.h	126;"	prototype	signature:(void)
+gOffset	./Adafruit_NeoPixel.h	153;"	variable
+GPIOTE_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3608;"	macro
+GPIOTE_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3592;"	macro
+GPIOTE_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	633;"	macro
+GPIOTE_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3565;"	macro
+GPIOTE_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3576;"	macro
+GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS	./pca10040/s132/config/sdk_config.h	616;"	macro
+GPIOTE_ENABLED	./pca10040/s132/config/sdk_config.h	612;"	macro
+gpio_init	./main.c	811;"	function	file:	signature:(void)
+HARDFAULT_HANDLER_ENABLED	./pca10040/s132/config/sdk_config.h	2357;"	macro
+HARDFAULT_HANDLER_GDB_PSP_BACKTRACE	./pca10040/s132/config/sdk_config.h	2371;"	macro
+HCI_MAX_PACKET_SIZE_IN_BITS	./pca10040/s132/config/sdk_config.h	2464;"	macro
+HCI_MEM_POOL_ENABLED	./pca10040/s132/config/sdk_config.h	2379;"	macro
+HCI_RX_BUF_QUEUE_SIZE	./pca10040/s132/config/sdk_config.h	2393;"	macro
+HCI_RX_BUF_SIZE	./pca10040/s132/config/sdk_config.h	2388;"	macro
+HCI_SLIP_ENABLED	./pca10040/s132/config/sdk_config.h	2401;"	macro
+HCI_TRANSPORT_ENABLED	./pca10040/s132/config/sdk_config.h	2460;"	macro
+HCI_TX_BUF_SIZE	./pca10040/s132/config/sdk_config.h	2383;"	macro
+HCI_UART_BAUDRATE	./pca10040/s132/config/sdk_config.h	2423;"	macro
+HCI_UART_CTS_PIN	./pca10040/s132/config/sdk_config.h	2452;"	macro
+HCI_UART_FLOW_CONTROL	./pca10040/s132/config/sdk_config.h	2432;"	macro
+HCI_UART_RTS_PIN	./pca10040/s132/config/sdk_config.h	2447;"	macro
+HCI_UART_RX_PIN	./pca10040/s132/config/sdk_config.h	2437;"	macro
+HCI_UART_TX_PIN	./pca10040/s132/config/sdk_config.h	2442;"	macro
+I2S_CONFIG_ALIGN	./pca10040/s132/config/sdk_config.h	700;"	macro
+I2S_CONFIG_CHANNELS	./pca10040/s132/config/sdk_config.h	720;"	macro
+I2S_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3659;"	macro
+I2S_CONFIG_FORMAT	./pca10040/s132/config/sdk_config.h	691;"	macro
+I2S_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3643;"	macro
+I2S_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	779;"	macro
+I2S_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3616;"	macro
+I2S_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3627;"	macro
+I2S_CONFIG_LRCK_PIN	./pca10040/s132/config/sdk_config.h	654;"	macro
+I2S_CONFIG_MASTER	./pca10040/s132/config/sdk_config.h	682;"	macro
+I2S_CONFIG_MCK_PIN	./pca10040/s132/config/sdk_config.h	659;"	macro
+I2S_CONFIG_MCK_SETUP	./pca10040/s132/config/sdk_config.h	746;"	macro
+I2S_CONFIG_RATIO	./pca10040/s132/config/sdk_config.h	762;"	macro
+I2S_CONFIG_SCK_PIN	./pca10040/s132/config/sdk_config.h	647;"	macro
+I2S_CONFIG_SDIN_PIN	./pca10040/s132/config/sdk_config.h	673;"	macro
+I2S_CONFIG_SDOUT_PIN	./pca10040/s132/config/sdk_config.h	666;"	macro
+I2S_CONFIG_SWIDTH	./pca10040/s132/config/sdk_config.h	710;"	macro
+I2S_ENABLED	./pca10040/s132/config/sdk_config.h	641;"	macro
+I2S_STDO_PIN	./LedPatterns.h	16;"	macro
+InitSongStruct	./SongPatterns.c	22;"	function	signature:(void)
+InitSongStruct	./SongPatterns.h	63;"	prototype	signature:(void)
+INST	./Adafruit_NeoPixel.cpp	664;"	macro	file:
+is800KHz	./Adafruit_NeoPixel.h	141;"	variable
+LEDSPATTERNS_H__	./LedPatterns.h	10;"	macro
+led_array	./LedPatterns.c	18;"	variable
+LED_SOFTBLINK_ENABLED	./pca10040/s132/config/sdk_config.h	2473;"	macro
+length_song1	./SongPatterns.h	40;"	variable
+length_song2	./SongPatterns.h	44;"	variable
+length_song3	./SongPatterns.h	48;"	variable
+LINKER_SCRIPT	./pca10040/s132/armgcc/Makefile	15;"	macro
+log_init	./main.c	710;"	function	file:	signature:(void)
+LOW_POWER_PWM_ENABLED	./pca10040/s132/config/sdk_config.h	2480;"	macro
+LPCOMP_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3710;"	macro
+LPCOMP_CONFIG_DETECTION	./pca10040/s132/config/sdk_config.h	820;"	macro
+LPCOMP_CONFIG_HYST	./pca10040/s132/config/sdk_config.h	842;"	macro
+LPCOMP_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3694;"	macro
+LPCOMP_CONFIG_INPUT	./pca10040/s132/config/sdk_config.h	835;"	macro
+LPCOMP_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	859;"	macro
+LPCOMP_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3667;"	macro
+LPCOMP_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3678;"	macro
+LPCOMP_CONFIG_REFERENCE	./pca10040/s132/config/sdk_config.h	810;"	macro
+LPCOMP_ENABLED	./pca10040/s132/config/sdk_config.h	787;"	macro
+MAGIC_T0H	./Adafruit_NeoPixel.cpp	173;"	macro	file:
+MAGIC_T0H_400KHz	./Adafruit_NeoPixel.cpp	177;"	macro	file:
+MAGIC_T1H	./Adafruit_NeoPixel.cpp	174;"	macro	file:
+MAGIC_T1H_400KHz	./Adafruit_NeoPixel.cpp	178;"	macro	file:
+main	./main.c	839;"	function	signature:(void)
+MAX_CONN_INTERVAL	./main.c	110;"	macro	file:
+MAX_CONN_PARAMS_UPDATE_COUNT	./main.c	115;"	macro	file:
+MEASUREMENT_PERIOD	./pca10040/s132/config/sdk_config.h	2762;"	macro
+MEMORY_MANAGER_LARGE_BLOCK_COUNT	./pca10040/s132/config/sdk_config.h	2520;"	macro
+MEMORY_MANAGER_LARGE_BLOCK_SIZE	./pca10040/s132/config/sdk_config.h	2527;"	macro
+MEMORY_MANAGER_MEDIUM_BLOCK_COUNT	./pca10040/s132/config/sdk_config.h	2506;"	macro
+MEMORY_MANAGER_MEDIUM_BLOCK_SIZE	./pca10040/s132/config/sdk_config.h	2513;"	macro
+MEMORY_MANAGER_SMALL_BLOCK_COUNT	./pca10040/s132/config/sdk_config.h	2492;"	macro
+MEMORY_MANAGER_SMALL_BLOCK_SIZE	./pca10040/s132/config/sdk_config.h	2499;"	macro
+MEMORY_MANAGER_XLARGE_BLOCK_COUNT	./pca10040/s132/config/sdk_config.h	2534;"	macro
+MEMORY_MANAGER_XLARGE_BLOCK_SIZE	./pca10040/s132/config/sdk_config.h	2541;"	macro
+MEMORY_MANAGER_XSMALL_BLOCK_COUNT	./pca10040/s132/config/sdk_config.h	2562;"	macro
+MEMORY_MANAGER_XSMALL_BLOCK_SIZE	./pca10040/s132/config/sdk_config.h	2569;"	macro
+MEMORY_MANAGER_XXLARGE_BLOCK_COUNT	./pca10040/s132/config/sdk_config.h	2548;"	macro
+MEMORY_MANAGER_XXLARGE_BLOCK_SIZE	./pca10040/s132/config/sdk_config.h	2555;"	macro
+MEMORY_MANAGER_XXSMALL_BLOCK_COUNT	./pca10040/s132/config/sdk_config.h	2576;"	macro
+MEMORY_MANAGER_XXSMALL_BLOCK_SIZE	./pca10040/s132/config/sdk_config.h	2583;"	macro
+MEM_MANAGER_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	2632;"	macro
+MEM_MANAGER_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	2616;"	macro
+MEM_MANAGER_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	2589;"	macro
+MEM_MANAGER_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	2600;"	macro
+MEM_MANAGER_DISABLE_API_PARAM_CHECK	./pca10040/s132/config/sdk_config.h	2641;"	macro
+MEM_MANAGER_ENABLED	./pca10040/s132/config/sdk_config.h	2486;"	macro
+MIN_CONN_INTERVAL	./main.c	109;"	macro	file:
+m_advertising	./main.c	125;"	variable
+m_adv_uuids	./main.c	129;"	variable	file:
+m_ble_nus_max_data_len	./main.c	128;"	variable	file:
+m_conn_handle	./main.c	127;"	variable	file:
+m_gatt	./main.c	124;"	variable
+m_nus	./main.c	123;"	variable
+m_pwm0	./main.c	144;"	variable	file:
+m_seq_values	./main.c	145;"	variable	file:
+neoPixelType	./Adafruit_NeoPixel.h	107;"	typedef
+neoPixelType	./Adafruit_NeoPixel.h	109;"	typedef
+NEO_BGR	./Adafruit_NeoPixel.h	55;"	macro
+NEO_BGRW	./Adafruit_NeoPixel.h	85;"	macro
+NEO_BGWR	./Adafruit_NeoPixel.h	84;"	macro
+NEO_BRG	./Adafruit_NeoPixel.h	54;"	macro
+NEO_BRGW	./Adafruit_NeoPixel.h	83;"	macro
+NEO_BRWG	./Adafruit_NeoPixel.h	82;"	macro
+NEO_BWGR	./Adafruit_NeoPixel.h	81;"	macro
+NEO_BWRG	./Adafruit_NeoPixel.h	80;"	macro
+NEO_GBR	./Adafruit_NeoPixel.h	53;"	macro
+NEO_GBRW	./Adafruit_NeoPixel.h	78;"	macro
+NEO_GBWR	./Adafruit_NeoPixel.h	77;"	macro
+NEO_GRB	./Adafruit_NeoPixel.h	52;"	macro
+NEO_GRBW	./Adafruit_NeoPixel.h	76;"	macro
+NEO_GRWB	./Adafruit_NeoPixel.h	75;"	macro
+NEO_GWBR	./Adafruit_NeoPixel.h	74;"	macro
+NEO_GWRB	./Adafruit_NeoPixel.h	73;"	macro
+NEO_KHZ400	./Adafruit_NeoPixel.h	98;"	macro
+NEO_KHZ800	./Adafruit_NeoPixel.h	96;"	macro
+NEO_RBG	./Adafruit_NeoPixel.h	51;"	macro
+NEO_RBGW	./Adafruit_NeoPixel.h	71;"	macro
+NEO_RBWG	./Adafruit_NeoPixel.h	70;"	macro
+NEO_RGB	./Adafruit_NeoPixel.h	50;"	macro
+NEO_RGBW	./Adafruit_NeoPixel.h	69;"	macro
+NEO_RGWB	./Adafruit_NeoPixel.h	68;"	macro
+NEO_RWBG	./Adafruit_NeoPixel.h	67;"	macro
+NEO_RWGB	./Adafruit_NeoPixel.h	66;"	macro
+NEO_WBGR	./Adafruit_NeoPixel.h	64;"	macro
+NEO_WBRG	./Adafruit_NeoPixel.h	63;"	macro
+NEO_WGBR	./Adafruit_NeoPixel.h	62;"	macro
+NEO_WGRB	./Adafruit_NeoPixel.h	61;"	macro
+NEO_WRBG	./Adafruit_NeoPixel.h	60;"	macro
+NEO_WRGB	./Adafruit_NeoPixel.h	59;"	macro
+NEXT_CONN_PARAMS_UPDATE_DELAY	./main.c	114;"	macro	file:
+NFC_BLE_PAIR_LIB_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5511;"	macro
+NOPx7	./Adafruit_NeoPixel.cpp	740;"	macro	file:
+noTone	./Tone.cpp	116;"	function	signature:(uint8_t pin)
+noTone	./Tone.h	30;"	prototype	signature:(uint8_t pin)
+no_stop	./Tone.cpp	42;"	variable
+NRFJPRO_DIR	./pca10040/s132/armgcc/Makefile	12;"	macro
+NRF_BALLOC_CONFIG_BASIC_CHECKS_ENABLED	./pca10040/s132/config/sdk_config.h	2674;"	macro
+NRF_BALLOC_CONFIG_DATA_TRASHING_CHECK_ENABLED	./pca10040/s132/config/sdk_config.h	2688;"	macro
+NRF_BALLOC_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4692;"	macro
+NRF_BALLOC_CONFIG_DEBUG_ENABLED	./pca10040/s132/config/sdk_config.h	2654;"	macro
+NRF_BALLOC_CONFIG_DOUBLE_FREE_CHECK_ENABLED	./pca10040/s132/config/sdk_config.h	2681;"	macro
+NRF_BALLOC_CONFIG_HEAD_GUARD_WORDS	./pca10040/s132/config/sdk_config.h	2660;"	macro
+NRF_BALLOC_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4676;"	macro
+NRF_BALLOC_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4649;"	macro
+NRF_BALLOC_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4660;"	macro
+NRF_BALLOC_CONFIG_TAIL_GUARD_WORDS	./pca10040/s132/config/sdk_config.h	2667;"	macro
+NRF_BALLOC_ENABLED	./pca10040/s132/config/sdk_config.h	2649;"	macro
+NRF_BLE_BMS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5518;"	macro
+NRF_BLE_CGMS_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5525;"	macro
+NRF_BLE_CONN_PARAMS_ENABLED	./pca10040/s132/config/sdk_config.h	89;"	macro
+NRF_BLE_CONN_PARAMS_MAX_SLAVE_LATENCY_DEVIATION	./pca10040/s132/config/sdk_config.h	95;"	macro
+NRF_BLE_CONN_PARAMS_MAX_SUPERVISION_TIMEOUT_DEVIATION	./pca10040/s132/config/sdk_config.h	102;"	macro
+NRF_BLE_ES_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5532;"	macro
+NRF_BLE_GATTS_C_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5539;"	macro
+NRF_BLE_GATT_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5546;"	macro
+NRF_BLE_GATT_ENABLED	./pca10040/s132/config/sdk_config.h	111;"	macro
+NRF_BLE_QWR_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5553;"	macro
+NRF_BLE_QWR_ENABLED	./pca10040/s132/config/sdk_config.h	118;"	macro
+NRF_CLI_ARGC_MAX	./pca10040/s132/config/sdk_config.h	2983;"	macro
+NRF_CLI_BLE_UART_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4743;"	macro
+NRF_CLI_BLE_UART_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4727;"	macro
+NRF_CLI_BLE_UART_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4700;"	macro
+NRF_CLI_BLE_UART_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4711;"	macro
+NRF_CLI_BUILD_IN_CMDS_ENABLED	./pca10040/s132/config/sdk_config.h	2990;"	macro
+NRF_CLI_CMD_BUFF_SIZE	./pca10040/s132/config/sdk_config.h	2995;"	macro
+NRF_CLI_ECHO_STATUS	./pca10040/s132/config/sdk_config.h	3002;"	macro
+NRF_CLI_ENABLED	./pca10040/s132/config/sdk_config.h	2978;"	macro
+NRF_CLI_HISTORY_ELEMENT_COUNT	./pca10040/s132/config/sdk_config.h	3022;"	macro
+NRF_CLI_HISTORY_ELEMENT_SIZE	./pca10040/s132/config/sdk_config.h	3017;"	macro
+NRF_CLI_HISTORY_ENABLED	./pca10040/s132/config/sdk_config.h	3013;"	macro
+NRF_CLI_LOG_BACKEND	./pca10040/s132/config/sdk_config.h	3045;"	macro
+NRF_CLI_PRINTF_BUFF_SIZE	./pca10040/s132/config/sdk_config.h	3007;"	macro
+NRF_CLI_STATISTICS_ENABLED	./pca10040/s132/config/sdk_config.h	3038;"	macro
+NRF_CLI_UART_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4794;"	macro
+NRF_CLI_UART_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4778;"	macro
+NRF_CLI_UART_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4751;"	macro
+NRF_CLI_UART_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4762;"	macro
+NRF_CLI_USES_TASK_MANAGER_ENABLED	./pca10040/s132/config/sdk_config.h	3052;"	macro
+NRF_CLI_VT100_COLORS_ENABLED	./pca10040/s132/config/sdk_config.h	3031;"	macro
+NRF_CSENSE_ENABLED	./pca10040/s132/config/sdk_config.h	2698;"	macro
+NRF_CSENSE_MAX_PADS_NUMBER	./pca10040/s132/config/sdk_config.h	2717;"	macro
+NRF_CSENSE_MAX_VALUE	./pca10040/s132/config/sdk_config.h	2722;"	macro
+NRF_CSENSE_MIN_PAD_VALUE	./pca10040/s132/config/sdk_config.h	2712;"	macro
+NRF_CSENSE_OUTPUT_PIN	./pca10040/s132/config/sdk_config.h	2729;"	macro
+NRF_CSENSE_PAD_DEVIATION	./pca10040/s132/config/sdk_config.h	2707;"	macro
+NRF_CSENSE_PAD_HYSTERESIS	./pca10040/s132/config/sdk_config.h	2702;"	macro
+NRF_DFU_BLE_BUTTONLESS_SUPPORTS_BONDS	./pca10040/s132/config/sdk_config.h	329;"	macro
+NRF_DRV_CSENSE_ENABLED	./pca10040/s132/config/sdk_config.h	2737;"	macro
+NRF_DRV_USBD_DMASCHEDULER_MODE	./pca10040/s132/config/sdk_config.h	1972;"	macro
+NRF_FPRINTF_ENABLED	./pca10040/s132/config/sdk_config.h	2773;"	macro
+NRF_FSTORAGE_ENABLED	./pca10040/s132/config/sdk_config.h	2779;"	macro
+NRF_FSTORAGE_SD_MAX_RETRIES	./pca10040/s132/config/sdk_config.h	2797;"	macro
+NRF_FSTORAGE_SD_MAX_WRITE_SIZE	./pca10040/s132/config/sdk_config.h	2807;"	macro
+NRF_FSTORAGE_SD_QUEUE_SIZE	./pca10040/s132/config/sdk_config.h	2789;"	macro
+NRF_LOG_ALLOW_OVERFLOW	./pca10040/s132/config/sdk_config.h	3190;"	macro
+NRF_LOG_BACKEND_RTT_ENABLED	./pca10040/s132/config/sdk_config.h	3067;"	macro
+NRF_LOG_BACKEND_RTT_TEMP_BUFFER_SIZE	./pca10040/s132/config/sdk_config.h	3076;"	macro
+NRF_LOG_BUFSIZE	./pca10040/s132/config/sdk_config.h	3180;"	macro
+NRF_LOG_CLI_CMDS	./pca10040/s132/config/sdk_config.h	3213;"	macro
+NRF_LOG_COLOR_DEFAULT	./pca10040/s132/config/sdk_config.h	3107;"	macro
+NRF_LOG_DEFAULT_LEVEL	./pca10040/s132/config/sdk_config.h	3153;"	macro
+NRF_LOG_DEFERRED	./pca10040/s132/config/sdk_config.h	3162;"	macro
+NRF_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3087;"	macro
+NRF_LOG_ERROR_COLOR	./pca10040/s132/config/sdk_config.h	3123;"	macro
+NRF_LOG_FILTERS_ENABLED	./pca10040/s132/config/sdk_config.h	3206;"	macro
+NRF_LOG_MSGPOOL_ELEMENT_COUNT	./pca10040/s132/config/sdk_config.h	3236;"	macro
+NRF_LOG_MSGPOOL_ELEMENT_SIZE	./pca10040/s132/config/sdk_config.h	3226;"	macro
+NRF_LOG_USES_COLORS	./pca10040/s132/config/sdk_config.h	3092;"	macro
+NRF_LOG_USES_TIMESTAMP	./pca10040/s132/config/sdk_config.h	3199;"	macro
+NRF_LOG_WARNING_COLOR	./pca10040/s132/config/sdk_config.h	3139;"	macro
+NRF_MAXIMUM_LATENCY_US	./pca10040/s132/config/sdk_config.h	1320;"	macro
+NRF_MEMOBJ_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4845;"	macro
+NRF_MEMOBJ_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4829;"	macro
+NRF_MEMOBJ_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4802;"	macro
+NRF_MEMOBJ_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4813;"	macro
+NRF_MEMOBJ_ENABLED	./pca10040/s132/config/sdk_config.h	2819;"	macro
+NRF_MPU_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3296;"	macro
+NRF_MPU_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3280;"	macro
+NRF_MPU_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3253;"	macro
+NRF_MPU_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3264;"	macro
+NRF_PWR_MGMT_CONFIG_AUTO_SHUTDOWN_RETRY	./pca10040/s132/config/sdk_config.h	2910;"	macro
+NRF_PWR_MGMT_CONFIG_CPU_USAGE_MONITOR_ENABLED	./pca10040/s132/config/sdk_config.h	2882;"	macro
+NRF_PWR_MGMT_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4896;"	macro
+NRF_PWR_MGMT_CONFIG_DEBUG_PIN_ENABLED	./pca10040/s132/config/sdk_config.h	2832;"	macro
+NRF_PWR_MGMT_CONFIG_FPU_SUPPORT_ENABLED	./pca10040/s132/config/sdk_config.h	2903;"	macro
+NRF_PWR_MGMT_CONFIG_HANDLER_PRIORITY_COUNT	./pca10040/s132/config/sdk_config.h	2924;"	macro
+NRF_PWR_MGMT_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4880;"	macro
+NRF_PWR_MGMT_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4853;"	macro
+NRF_PWR_MGMT_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4864;"	macro
+NRF_PWR_MGMT_CONFIG_STANDBY_TIMEOUT_ENABLED	./pca10040/s132/config/sdk_config.h	2888;"	macro
+NRF_PWR_MGMT_CONFIG_STANDBY_TIMEOUT_S	./pca10040/s132/config/sdk_config.h	2894;"	macro
+NRF_PWR_MGMT_CONFIG_USE_SCHEDULER	./pca10040/s132/config/sdk_config.h	2917;"	macro
+NRF_PWR_MGMT_ENABLED	./pca10040/s132/config/sdk_config.h	2825;"	macro
+NRF_PWR_MGMT_SLEEP_DEBUG_PIN	./pca10040/s132/config/sdk_config.h	2871;"	macro
+NRF_QUEUE_ENABLED	./pca10040/s132/config/sdk_config.h	2933;"	macro
+NRF_SDH_ANT_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4947;"	macro
+NRF_SDH_ANT_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4931;"	macro
+NRF_SDH_ANT_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4904;"	macro
+NRF_SDH_ANT_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4915;"	macro
+NRF_SDH_ANT_STACK_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5708;"	macro
+NRF_SDH_BLE_CENTRAL_LINK_COUNT	./pca10040/s132/config/sdk_config.h	5238;"	macro
+NRF_SDH_BLE_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4998;"	macro
+NRF_SDH_BLE_ENABLED	./pca10040/s132/config/sdk_config.h	5224;"	macro
+NRF_SDH_BLE_GAP_EVENT_LENGTH	./pca10040/s132/config/sdk_config.h	5248;"	macro
+NRF_SDH_BLE_GATTS_ATTR_TAB_SIZE	./pca10040/s132/config/sdk_config.h	5258;"	macro
+NRF_SDH_BLE_GATT_MAX_MTU_SIZE	./pca10040/s132/config/sdk_config.h	5253;"	macro
+NRF_SDH_BLE_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4982;"	macro
+NRF_SDH_BLE_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4955;"	macro
+NRF_SDH_BLE_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4966;"	macro
+NRF_SDH_BLE_OBSERVER_PRIO_LEVELS	./pca10040/s132/config/sdk_config.h	5284;"	macro
+NRF_SDH_BLE_PERIPHERAL_LINK_COUNT	./pca10040/s132/config/sdk_config.h	5233;"	macro
+NRF_SDH_BLE_SERVICE_CHANGED	./pca10040/s132/config/sdk_config.h	5270;"	macro
+NRF_SDH_BLE_STACK_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5717;"	macro
+NRF_SDH_BLE_TOTAL_LINK_COUNT	./pca10040/s132/config/sdk_config.h	5243;"	macro
+NRF_SDH_BLE_VS_UUID_COUNT	./pca10040/s132/config/sdk_config.h	5263;"	macro
+NRF_SDH_CLOCK_LF_RC_CTIV	./pca10040/s132/config/sdk_config.h	5613;"	macro
+NRF_SDH_CLOCK_LF_RC_TEMP_CTIV	./pca10040/s132/config/sdk_config.h	5622;"	macro
+NRF_SDH_CLOCK_LF_SRC	./pca10040/s132/config/sdk_config.h	5607;"	macro
+NRF_SDH_CLOCK_LF_XTAL_ACCURACY	./pca10040/s132/config/sdk_config.h	5638;"	macro
+NRF_SDH_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	5049;"	macro
+NRF_SDH_DISPATCH_MODEL	./pca10040/s132/config/sdk_config.h	5590;"	macro
+NRF_SDH_ENABLED	./pca10040/s132/config/sdk_config.h	5573;"	macro
+NRF_SDH_INFO_COLOR	./pca10040/s132/config/sdk_config.h	5033;"	macro
+NRF_SDH_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	5006;"	macro
+NRF_SDH_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	5017;"	macro
+NRF_SDH_REQ_OBSERVER_PRIO_LEVELS	./pca10040/s132/config/sdk_config.h	5652;"	macro
+NRF_SDH_SOC_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	5100;"	macro
+NRF_SDH_SOC_ENABLED	./pca10040/s132/config/sdk_config.h	5741;"	macro
+NRF_SDH_SOC_INFO_COLOR	./pca10040/s132/config/sdk_config.h	5084;"	macro
+NRF_SDH_SOC_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	5057;"	macro
+NRF_SDH_SOC_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	5068;"	macro
+NRF_SDH_SOC_OBSERVER_PRIO_LEVELS	./pca10040/s132/config/sdk_config.h	5751;"	macro
+NRF_SDH_SOC_STACK_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5726;"	macro
+NRF_SDH_STACK_OBSERVER_PRIO_LEVELS	./pca10040/s132/config/sdk_config.h	5668;"	macro
+NRF_SDH_STATE_OBSERVER_PRIO_LEVELS	./pca10040/s132/config/sdk_config.h	5660;"	macro
+NRF_SECTION_ITER_ENABLED	./pca10040/s132/config/sdk_config.h	2940;"	macro
+NRF_SORTLIST_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	5151;"	macro
+NRF_SORTLIST_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	5135;"	macro
+NRF_SORTLIST_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	5108;"	macro
+NRF_SORTLIST_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	5119;"	macro
+NRF_SPI_DRV_MISO_PULLUP_CFG	./pca10040/s132/config/sdk_config.h	1519;"	macro
+NRF_STACK_GUARD_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3347;"	macro
+NRF_STACK_GUARD_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3331;"	macro
+NRF_STACK_GUARD_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3304;"	macro
+NRF_STACK_GUARD_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3315;"	macro
+NRF_STRERROR_ENABLED	./pca10040/s132/config/sdk_config.h	2947;"	macro
+NRF_TWI_MNGR_ENABLED	./pca10040/s132/config/sdk_config.h	2954;"	macro
+numBytes	./Adafruit_NeoPixel.h	146;"	variable
+numLEDs	./Adafruit_NeoPixel.h	145;"	variable
+numPixels	./Adafruit_NeoPixel.cpp	987;"	function	class:Adafruit_NeoPixel	signature:(void) const
+numPixels	./Adafruit_NeoPixel.h	131;"	prototype	signature:(void) const
+NUM_LEDS	./LedPatterns.h	15;"	macro
+num_notes	./SongPatterns.h	52;"	member	struct:__anon1
+num_notes_song1	./SongPatterns.h	24;"	macro
+num_notes_song2	./SongPatterns.h	26;"	macro
+num_notes_song3	./SongPatterns.h	28;"	macro
+NUM_SONGS	./SongPatterns.h	21;"	macro
+nus_data_handler	./main.c	205;"	function	file:	signature:(ble_nus_evt_t * p_evt)
+NUS_SERVICE_UUID_TYPE	./main.c	102;"	macro	file:
+OffLeds	./LedPatterns.c	20;"	function	signature:(void)
+OFFLEDS	./LedPatterns.h	18;"	macro
+OffLeds	./LedPatterns.h	39;"	prototype	signature:(void)
+ONLEDS	./LedPatterns.h	19;"	macro
+on_adv_evt	./main.c	355;"	function	file:	signature:(ble_adv_evt_t ble_adv_evt)
+on_conn_params_evt	./main.c	285;"	function	file:	signature:(ble_conn_params_evt_t * p_evt)
+OPT	./pca10040/s132/armgcc/Makefile	198;"	macro
+OUTPUT_DIRECTORY	./pca10040/s132/armgcc/Makefile	3;"	macro
+PDM_CONFIG_CLOCK_FREQ	./pca10040/s132/config/sdk_config.h	894;"	macro
+PDM_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3761;"	macro
+PDM_CONFIG_EDGE	./pca10040/s132/config/sdk_config.h	884;"	macro
+PDM_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3745;"	macro
+PDM_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	911;"	macro
+PDM_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3718;"	macro
+PDM_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3729;"	macro
+PDM_CONFIG_MODE	./pca10040/s132/config/sdk_config.h	875;"	macro
+PDM_ENABLED	./pca10040/s132/config/sdk_config.h	867;"	macro
+PEER_MANAGER_ENABLED	./pca10040/s132/config/sdk_config.h	124;"	macro
+PERIOD_400	./Adafruit_NeoPixel.cpp	670;"	macro	file:
+PERIOD_800	./Adafruit_NeoPixel.cpp	667;"	macro	file:
+PERIPHERAL_RESOURCE_SHARING_ENABLED	./pca10040/s132/config/sdk_config.h	920;"	macro
+pin	./Adafruit_NeoPixel.h	148;"	variable
+pin_sound	./Tone.cpp	43;"	variable
+pixels	./Adafruit_NeoPixel.h	151;"	variable
+PlayMusic	./SongPatterns.c	47;"	function	signature:(song_param_t* ptr_array_struct)
+PlayMusic	./SongPatterns.h	64;"	prototype	signature:(song_param_t* ptr_array_struct)
+PM_BLE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5558;"	macro
+PM_CENTRAL_ENABLED	./pca10040/s132/config/sdk_config.h	144;"	macro
+PM_FLASH_BUFFERS	./pca10040/s132/config/sdk_config.h	135;"	macro
+PM_MAX_REGISTRANTS	./pca10040/s132/config/sdk_config.h	128;"	macro
+POWER_CONFIG_DEFAULT_DCDCEN	./pca10040/s132/config/sdk_config.h	951;"	macro
+POWER_CONFIG_DEFAULT_DCDCENHV	./pca10040/s132/config/sdk_config.h	960;"	macro
+POWER_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	942;"	macro
+POWER_CONFIG_SOC_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5782;"	macro
+POWER_CONFIG_STATE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5686;"	macro
+POWER_ENABLED	./pca10040/s132/config/sdk_config.h	926;"	macro
+power_manage	./main.c	721;"	function	file:	signature:(void)
+PPI_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3812;"	macro
+PPI_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3796;"	macro
+PPI_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3769;"	macro
+PPI_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3780;"	macro
+PPI_ENABLED	./pca10040/s132/config/sdk_config.h	969;"	macro
+PROJECT_NAME	./pca10040/s132/armgcc/Makefile	1;"	macro
+PROJ_DIR	./pca10040/s132/armgcc/Makefile	7;"	macro
+ptr_length_song	./SongPatterns.h	56;"	member	struct:__anon1
+ptr_song	./SongPatterns.h	54;"	member	struct:__anon1
+PWM0_ENABLED	./pca10040/s132/config/sdk_config.h	1075;"	macro
+PWM0_IRQHandler	./Tone.cpp	136;"	function	signature:(void)
+PWM1_ENABLED	./pca10040/s132/config/sdk_config.h	1082;"	macro
+PWM1_IRQHandler	./Tone.cpp	149;"	function	signature:(void)
+PWM2_ENABLED	./pca10040/s132/config/sdk_config.h	1089;"	macro
+PWM2_IRQHandler	./Tone.cpp	162;"	function	signature:(void)
+PWM_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3863;"	macro
+PWM_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3847;"	macro
+PWM_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3820;"	macro
+PWM_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3831;"	macro
+PWM_DEFAULT_CONFIG_BASE_CLOCK	./pca10040/s132/config/sdk_config.h	1017;"	macro
+PWM_DEFAULT_CONFIG_COUNT_MODE	./pca10040/s132/config/sdk_config.h	1026;"	macro
+PWM_DEFAULT_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	1068;"	macro
+PWM_DEFAULT_CONFIG_LOAD_MODE	./pca10040/s132/config/sdk_config.h	1042;"	macro
+PWM_DEFAULT_CONFIG_OUT0_PIN	./pca10040/s132/config/sdk_config.h	981;"	macro
+PWM_DEFAULT_CONFIG_OUT1_PIN	./pca10040/s132/config/sdk_config.h	988;"	macro
+PWM_DEFAULT_CONFIG_OUT2_PIN	./pca10040/s132/config/sdk_config.h	995;"	macro
+PWM_DEFAULT_CONFIG_OUT3_PIN	./pca10040/s132/config/sdk_config.h	1002;"	macro
+PWM_DEFAULT_CONFIG_STEP_MODE	./pca10040/s132/config/sdk_config.h	1051;"	macro
+PWM_DEFAULT_CONFIG_TOP_VALUE	./pca10040/s132/config/sdk_config.h	1031;"	macro
+PWM_ENABLED	./pca10040/s132/config/sdk_config.h	975;"	macro
+PWM_NRF52_ANOMALY_109_EGU_INSTANCE	./pca10040/s132/config/sdk_config.h	1115;"	macro
+PWM_NRF52_ANOMALY_109_WORKAROUND_ENABLED	./pca10040/s132/config/sdk_config.h	1103;"	macro
+QDEC_CONFIG_DBFEN	./pca10040/s132/config/sdk_config.h	1196;"	macro
+QDEC_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3914;"	macro
+QDEC_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3898;"	macro
+QDEC_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	1220;"	macro
+QDEC_CONFIG_LEDPOL	./pca10040/s132/config/sdk_config.h	1189;"	macro
+QDEC_CONFIG_LEDPRE	./pca10040/s132/config/sdk_config.h	1180;"	macro
+QDEC_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3871;"	macro
+QDEC_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3882;"	macro
+QDEC_CONFIG_PIO_A	./pca10040/s132/config/sdk_config.h	1161;"	macro
+QDEC_CONFIG_PIO_B	./pca10040/s132/config/sdk_config.h	1168;"	macro
+QDEC_CONFIG_PIO_LED	./pca10040/s132/config/sdk_config.h	1175;"	macro
+QDEC_CONFIG_REPORTPER	./pca10040/s132/config/sdk_config.h	1139;"	macro
+QDEC_CONFIG_SAMPLEPER	./pca10040/s132/config/sdk_config.h	1154;"	macro
+QDEC_CONFIG_SAMPLE_INTEN	./pca10040/s132/config/sdk_config.h	1203;"	macro
+QDEC_ENABLED	./pca10040/s132/config/sdk_config.h	1125;"	macro
+RETARGET_ENABLED	./pca10040/s132/config/sdk_config.h	2961;"	macro
+Ring	./LedPatterns.c	313;"	function	signature:(void)
+RING	./LedPatterns.h	25;"	macro
+Ring	./LedPatterns.h	47;"	prototype	signature:(void)
+RNG_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3965;"	macro
+RNG_CONFIG_ERROR_CORRECTION	./pca10040/s132/config/sdk_config.h	1234;"	macro
+RNG_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3949;"	macro
+RNG_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	1256;"	macro
+RNG_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3922;"	macro
+RNG_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3933;"	macro
+RNG_CONFIG_POOL_SIZE	./pca10040/s132/config/sdk_config.h	1239;"	macro
+RNG_CONFIG_RANDOM_NUMBER_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3972;"	macro
+RNG_CONFIG_STATE_OBSERVER_PRIO	./pca10040/s132/config/sdk_config.h	5693;"	macro
+RNG_ENABLED	./pca10040/s132/config/sdk_config.h	1228;"	macro
+rOffset	./Adafruit_NeoPixel.h	152;"	variable
+RTC0_ENABLED	./pca10040/s132/config/sdk_config.h	1301;"	macro
+RTC1_ENABLED	./pca10040/s132/config/sdk_config.h	1308;"	macro
+RTC2_ENABLED	./pca10040/s132/config/sdk_config.h	1315;"	macro
+RTC_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4023;"	macro
+RTC_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4007;"	macro
+RTC_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3980;"	macro
+RTC_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3991;"	macro
+RTC_DEFAULT_CONFIG_FREQUENCY	./pca10040/s132/config/sdk_config.h	1270;"	macro
+RTC_DEFAULT_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	1294;"	macro
+RTC_DEFAULT_CONFIG_RELIABLE	./pca10040/s132/config/sdk_config.h	1277;"	macro
+RTC_ENABLED	./pca10040/s132/config/sdk_config.h	1264;"	macro
+SAADC_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4074;"	macro
+SAADC_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4058;"	macro
+SAADC_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	1378;"	macro
+SAADC_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4031;"	macro
+SAADC_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4042;"	macro
+SAADC_CONFIG_LP_MODE	./pca10040/s132/config/sdk_config.h	1361;"	macro
+SAADC_CONFIG_OVERSAMPLE	./pca10040/s132/config/sdk_config.h	1354;"	macro
+SAADC_CONFIG_RESOLUTION	./pca10040/s132/config/sdk_config.h	1338;"	macro
+SAADC_ENABLED	./pca10040/s132/config/sdk_config.h	1328;"	macro
+SCALE	./Adafruit_NeoPixel.cpp	663;"	macro	file:
+SDK_CONFIG_FILE	./pca10040/s132/armgcc/Makefile	298;"	macro
+SDK_CONFIG_H	./pca10040/s132/config/sdk_config.h	44;"	macro
+SDK_ROOT	./pca10040/s132/armgcc/Makefile	6;"	macro
+SEGGER_RTT_CONFIG_BUFFER_SIZE_DOWN	./pca10040/s132/config/sdk_config.h	5189;"	macro
+SEGGER_RTT_CONFIG_BUFFER_SIZE_UP	./pca10040/s132/config/sdk_config.h	5179;"	macro
+SEGGER_RTT_CONFIG_DEFAULT_MODE	./pca10040/s132/config/sdk_config.h	5209;"	macro
+SEGGER_RTT_CONFIG_MAX_NUM_DOWN_BUFFERS	./pca10040/s132/config/sdk_config.h	5194;"	macro
+SEGGER_RTT_CONFIG_MAX_NUM_UP_BUFFERS	./pca10040/s132/config/sdk_config.h	5184;"	macro
+services_init	./main.c	260;"	function	file:	signature:(void)
+SetAll	./LedPatterns.c	26;"	function	signature:(uint8_t red, uint8_t green, uint8_t blue)
+SetAll	./LedPatterns.h	40;"	prototype	signature:(uint8_t red, uint8_t green, uint8_t blue)
+setBrightness	./Adafruit_NeoPixel.cpp	1003;"	function	class:Adafruit_NeoPixel	signature:(uint8_t b)
+setBrightness	./Adafruit_NeoPixel.h	121;"	prototype	signature:(uint8_t)
+setPin	./Adafruit_NeoPixel.cpp	845;"	function	class:Adafruit_NeoPixel	signature:(uint8_t p)
+setPin	./Adafruit_NeoPixel.h	117;"	prototype	signature:(uint8_t p)
+SetPixel	./LedPatterns.c	39;"	function	signature:(uint8_t pixel, uint8_t red, uint8_t green, uint8_t blue)
+SetPixel	./LedPatterns.h	41;"	prototype	signature:(uint8_t pixel, uint8_t red, uint8_t green, uint8_t blue)
+setPixelColor	./Adafruit_NeoPixel.cpp	859;"	function	class:Adafruit_NeoPixel	signature:( uint16_t n, uint8_t r, uint8_t g, uint8_t b)
+setPixelColor	./Adafruit_NeoPixel.cpp	881;"	function	class:Adafruit_NeoPixel	signature:( uint16_t n, uint8_t r, uint8_t g, uint8_t b, uint8_t w)
+setPixelColor	./Adafruit_NeoPixel.cpp	905;"	function	class:Adafruit_NeoPixel	signature:(uint16_t n, uint32_t c)
+setPixelColor	./Adafruit_NeoPixel.h	118;"	prototype	signature:(uint16_t n, uint8_t r, uint8_t g, uint8_t b)
+setPixelColor	./Adafruit_NeoPixel.h	119;"	prototype	signature:(uint16_t n, uint8_t r, uint8_t g, uint8_t b, uint8_t w)
+setPixelColor	./Adafruit_NeoPixel.h	120;"	prototype	signature:(uint16_t n, uint32_t c)
+show	./Adafruit_NeoPixel.h	116;"	prototype	signature:(void)
+SLAVE_LATENCY	./main.c	111;"	macro	file:
+sleep_mode_enter	./main.c	334;"	function	file:	signature:(void)
+SLIP_ENABLED	./pca10040/s132/config/sdk_config.h	2968;"	macro
+SONG1	./SongPatterns.h	31;"	macro
+song1	./SongPatterns.h	38;"	variable
+SONG2	./SongPatterns.h	32;"	macro
+song2	./SongPatterns.h	42;"	variable
+SONG3	./SongPatterns.h	33;"	macro
+song3	./SongPatterns.h	46;"	variable
+SONGPATTERNS_H__	./SongPatterns.h	2;"	macro
+song_param_t	./SongPatterns.h	57;"	typedef	typeref:struct:__anon1
+SPI0_ENABLED	./pca10040/s132/config/sdk_config.h	1525;"	macro
+SPI0_USE_EASY_DMA	./pca10040/s132/config/sdk_config.h	1531;"	macro
+SPI1_ENABLED	./pca10040/s132/config/sdk_config.h	1539;"	macro
+SPI1_USE_EASY_DMA	./pca10040/s132/config/sdk_config.h	1545;"	macro
+SPI2_ENABLED	./pca10040/s132/config/sdk_config.h	1553;"	macro
+SPI2_USE_EASY_DMA	./pca10040/s132/config/sdk_config.h	1559;"	macro
+SPIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED	./pca10040/s132/config/sdk_config.h	1575;"	macro
+SPIS0_ENABLED	./pca10040/s132/config/sdk_config.h	1443;"	macro
+SPIS1_ENABLED	./pca10040/s132/config/sdk_config.h	1450;"	macro
+SPIS2_ENABLED	./pca10040/s132/config/sdk_config.h	1457;"	macro
+SPIS_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4125;"	macro
+SPIS_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4109;"	macro
+SPIS_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4082;"	macro
+SPIS_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4093;"	macro
+SPIS_DEFAULT_BIT_ORDER	./pca10040/s132/config/sdk_config.h	1422;"	macro
+SPIS_DEFAULT_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	1402;"	macro
+SPIS_DEFAULT_DEF	./pca10040/s132/config/sdk_config.h	1429;"	macro
+SPIS_DEFAULT_MODE	./pca10040/s132/config/sdk_config.h	1413;"	macro
+SPIS_DEFAULT_ORC	./pca10040/s132/config/sdk_config.h	1436;"	macro
+SPIS_ENABLED	./pca10040/s132/config/sdk_config.h	1386;"	macro
+SPIS_NRF52_ANOMALY_109_WORKAROUND_ENABLED	./pca10040/s132/config/sdk_config.h	1471;"	macro
+SPI_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4176;"	macro
+SPI_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4160;"	macro
+SPI_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4133;"	macro
+SPI_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4144;"	macro
+SPI_DEFAULT_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	1495;"	macro
+SPI_DEFAULT_FREQUENCY	./pca10040/s132/config/sdk_config.h	1509;"	macro
+SPI_ENABLED	./pca10040/s132/config/sdk_config.h	1479;"	macro
+SWI_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4227;"	macro
+SWI_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4211;"	macro
+SWI_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4184;"	macro
+SWI_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4195;"	macro
+SYSTICK_INTERVAL	./main.c	137;"	macro	file:
+systick_timer_id	./main.c	136;"	variable
+TARGETS	./pca10040/s132/armgcc/Makefile	2;"	macro
+TASK_MANAGER_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	3398;"	macro
+TASK_MANAGER_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	3382;"	macro
+TASK_MANAGER_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	3355;"	macro
+TASK_MANAGER_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	3366;"	macro
+TEMPLATE_PATH	./pca10040/s132/armgcc/Makefile	270;"	macro
+tempo_song	./SongPatterns.h	55;"	member	struct:__anon1
+tempo_song1	./SongPatterns.h	25;"	macro
+tempo_song2	./SongPatterns.h	27;"	macro
+tempo_song3	./SongPatterns.h	29;"	macro
+TIMER0_ENABLED	./pca10040/s132/config/sdk_config.h	1643;"	macro
+TIMER0_FOR_CSENSE	./pca10040/s132/config/sdk_config.h	2748;"	macro
+TIMER1_ENABLED	./pca10040/s132/config/sdk_config.h	1650;"	macro
+TIMER1_FOR_CSENSE	./pca10040/s132/config/sdk_config.h	2753;"	macro
+TIMER2_ENABLED	./pca10040/s132/config/sdk_config.h	1657;"	macro
+TIMER3_ENABLED	./pca10040/s132/config/sdk_config.h	1664;"	macro
+TIMER4_ENABLED	./pca10040/s132/config/sdk_config.h	1671;"	macro
+TIMER_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4278;"	macro
+TIMER_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4262;"	macro
+TIMER_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4235;"	macro
+TIMER_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4246;"	macro
+TIMER_DEFAULT_CONFIG_BIT_WIDTH	./pca10040/s132/config/sdk_config.h	1619;"	macro
+TIMER_DEFAULT_CONFIG_FREQUENCY	./pca10040/s132/config/sdk_config.h	1599;"	macro
+TIMER_DEFAULT_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	1636;"	macro
+TIMER_DEFAULT_CONFIG_MODE	./pca10040/s132/config/sdk_config.h	1608;"	macro
+TIMER_ENABLED	./pca10040/s132/config/sdk_config.h	1583;"	macro
+TIME_400_0	./Adafruit_NeoPixel.cpp	668;"	macro	file:
+TIME_400_1	./Adafruit_NeoPixel.cpp	669;"	macro	file:
+TIME_800_0	./Adafruit_NeoPixel.cpp	665;"	macro	file:
+TIME_800_1	./Adafruit_NeoPixel.cpp	666;"	macro	file:
+tone	./Tone.cpp	46;"	function	signature:(uint8_t pin, unsigned int frequency, unsigned long duration)
+tone	./Tone.h	29;"	prototype	signature:(uint8_t pin, unsigned int frequency, unsigned long duration = 0)
+TOOLS	./pca10040/s132/armgcc/Makefile	10;"	macro
+TWI0_ENABLED	./pca10040/s132/config/sdk_config.h	1811;"	macro
+TWI0_USE_EASY_DMA	./pca10040/s132/config/sdk_config.h	1817;"	macro
+TWI1_ENABLED	./pca10040/s132/config/sdk_config.h	1825;"	macro
+TWI1_USE_EASY_DMA	./pca10040/s132/config/sdk_config.h	1831;"	macro
+TWIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED	./pca10040/s132/config/sdk_config.h	1846;"	macro
+TWIS0_ENABLED	./pca10040/s132/config/sdk_config.h	1732;"	macro
+TWIS1_ENABLED	./pca10040/s132/config/sdk_config.h	1739;"	macro
+TWIS_ASSUME_INIT_AFTER_RESET_ONLY	./pca10040/s132/config/sdk_config.h	1748;"	macro
+TWIS_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4329;"	macro
+TWIS_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4313;"	macro
+TWIS_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4286;"	macro
+TWIS_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4297;"	macro
+TWIS_DEFAULT_CONFIG_ADDR0	./pca10040/s132/config/sdk_config.h	1683;"	macro
+TWIS_DEFAULT_CONFIG_ADDR1	./pca10040/s132/config/sdk_config.h	1688;"	macro
+TWIS_DEFAULT_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	1725;"	macro
+TWIS_DEFAULT_CONFIG_SCL_PULL	./pca10040/s132/config/sdk_config.h	1698;"	macro
+TWIS_DEFAULT_CONFIG_SDA_PULL	./pca10040/s132/config/sdk_config.h	1708;"	macro
+TWIS_ENABLED	./pca10040/s132/config/sdk_config.h	1679;"	macro
+TWIS_NO_SYNC_MODE	./pca10040/s132/config/sdk_config.h	1757;"	macro
+TWI_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4380;"	macro
+TWI_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4364;"	macro
+TWI_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4337;"	macro
+TWI_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4348;"	macro
+TWI_DEFAULT_CONFIG_CLR_BUS_INIT	./pca10040/s132/config/sdk_config.h	1781;"	macro
+TWI_DEFAULT_CONFIG_FREQUENCY	./pca10040/s132/config/sdk_config.h	1774;"	macro
+TWI_DEFAULT_CONFIG_HOLD_BUS_UNINIT	./pca10040/s132/config/sdk_config.h	1788;"	macro
+TWI_DEFAULT_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	1805;"	macro
+TWI_ENABLED	./pca10040/s132/config/sdk_config.h	1765;"	macro
+UART0_CONFIG_USE_EASY_DMA	./pca10040/s132/config/sdk_config.h	1937;"	macro
+UART0_ENABLED	./pca10040/s132/config/sdk_config.h	1931;"	macro
+UART_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4431;"	macro
+UART_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4415;"	macro
+UART_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4388;"	macro
+UART_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4399;"	macro
+UART_DEFAULT_CONFIG_BAUDRATE	./pca10040/s132/config/sdk_config.h	1894;"	macro
+UART_DEFAULT_CONFIG_HWFC	./pca10040/s132/config/sdk_config.h	1862;"	macro
+UART_DEFAULT_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	1911;"	macro
+UART_DEFAULT_CONFIG_PARITY	./pca10040/s132/config/sdk_config.h	1871;"	macro
+UART_EASY_DMA_SUPPORT	./pca10040/s132/config/sdk_config.h	1918;"	macro
+UART_ENABLED	./pca10040/s132/config/sdk_config.h	1854;"	macro
+uart_event_handle	./main.c	587;"	function	signature:(app_uart_evt_t * p_event)
+uart_init	./main.c	636;"	function	file:	signature:(void)
+UART_LEGACY_SUPPORT	./pca10040/s132/config/sdk_config.h	1925;"	macro
+UART_RX_BUF_SIZE	./main.c	120;"	macro	file:
+UART_TX_BUF_SIZE	./main.c	119;"	macro	file:
+updateLength	./Adafruit_NeoPixel.h	123;"	prototype	signature:(uint16_t n)
+updateType	./Adafruit_NeoPixel.h	124;"	prototype	signature:(neoPixelType t)
+USBD_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4482;"	macro
+USBD_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4466;"	macro
+USBD_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	1963;"	macro
+USBD_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4439;"	macro
+USBD_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4450;"	macro
+USBD_ENABLED	./pca10040/s132/config/sdk_config.h	1947;"	macro
+USE_COMP	./pca10040/s132/config/sdk_config.h	2744;"	macro
+WDT_CONFIG_BEHAVIOUR	./pca10040/s132/config/sdk_config.h	1990;"	macro
+WDT_CONFIG_DEBUG_COLOR	./pca10040/s132/config/sdk_config.h	4533;"	macro
+WDT_CONFIG_INFO_COLOR	./pca10040/s132/config/sdk_config.h	4517;"	macro
+WDT_CONFIG_IRQ_PRIORITY	./pca10040/s132/config/sdk_config.h	2014;"	macro
+WDT_CONFIG_LOG_ENABLED	./pca10040/s132/config/sdk_config.h	4490;"	macro
+WDT_CONFIG_LOG_LEVEL	./pca10040/s132/config/sdk_config.h	4501;"	macro
+WDT_CONFIG_RELOAD_VALUE	./pca10040/s132/config/sdk_config.h	1997;"	macro
+WDT_ENABLED	./pca10040/s132/config/sdk_config.h	1980;"	macro
+Wipe	./LedPatterns.c	267;"	function	signature:(void)
+WIPE	./LedPatterns.h	24;"	macro
+Wipe	./LedPatterns.h	46;"	prototype	signature:(void)
+wOffset	./Adafruit_NeoPixel.h	155;"	variable
+ws2812bpattern	./main.c	140;"	variable
+_WIRING_TONE_	./Tone.h	20;"	macro

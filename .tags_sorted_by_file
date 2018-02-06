@@ -1,0 +1,992 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Adafruit_NeoPixel_Begin	Adafruit_NeoPixel.c	/^void Adafruit_NeoPixel_Begin(void)$/;"	f
+Adafruit_NeoPixel_Color	Adafruit_NeoPixel.c	/^uint32_t Adafruit_NeoPixel_Color(uint8_t r, uint8_t g, uint8_t b)$/;"	f
+Adafruit_NeoPixel_Init	Adafruit_NeoPixel.c	/^void Adafruit_NeoPixel_Init(uint16_t n, uint8_t p, neoPixelType t)$/;"	f
+Adafruit_NeoPixel_Show	Adafruit_NeoPixel.c	/^void Adafruit_NeoPixel_Show(void)$/;"	f
+Adafruit_NeoPixel_clear	Adafruit_NeoPixel.c	/^void Adafruit_NeoPixel_clear(void)$/;"	f
+Adafruit_NeoPixel_getBrightness	Adafruit_NeoPixel.c	/^uint8_t Adafruit_NeoPixel_getBrightness(void)$/;"	f
+Adafruit_NeoPixel_getPixelColor	Adafruit_NeoPixel.c	/^uint32_t Adafruit_NeoPixel_getPixelColor(uint16_t n)$/;"	f
+Adafruit_NeoPixel_getPixels	Adafruit_NeoPixel.c	/^uint8_t *Adafruit_NeoPixel_getPixels(void)$/;"	f
+Adafruit_NeoPixel_numPixels	Adafruit_NeoPixel.c	/^uint16_t Adafruit_NeoPixel_numPixels(void)$/;"	f
+Adafruit_NeoPixel_setBrightness	Adafruit_NeoPixel.c	/^void Adafruit_NeoPixel_setBrightness(uint8_t b)$/;"	f
+Adafruit_NeoPixel_setPin	Adafruit_NeoPixel.c	/^void Adafruit_NeoPixel_setPin(uint8_t p)$/;"	f
+Adafruit_NeoPixel_setPixelColor	Adafruit_NeoPixel.c	/^void Adafruit_NeoPixel_setPixelColor(uint16_t n, uint8_t r, uint8_t g, uint8_t b)$/;"	f
+Adafruit_NeoPixel_updateLength	Adafruit_NeoPixel.c	/^void Adafruit_NeoPixel_updateLength(uint16_t n)$/;"	f
+Adafruit_NeoPixel_updateType	Adafruit_NeoPixel.c	/^void Adafruit_NeoPixel_updateType(neoPixelType t)$/;"	f
+CTOPVAL	Adafruit_NeoPixel.c	194;"	d	file:
+CTOPVAL_400KHz	Adafruit_NeoPixel.c	195;"	d	file:
+CYCLES_400	Adafruit_NeoPixel.c	213;"	d	file:
+CYCLES_400_T0H	Adafruit_NeoPixel.c	211;"	d	file:
+CYCLES_400_T1H	Adafruit_NeoPixel.c	212;"	d	file:
+CYCLES_800	Adafruit_NeoPixel.c	209;"	d	file:
+CYCLES_800_T0H	Adafruit_NeoPixel.c	207;"	d	file:
+CYCLES_800_T1H	Adafruit_NeoPixel.c	208;"	d	file:
+MAGIC_T0H	Adafruit_NeoPixel.c	186;"	d	file:
+MAGIC_T0H_400KHz	Adafruit_NeoPixel.c	190;"	d	file:
+MAGIC_T1H	Adafruit_NeoPixel.c	187;"	d	file:
+MAGIC_T1H_400KHz	Adafruit_NeoPixel.c	191;"	d	file:
+ADAFRUIT_NEOPIXEL_H	Adafruit_NeoPixel.h	20;"	d
+NEO_BGR	Adafruit_NeoPixel.h	57;"	d
+NEO_BGRW	Adafruit_NeoPixel.h	87;"	d
+NEO_BGWR	Adafruit_NeoPixel.h	86;"	d
+NEO_BRG	Adafruit_NeoPixel.h	56;"	d
+NEO_BRGW	Adafruit_NeoPixel.h	85;"	d
+NEO_BRWG	Adafruit_NeoPixel.h	84;"	d
+NEO_BWGR	Adafruit_NeoPixel.h	83;"	d
+NEO_BWRG	Adafruit_NeoPixel.h	82;"	d
+NEO_GBR	Adafruit_NeoPixel.h	55;"	d
+NEO_GBRW	Adafruit_NeoPixel.h	80;"	d
+NEO_GBWR	Adafruit_NeoPixel.h	79;"	d
+NEO_GRB	Adafruit_NeoPixel.h	54;"	d
+NEO_GRBW	Adafruit_NeoPixel.h	78;"	d
+NEO_GRWB	Adafruit_NeoPixel.h	77;"	d
+NEO_GWBR	Adafruit_NeoPixel.h	76;"	d
+NEO_GWRB	Adafruit_NeoPixel.h	75;"	d
+NEO_KHZ400	Adafruit_NeoPixel.h	100;"	d
+NEO_KHZ800	Adafruit_NeoPixel.h	98;"	d
+NEO_RBG	Adafruit_NeoPixel.h	53;"	d
+NEO_RBGW	Adafruit_NeoPixel.h	73;"	d
+NEO_RBWG	Adafruit_NeoPixel.h	72;"	d
+NEO_RGB	Adafruit_NeoPixel.h	52;"	d
+NEO_RGBW	Adafruit_NeoPixel.h	71;"	d
+NEO_RGWB	Adafruit_NeoPixel.h	70;"	d
+NEO_RWBG	Adafruit_NeoPixel.h	69;"	d
+NEO_RWGB	Adafruit_NeoPixel.h	68;"	d
+NEO_WBGR	Adafruit_NeoPixel.h	66;"	d
+NEO_WBRG	Adafruit_NeoPixel.h	65;"	d
+NEO_WGBR	Adafruit_NeoPixel.h	64;"	d
+NEO_WGRB	Adafruit_NeoPixel.h	63;"	d
+NEO_WRBG	Adafruit_NeoPixel.h	62;"	d
+NEO_WRGB	Adafruit_NeoPixel.h	61;"	d
+bOffset	Adafruit_NeoPixel.h	/^ bOffset,			\/\/ Index of blue byte$/;"	v
+begun	Adafruit_NeoPixel.h	/^bool begun;			\/\/ true if begin() previously called$/;"	v
+brightness	Adafruit_NeoPixel.h	/^uint8_t brightness, *pixels,	\/\/ Holds LED color values (3 or 4 bytes each)$/;"	v
+gOffset	Adafruit_NeoPixel.h	/^ gOffset,			\/\/ Index of green byte$/;"	v
+is800KHz	Adafruit_NeoPixel.h	/^bool is800KHz;			\/\/ ...true if 800 KHz pixels$/;"	v
+neoPixelType	Adafruit_NeoPixel.h	/^typedef uint16_t neoPixelType;$/;"	t
+neoPixelType	Adafruit_NeoPixel.h	/^typedef uint8_t neoPixelType;$/;"	t
+numBytes	Adafruit_NeoPixel.h	/^ numBytes;			\/\/ Size of 'pixels' buffer below (3 or 4 bytes\/pixel)$/;"	v
+numLEDs	Adafruit_NeoPixel.h	/^uint16_t numLEDs,		\/\/ Number of RGB LEDs in strip$/;"	v
+pin	Adafruit_NeoPixel.h	/^int8_t pin;			\/\/ Output pin number (-1 if not yet set)$/;"	v
+pixels	Adafruit_NeoPixel.h	/^uint8_t brightness, *pixels,	\/\/ Holds LED color values (3 or 4 bytes each)$/;"	v
+rOffset	Adafruit_NeoPixel.h	/^ rOffset,			\/\/ Index of red byte within each 3- or 4-byte pixel$/;"	v
+wOffset	Adafruit_NeoPixel.h	/^ wOffset;			\/\/ Index of white byte (same as rOffset if no white)$/;"	v
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+Cyclon	LedPatterns.c	/^uint8_t Cyclon(void)$/;"	f
+FadeInOut	LedPatterns.c	/^uint8_t FadeInOut(void)$/;"	f
+Flash	LedPatterns.c	/^uint8_t Flash(void)$/;"	f
+FlashFadeInOut	LedPatterns.c	/^uint8_t FlashFadeInOut(void)$/;"	f
+OffLeds	LedPatterns.c	/^void OffLeds(void)$/;"	f
+Ring	LedPatterns.c	/^uint16_t Ring(void)$/;"	f
+SetAll	LedPatterns.c	/^void SetAll(uint8_t red, uint8_t green, uint8_t blue)$/;"	f
+SetPixel	LedPatterns.c	/^void SetPixel(uint8_t pixel, uint8_t red, uint8_t green, uint8_t blue)$/;"	f
+Wipe	LedPatterns.c	/^uint16_t Wipe(void)$/;"	f
+led_array	LedPatterns.c	/^rgb_led_t led_array[NUM_LEDS];$/;"	v
+CYCLON	LedPatterns.h	21;"	d
+DELAYBOUNCE	LedPatterns.h	33;"	d
+DELAYCYCLON	LedPatterns.h	29;"	d
+DELAYFADE	LedPatterns.h	28;"	d
+DELAYFLASH	LedPatterns.h	30;"	d
+DELAYFLASHFADE	LedPatterns.h	31;"	d
+DELAYRING	LedPatterns.h	34;"	d
+DELAYRINGBOUNCE	LedPatterns.h	35;"	d
+DELAYWIPE	LedPatterns.h	32;"	d
+FADE	LedPatterns.h	20;"	d
+FLASH	LedPatterns.h	22;"	d
+FLASHFADE	LedPatterns.h	23;"	d
+I2S_STDO_PIN	LedPatterns.h	16;"	d
+LEDSPATTERNS_H__	LedPatterns.h	10;"	d
+NUM_LEDS	LedPatterns.h	15;"	d
+OFFLEDS	LedPatterns.h	18;"	d
+ONLEDS	LedPatterns.h	19;"	d
+RING	LedPatterns.h	25;"	d
+WIPE	LedPatterns.h	24;"	d
+InitSongStruct	SongPatterns.c	/^void InitSongStruct(void)$/;"	f
+PlayMusic	SongPatterns.c	/^uint16_t PlayMusic(song_param_t* ptr_array_struct)$/;"	f
+A	SongPatterns.h	17;"	d
+B	SongPatterns.h	18;"	d
+C	SongPatterns.h	12;"	d
+C2	SongPatterns.h	19;"	d
+D	SongPatterns.h	13;"	d
+E	SongPatterns.h	14;"	d
+END_SONG	SongPatterns.h	22;"	d
+F	SongPatterns.h	15;"	d
+G	SongPatterns.h	16;"	d
+NUM_SONGS	SongPatterns.h	21;"	d
+SONG1	SongPatterns.h	31;"	d
+SONG2	SongPatterns.h	32;"	d
+SONG3	SongPatterns.h	33;"	d
+SONGPATTERNS_H__	SongPatterns.h	2;"	d
+length_song1	SongPatterns.h	/^static const uint8_t length_song1[num_notes_song1] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1,$/;"	v
+length_song2	SongPatterns.h	/^static const uint8_t length_song2[num_notes_song2] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1,$/;"	v
+length_song3	SongPatterns.h	/^static const uint8_t length_song3[num_notes_song3] = { 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,$/;"	v
+num_notes	SongPatterns.h	/^    uint8_t num_notes;$/;"	m	struct:__anon1
+num_notes_song1	SongPatterns.h	24;"	d
+num_notes_song2	SongPatterns.h	26;"	d
+num_notes_song3	SongPatterns.h	28;"	d
+ptr_length_song	SongPatterns.h	/^    const uint8_t* ptr_length_song;$/;"	m	struct:__anon1
+ptr_song	SongPatterns.h	/^    const uint16_t* ptr_song;$/;"	m	struct:__anon1
+song1	SongPatterns.h	/^static const uint16_t song1[num_notes_song1] = { C, C, G, G, A, A, G, F, F, E, E, D, D,$/;"	v
+song2	SongPatterns.h	/^static const uint16_t song2[num_notes_song2] = { B, A, G, A, B, B, B, A, A, A, B, B, B, B, A, G, A, B, B, B, A, A, B, A,$/;"	v
+song3	SongPatterns.h	/^static const uint16_t song3[num_notes_song3] = { E, E, E, E, E, E, E, G, C, D, E, F, F, F, F, F, E, E, E, E, D, D, E, D,$/;"	v
+song_param_t	SongPatterns.h	/^} song_param_t;$/;"	t	typeref:struct:__anon1
+tempo_song	SongPatterns.h	/^    uint16_t tempo_song;$/;"	m	struct:__anon1
+tempo_song1	SongPatterns.h	25;"	d
+tempo_song2	SongPatterns.h	27;"	d
+tempo_song3	SongPatterns.h	29;"	d
+PWM0_IRQHandler	Tone.cpp	/^void PWM0_IRQHandler(void){$/;"	f
+PWM1_IRQHandler	Tone.cpp	/^void PWM1_IRQHandler(void){$/;"	f
+PWM2_IRQHandler	Tone.cpp	/^void PWM2_IRQHandler(void){$/;"	f
+count_duration	Tone.cpp	/^unsigned long int count_duration=0;$/;"	v
+noTone	Tone.cpp	/^void noTone(uint8_t pin)$/;"	f
+no_stop	Tone.cpp	/^volatile bool no_stop = false;$/;"	v
+pin_sound	Tone.cpp	/^uint8_t pin_sound=0;$/;"	v
+tone	Tone.cpp	/^void tone(uint8_t pin, unsigned int frequency, unsigned long duration)$/;"	f
+_WIRING_TONE_	Tone.h	20;"	d
+blink	WS2812FX.c	/^uint16_t WS2812FX::blink(uint32_t color1, uint32_t color2, bool strobe) {$/;"	f	class:WS2812FX
+chase	WS2812FX.c	/^uint16_t WS2812FX::chase(uint32_t color1, uint32_t color2, uint32_t color3) {$/;"	f	class:WS2812FX
+color_wheel	WS2812FX.c	/^uint32_t WS2812FX::color_wheel(uint8_t pos) {$/;"	f	class:WS2812FX
+color_wipe	WS2812FX.c	/^uint16_t WS2812FX::color_wipe(uint32_t color1, uint32_t color2, bool rev) {$/;"	f	class:WS2812FX
+decreaseBrightness	WS2812FX.c	/^void WS2812FX::decreaseBrightness(uint8_t s) {$/;"	f	class:WS2812FX
+decreaseLength	WS2812FX.c	/^void WS2812FX::decreaseLength(uint16_t s) {$/;"	f	class:WS2812FX
+decreaseSpeed	WS2812FX.c	/^void WS2812FX::decreaseSpeed(uint8_t s) {$/;"	f	class:WS2812FX
+fade_out	WS2812FX.c	/^void WS2812FX::fade_out() {$/;"	f	class:WS2812FX
+fire_flicker	WS2812FX.c	/^uint16_t WS2812FX::fire_flicker(int rev_intensity) {$/;"	f	class:WS2812FX
+fireworks	WS2812FX.c	/^uint16_t WS2812FX::fireworks(uint32_t color) {$/;"	f	class:WS2812FX
+getBrightness	WS2812FX.c	/^uint8_t WS2812FX::getBrightness(void) {$/;"	f	class:WS2812FX
+getColor	WS2812FX.c	/^uint32_t WS2812FX::getColor(void) {$/;"	f	class:WS2812FX
+getLength	WS2812FX.c	/^uint16_t WS2812FX::getLength(void) {$/;"	f	class:WS2812FX
+getMode	WS2812FX.c	/^uint8_t WS2812FX::getMode(void) {$/;"	f	class:WS2812FX
+getModeCount	WS2812FX.c	/^uint8_t WS2812FX::getModeCount(void) {$/;"	f	class:WS2812FX
+getModeName	WS2812FX.c	/^const __FlashStringHelper* WS2812FX::getModeName(uint8_t m) {$/;"	f	class:WS2812FX
+getNumSegments	WS2812FX.c	/^uint8_t WS2812FX::getNumSegments(void) {$/;"	f	class:WS2812FX
+getSegments	WS2812FX.c	/^WS2812FX::segment* WS2812FX::getSegments(void) {$/;"	f	class:WS2812FX
+getSpeed	WS2812FX.c	/^uint16_t WS2812FX::getSpeed(void) {$/;"	f	class:WS2812FX
+get_random_wheel_index	WS2812FX.c	/^uint8_t WS2812FX::get_random_wheel_index(uint8_t pos) {$/;"	f	class:WS2812FX
+increaseBrightness	WS2812FX.c	/^void WS2812FX::increaseBrightness(uint8_t s) {$/;"	f	class:WS2812FX
+increaseLength	WS2812FX.c	/^void WS2812FX::increaseLength(uint16_t s) {$/;"	f	class:WS2812FX
+increaseSpeed	WS2812FX.c	/^void WS2812FX::increaseSpeed(uint8_t s) {$/;"	f	class:WS2812FX
+init	WS2812FX.c	/^void WS2812FX::init() {$/;"	f	class:WS2812FX
+isRunning	WS2812FX.c	/^boolean WS2812FX::isRunning() {$/;"	f	class:WS2812FX
+mode_bicolor_chase	WS2812FX.c	/^uint16_t WS2812FX::mode_bicolor_chase(void) {$/;"	f	class:WS2812FX
+mode_blink	WS2812FX.c	/^uint16_t WS2812FX::mode_blink(void) {$/;"	f	class:WS2812FX
+mode_blink_rainbow	WS2812FX.c	/^uint16_t WS2812FX::mode_blink_rainbow(void) {$/;"	f	class:WS2812FX
+mode_breath	WS2812FX.c	/^uint16_t WS2812FX::mode_breath(void) {$/;"	f	class:WS2812FX
+mode_chase_blackout	WS2812FX.c	/^uint16_t WS2812FX::mode_chase_blackout(void) {$/;"	f	class:WS2812FX
+mode_chase_blackout_rainbow	WS2812FX.c	/^uint16_t WS2812FX::mode_chase_blackout_rainbow(void) {$/;"	f	class:WS2812FX
+mode_chase_color	WS2812FX.c	/^uint16_t WS2812FX::mode_chase_color(void) {$/;"	f	class:WS2812FX
+mode_chase_flash	WS2812FX.c	/^uint16_t WS2812FX::mode_chase_flash(void) {$/;"	f	class:WS2812FX
+mode_chase_flash_random	WS2812FX.c	/^uint16_t WS2812FX::mode_chase_flash_random(void) {$/;"	f	class:WS2812FX
+mode_chase_rainbow	WS2812FX.c	/^uint16_t WS2812FX::mode_chase_rainbow(void) {$/;"	f	class:WS2812FX
+mode_chase_rainbow_white	WS2812FX.c	/^uint16_t WS2812FX::mode_chase_rainbow_white(void) {$/;"	f	class:WS2812FX
+mode_chase_random	WS2812FX.c	/^uint16_t WS2812FX::mode_chase_random(void) {$/;"	f	class:WS2812FX
+mode_chase_white	WS2812FX.c	/^uint16_t WS2812FX::mode_chase_white(void) {$/;"	f	class:WS2812FX
+mode_circus_combustus	WS2812FX.c	/^uint16_t WS2812FX::mode_circus_combustus(void) {$/;"	f	class:WS2812FX
+mode_color_sweep_random	WS2812FX.c	/^uint16_t WS2812FX::mode_color_sweep_random(void) {$/;"	f	class:WS2812FX
+mode_color_wipe	WS2812FX.c	/^uint16_t WS2812FX::mode_color_wipe(void) {$/;"	f	class:WS2812FX
+mode_color_wipe_inv	WS2812FX.c	/^uint16_t WS2812FX::mode_color_wipe_inv(void) {$/;"	f	class:WS2812FX
+mode_color_wipe_random	WS2812FX.c	/^uint16_t WS2812FX::mode_color_wipe_random(void) {$/;"	f	class:WS2812FX
+mode_color_wipe_rev	WS2812FX.c	/^uint16_t WS2812FX::mode_color_wipe_rev(void) {$/;"	f	class:WS2812FX
+mode_color_wipe_rev_inv	WS2812FX.c	/^uint16_t WS2812FX::mode_color_wipe_rev_inv(void) {$/;"	f	class:WS2812FX
+mode_comet	WS2812FX.c	/^uint16_t WS2812FX::mode_comet(void) {$/;"	f	class:WS2812FX
+mode_dual_scan	WS2812FX.c	/^uint16_t WS2812FX::mode_dual_scan(void) {$/;"	f	class:WS2812FX
+mode_fade	WS2812FX.c	/^uint16_t WS2812FX::mode_fade(void) {$/;"	f	class:WS2812FX
+mode_fire_flicker	WS2812FX.c	/^uint16_t WS2812FX::mode_fire_flicker(void) {$/;"	f	class:WS2812FX
+mode_fire_flicker_intense	WS2812FX.c	/^uint16_t WS2812FX::mode_fire_flicker_intense(void) {$/;"	f	class:WS2812FX
+mode_fire_flicker_soft	WS2812FX.c	/^uint16_t WS2812FX::mode_fire_flicker_soft(void) {$/;"	f	class:WS2812FX
+mode_fireworks	WS2812FX.c	/^uint16_t WS2812FX::mode_fireworks(void) {$/;"	f	class:WS2812FX
+mode_fireworks_random	WS2812FX.c	/^uint16_t WS2812FX::mode_fireworks_random(void) {$/;"	f	class:WS2812FX
+mode_flash_sparkle	WS2812FX.c	/^uint16_t WS2812FX::mode_flash_sparkle(void) {$/;"	f	class:WS2812FX
+mode_halloween	WS2812FX.c	/^uint16_t WS2812FX::mode_halloween(void) {$/;"	f	class:WS2812FX
+mode_hyper_sparkle	WS2812FX.c	/^uint16_t WS2812FX::mode_hyper_sparkle(void) {$/;"	f	class:WS2812FX
+mode_icu	WS2812FX.c	/^uint16_t WS2812FX::mode_icu() {$/;"	f	class:WS2812FX
+mode_larson_scanner	WS2812FX.c	/^uint16_t WS2812FX::mode_larson_scanner(void) {$/;"	f	class:WS2812FX
+mode_merry_christmas	WS2812FX.c	/^uint16_t WS2812FX::mode_merry_christmas(void) {$/;"	f	class:WS2812FX
+mode_multi_dynamic	WS2812FX.c	/^uint16_t WS2812FX::mode_multi_dynamic(void) {$/;"	f	class:WS2812FX
+mode_multi_strobe	WS2812FX.c	/^uint16_t WS2812FX::mode_multi_strobe(void) {$/;"	f	class:WS2812FX
+mode_rainbow	WS2812FX.c	/^uint16_t WS2812FX::mode_rainbow(void) {$/;"	f	class:WS2812FX
+mode_rainbow_cycle	WS2812FX.c	/^uint16_t WS2812FX::mode_rainbow_cycle(void) {$/;"	f	class:WS2812FX
+mode_random_color	WS2812FX.c	/^uint16_t WS2812FX::mode_random_color(void) {$/;"	f	class:WS2812FX
+mode_running_color	WS2812FX.c	/^uint16_t WS2812FX::mode_running_color(void) {$/;"	f	class:WS2812FX
+mode_running_lights	WS2812FX.c	/^uint16_t WS2812FX::mode_running_lights(void) {$/;"	f	class:WS2812FX
+mode_running_random	WS2812FX.c	/^uint16_t WS2812FX::mode_running_random(void) {$/;"	f	class:WS2812FX
+mode_running_red_blue	WS2812FX.c	/^uint16_t WS2812FX::mode_running_red_blue(void) {$/;"	f	class:WS2812FX
+mode_scan	WS2812FX.c	/^uint16_t WS2812FX::mode_scan(void) {$/;"	f	class:WS2812FX
+mode_single_dynamic	WS2812FX.c	/^uint16_t WS2812FX::mode_single_dynamic(void) {$/;"	f	class:WS2812FX
+mode_sparkle	WS2812FX.c	/^uint16_t WS2812FX::mode_sparkle(void) {$/;"	f	class:WS2812FX
+mode_static	WS2812FX.c	/^uint16_t WS2812FX::mode_static(void) {$/;"	f	class:WS2812FX
+mode_strobe	WS2812FX.c	/^uint16_t WS2812FX::mode_strobe(void) {$/;"	f	class:WS2812FX
+mode_strobe_rainbow	WS2812FX.c	/^uint16_t WS2812FX::mode_strobe_rainbow(void) {$/;"	f	class:WS2812FX
+mode_theater_chase	WS2812FX.c	/^uint16_t WS2812FX::mode_theater_chase(void) {$/;"	f	class:WS2812FX
+mode_theater_chase_rainbow	WS2812FX.c	/^uint16_t WS2812FX::mode_theater_chase_rainbow(void) {$/;"	f	class:WS2812FX
+mode_tricolor_chase	WS2812FX.c	/^uint16_t WS2812FX::mode_tricolor_chase(void) {$/;"	f	class:WS2812FX
+mode_twinkle	WS2812FX.c	/^uint16_t WS2812FX::mode_twinkle(void) {$/;"	f	class:WS2812FX
+mode_twinkle_fade	WS2812FX.c	/^uint16_t WS2812FX::mode_twinkle_fade(void) {$/;"	f	class:WS2812FX
+mode_twinkle_fade_random	WS2812FX.c	/^uint16_t WS2812FX::mode_twinkle_fade_random(void) {$/;"	f	class:WS2812FX
+mode_twinkle_random	WS2812FX.c	/^uint16_t WS2812FX::mode_twinkle_random(void) {$/;"	f	class:WS2812FX
+resetSegments	WS2812FX.c	/^void WS2812FX::resetSegments() {$/;"	f	class:WS2812FX
+running	WS2812FX.c	/^uint16_t WS2812FX::running(uint32_t color1, uint32_t color2) {$/;"	f	class:WS2812FX
+service	WS2812FX.c	/^void WS2812FX::service() {$/;"	f	class:WS2812FX
+setBrightness	WS2812FX.c	/^void WS2812FX::setBrightness(uint8_t b) {$/;"	f	class:WS2812FX
+setColor	WS2812FX.c	/^void WS2812FX::setColor(uint32_t c) {$/;"	f	class:WS2812FX
+setColor	WS2812FX.c	/^void WS2812FX::setColor(uint8_t r, uint8_t g, uint8_t b) {$/;"	f	class:WS2812FX
+setLength	WS2812FX.c	/^void WS2812FX::setLength(uint16_t b) {$/;"	f	class:WS2812FX
+setMode	WS2812FX.c	/^void WS2812FX::setMode(uint8_t m) {$/;"	f	class:WS2812FX
+setNumSegments	WS2812FX.c	/^void WS2812FX::setNumSegments(uint8_t n) {$/;"	f	class:WS2812FX
+setSegment	WS2812FX.c	/^void WS2812FX::setSegment(uint8_t n, uint16_t start, uint16_t stop, uint8_t mode, const uint32_t colors[], uint16_t speed, bool reverse) {$/;"	f	class:WS2812FX
+setSegment	WS2812FX.c	/^void WS2812FX::setSegment(uint8_t n, uint16_t start, uint16_t stop, uint8_t mode, uint32_t color, uint16_t speed, bool reverse) {$/;"	f	class:WS2812FX
+setSpeed	WS2812FX.c	/^void WS2812FX::setSpeed(uint16_t s) {$/;"	f	class:WS2812FX
+start	WS2812FX.c	/^void WS2812FX::start() {$/;"	f	class:WS2812FX
+stop	WS2812FX.c	/^void WS2812FX::stop() {$/;"	f	class:WS2812FX
+strip_off	WS2812FX.c	/^void WS2812FX::strip_off() {$/;"	f	class:WS2812FX
+theater_chase	WS2812FX.c	/^uint16_t WS2812FX::theater_chase(uint32_t color1, uint32_t color2) {$/;"	f	class:WS2812FX
+tricolor_chase	WS2812FX.c	/^uint16_t WS2812FX::tricolor_chase(uint32_t color1, uint32_t color2, uint32_t color3) {$/;"	f	class:WS2812FX
+trigger	WS2812FX.c	/^void WS2812FX::trigger() {$/;"	f	class:WS2812FX
+twinkle	WS2812FX.c	/^uint16_t WS2812FX::twinkle(uint32_t color) {$/;"	f	class:WS2812FX
+twinkle_fade	WS2812FX.c	/^uint16_t WS2812FX::twinkle_fade(uint32_t color) {$/;"	f	class:WS2812FX
+BLACK	WS2812FX.h	65;"	d
+BLUE	WS2812FX.h	63;"	d
+BRIGHTNESS_MAX	WS2812FX.h	51;"	d
+BRIGHTNESS_MIN	WS2812FX.h	50;"	d
+CYAN	WS2812FX.h	67;"	d
+DEFAULT_BRIGHTNESS	WS2812FX.h	42;"	d
+DEFAULT_COLOR	WS2812FX.h	45;"	d
+DEFAULT_MODE	WS2812FX.h	43;"	d
+DEFAULT_SPEED	WS2812FX.h	44;"	d
+FX_MODE_BICOLOR_CHASE	WS2812FX.h	128;"	d
+FX_MODE_BLINK	WS2812FX.h	76;"	d
+FX_MODE_BLINK_RAINBOW	WS2812FX.h	104;"	d
+FX_MODE_BREATH	WS2812FX.h	77;"	d
+FX_MODE_CHASE_BLACKOUT	WS2812FX.h	112;"	d
+FX_MODE_CHASE_BLACKOUT_RAINBOW	WS2812FX.h	113;"	d
+FX_MODE_CHASE_COLOR	WS2812FX.h	106;"	d
+FX_MODE_CHASE_FLASH	WS2812FX.h	109;"	d
+FX_MODE_CHASE_FLASH_RANDOM	WS2812FX.h	110;"	d
+FX_MODE_CHASE_RAINBOW	WS2812FX.h	108;"	d
+FX_MODE_CHASE_RAINBOW_WHITE	WS2812FX.h	111;"	d
+FX_MODE_CHASE_RANDOM	WS2812FX.h	107;"	d
+FX_MODE_CHASE_WHITE	WS2812FX.h	105;"	d
+FX_MODE_CIRCUS_COMBUSTUS	WS2812FX.h	126;"	d
+FX_MODE_COLOR_SWEEP_RANDOM	WS2812FX.h	114;"	d
+FX_MODE_COLOR_WIPE	WS2812FX.h	78;"	d
+FX_MODE_COLOR_WIPE_INV	WS2812FX.h	79;"	d
+FX_MODE_COLOR_WIPE_RANDOM	WS2812FX.h	82;"	d
+FX_MODE_COLOR_WIPE_REV	WS2812FX.h	80;"	d
+FX_MODE_COLOR_WIPE_REV_INV	WS2812FX.h	81;"	d
+FX_MODE_COMET	WS2812FX.h	119;"	d
+FX_MODE_DUAL_SCAN	WS2812FX.h	89;"	d
+FX_MODE_FADE	WS2812FX.h	90;"	d
+FX_MODE_FIREWORKS	WS2812FX.h	120;"	d
+FX_MODE_FIREWORKS_RANDOM	WS2812FX.h	121;"	d
+FX_MODE_FIRE_FLICKER	WS2812FX.h	123;"	d
+FX_MODE_FIRE_FLICKER_INTENSE	WS2812FX.h	125;"	d
+FX_MODE_FIRE_FLICKER_SOFT	WS2812FX.h	124;"	d
+FX_MODE_FLASH_SPARKLE	WS2812FX.h	99;"	d
+FX_MODE_HALLOWEEN	WS2812FX.h	127;"	d
+FX_MODE_HYPER_SPARKLE	WS2812FX.h	100;"	d
+FX_MODE_ICU	WS2812FX.h	130;"	d
+FX_MODE_LARSON_SCANNER	WS2812FX.h	118;"	d
+FX_MODE_MERRY_CHRISTMAS	WS2812FX.h	122;"	d
+FX_MODE_MULTI_DYNAMIC	WS2812FX.h	85;"	d
+FX_MODE_MULTI_STROBE	WS2812FX.h	103;"	d
+FX_MODE_RAINBOW	WS2812FX.h	86;"	d
+FX_MODE_RAINBOW_CYCLE	WS2812FX.h	87;"	d
+FX_MODE_RANDOM_COLOR	WS2812FX.h	83;"	d
+FX_MODE_RUNNING_COLOR	WS2812FX.h	115;"	d
+FX_MODE_RUNNING_LIGHTS	WS2812FX.h	93;"	d
+FX_MODE_RUNNING_RANDOM	WS2812FX.h	117;"	d
+FX_MODE_RUNNING_RED_BLUE	WS2812FX.h	116;"	d
+FX_MODE_SCAN	WS2812FX.h	88;"	d
+FX_MODE_SINGLE_DYNAMIC	WS2812FX.h	84;"	d
+FX_MODE_SPARKLE	WS2812FX.h	98;"	d
+FX_MODE_STATIC	WS2812FX.h	75;"	d
+FX_MODE_STROBE	WS2812FX.h	101;"	d
+FX_MODE_STROBE_RAINBOW	WS2812FX.h	102;"	d
+FX_MODE_THEATER_CHASE	WS2812FX.h	91;"	d
+FX_MODE_THEATER_CHASE_RAINBOW	WS2812FX.h	92;"	d
+FX_MODE_TRICOLOR_CHASE	WS2812FX.h	129;"	d
+FX_MODE_TWINKLE	WS2812FX.h	94;"	d
+FX_MODE_TWINKLE_FADE	WS2812FX.h	96;"	d
+FX_MODE_TWINKLE_FADE_RANDOM	WS2812FX.h	97;"	d
+FX_MODE_TWINKLE_RANDOM	WS2812FX.h	95;"	d
+GREEN	WS2812FX.h	62;"	d
+MAGENTA	WS2812FX.h	68;"	d
+MAX_NUM_SEGMENTS	WS2812FX.h	53;"	d
+MODE_COUNT	WS2812FX.h	73;"	d
+NUM_COLORS	WS2812FX.h	54;"	d
+ORANGE	WS2812FX.h	70;"	d
+PURPLE	WS2812FX.h	69;"	d
+RED	WS2812FX.h	61;"	d
+RESET_RUNTIME	WS2812FX.h	58;"	d
+SEGMENT	WS2812FX.h	55;"	d
+SEGMENT_LENGTH	WS2812FX.h	57;"	d
+SEGMENT_RUNTIME	WS2812FX.h	56;"	d
+SPEED_MAX	WS2812FX.h	48;"	d
+SPEED_MIN	WS2812FX.h	47;"	d
+ULTRAWHITE	WS2812FX.h	71;"	d
+WHITE	WS2812FX.h	64;"	d
+WS2812FX	WS2812FX.h	/^    WS2812FX(uint16_t n, uint8_t p, neoPixelType t) : Adafruit_NeoPixel(n, p, t) {$/;"	f	class:WS2812FX
+WS2812FX	WS2812FX.h	/^class WS2812FX : public Adafruit_NeoPixel {$/;"	c
+WS2812FX_h	WS2812FX.h	38;"	d
+YELLOW	WS2812FX.h	66;"	d
+_brightness	WS2812FX.h	/^      _brightness;$/;"	m	class:WS2812FX
+_mode	WS2812FX.h	/^      _mode[MODE_COUNT]; \/\/ SRAM footprint: 4 bytes per element$/;"	m	class:WS2812FX
+_name	WS2812FX.h	/^      _name[MODE_COUNT]; \/\/ SRAM footprint: 2 bytes per element$/;"	m	class:WS2812FX
+_num_segments	WS2812FX.h	/^    uint8_t _num_segments = 1;$/;"	m	class:WS2812FX
+_running	WS2812FX.h	/^      _running,$/;"	m	class:WS2812FX
+_segment_index	WS2812FX.h	/^    uint8_t _segment_index = 0;$/;"	m	class:WS2812FX
+_segment_runtimes	WS2812FX.h	/^    segment_runtime _segment_runtimes[MAX_NUM_SEGMENTS]; \/\/ SRAM footprint: 14 bytes per element$/;"	m	class:WS2812FX
+_segments	WS2812FX.h	/^    segment _segments[MAX_NUM_SEGMENTS] = { \/\/ SRAM footprint: 20 bytes per element$/;"	m	class:WS2812FX
+_triggered	WS2812FX.h	/^      _triggered;$/;"	m	class:WS2812FX
+aux_param	WS2812FX.h	/^    uint16_t aux_param;$/;"	m	struct:WS2812FX::segment_runtime
+colors	WS2812FX.h	/^      uint32_t colors[NUM_COLORS];$/;"	m	struct:WS2812FX::segment
+counter_mode_call	WS2812FX.h	/^    uint32_t counter_mode_call;$/;"	m	struct:WS2812FX::segment_runtime
+counter_mode_step	WS2812FX.h	/^    uint32_t counter_mode_step;$/;"	m	struct:WS2812FX::segment_runtime
+mode	WS2812FX.h	/^      uint8_t  mode;$/;"	m	struct:WS2812FX::segment
+mode_ptr	WS2812FX.h	/^  typedef uint16_t (WS2812FX::*mode_ptr)(void);$/;"	t	class:WS2812FX
+next_time	WS2812FX.h	/^    unsigned long next_time;$/;"	m	struct:WS2812FX::segment_runtime
+reverse	WS2812FX.h	/^      bool     reverse;$/;"	m	struct:WS2812FX::segment
+segment	WS2812FX.h	/^    typedef struct segment {$/;"	s	class:WS2812FX
+segment	WS2812FX.h	/^    } segment;$/;"	t	class:WS2812FX	typeref:struct:WS2812FX::segment
+segment_runtime	WS2812FX.h	/^  typedef struct segment_runtime {$/;"	s	class:WS2812FX
+segment_runtime	WS2812FX.h	/^  } segment_runtime;$/;"	t	class:WS2812FX	typeref:struct:WS2812FX::segment_runtime
+speed	WS2812FX.h	/^      uint16_t speed;$/;"	m	struct:WS2812FX::segment
+start	WS2812FX.h	/^      uint16_t start;$/;"	m	struct:WS2812FX::segment
+stop	WS2812FX.h	/^      uint16_t stop;$/;"	m	struct:WS2812FX::segment
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+APP_ADV_INTERVAL	main.c	97;"	d	file:
+APP_ADV_TIMEOUT_IN_SECONDS	main.c	98;"	d	file:
+APP_BLE_CONN_CFG_TAG	main.c	88;"	d	file:
+APP_BLE_OBSERVER_PRIO	main.c	95;"	d	file:
+APP_FEATURE_NOT_SUPPORTED	main.c	90;"	d	file:
+CONN_SUP_TIMEOUT	main.c	103;"	d	file:
+DEAD_BEEF	main.c	108;"	d	file:
+DEVICE_NAME	main.c	92;"	d	file:
+FIRST_CONN_PARAMS_UPDATE_DELAY	main.c	104;"	d	file:
+MAX_CONN_INTERVAL	main.c	101;"	d	file:
+MAX_CONN_PARAMS_UPDATE_COUNT	main.c	106;"	d	file:
+MIN_CONN_INTERVAL	main.c	100;"	d	file:
+NEXT_CONN_PARAMS_UPDATE_DELAY	main.c	105;"	d	file:
+NUS_SERVICE_UUID_TYPE	main.c	93;"	d	file:
+SLAVE_LATENCY	main.c	102;"	d	file:
+UART_RX_BUF_SIZE	main.c	111;"	d	file:
+UART_TX_BUF_SIZE	main.c	110;"	d	file:
+advertising_init	main.c	/^static void advertising_init(void)$/;"	f	file:
+assert_nrf_callback	main.c	/^void assert_nrf_callback(uint16_t line_num, const uint8_t * p_file_name)$/;"	f
+ble_evt_handler	main.c	/^static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)$/;"	f	file:
+ble_stack_init	main.c	/^static void ble_stack_init(void)$/;"	f	file:
+bsp_event_handler	main.c	/^void bsp_event_handler(bsp_event_t event)$/;"	f
+buttons_leds_init	main.c	/^static void buttons_leds_init(bool * p_erase_bonds)$/;"	f	file:
+conn_params_error_handler	main.c	/^static void conn_params_error_handler(uint32_t nrf_error)$/;"	f	file:
+conn_params_init	main.c	/^static void conn_params_init(void)$/;"	f	file:
+gap_params_init	main.c	/^static void gap_params_init(void)$/;"	f	file:
+gatt_evt_handler	main.c	/^void gatt_evt_handler(nrf_ble_gatt_t * p_gatt, nrf_ble_gatt_evt_t const * p_evt)$/;"	f
+gatt_init	main.c	/^void gatt_init(void)$/;"	f
+gpio_init	main.c	/^static void gpio_init(void)$/;"	f	file:
+log_init	main.c	/^static void log_init(void)$/;"	f	file:
+m_adv_uuids	main.c	/^static ble_uuid_t m_adv_uuids[]          =                                          \/**< Universally unique service identifier. *\/$/;"	v	file:
+m_advertising	main.c	/^BLE_ADVERTISING_DEF(m_advertising);                                                 \/**< Advertising module instance. *\/$/;"	v
+m_ble_nus_max_data_len	main.c	/^static uint16_t   m_ble_nus_max_data_len = BLE_GATT_ATT_MTU_DEFAULT - 3;            \/**< Maximum length of data (in bytes) that can be transmitted to the peer by the Nordic UART service module. *\/$/;"	v	file:
+m_conn_handle	main.c	/^static uint16_t   m_conn_handle          = BLE_CONN_HANDLE_INVALID;                 \/**< Handle of the current connection. *\/$/;"	v	file:
+m_gatt	main.c	/^NRF_BLE_GATT_DEF(m_gatt);                                                           \/**< GATT module instance. *\/$/;"	v
+m_nus	main.c	/^BLE_NUS_DEF(m_nus);                                                                 \/**< BLE NUS service instance. *\/$/;"	v
+main	main.c	/^int main(void)$/;"	f
+nus_data_handler	main.c	/^static void nus_data_handler(ble_nus_evt_t * p_evt)$/;"	f	file:
+on_adv_evt	main.c	/^static void on_adv_evt(ble_adv_evt_t ble_adv_evt)$/;"	f	file:
+on_conn_params_evt	main.c	/^static void on_conn_params_evt(ble_conn_params_evt_t * p_evt)$/;"	f	file:
+power_manage	main.c	/^static void power_manage(void)$/;"	f	file:
+services_init	main.c	/^static void services_init(void)$/;"	f	file:
+sleep_mode_enter	main.c	/^static void sleep_mode_enter(void)$/;"	f	file:
+uart_event_handle	main.c	/^void uart_event_handle(app_uart_evt_t * p_event)$/;"	f
+uart_init	main.c	/^static void uart_init(void)$/;"	f	file:
+CMSIS_CONFIG_TOOL	pca10040/s132/armgcc/Makefile	/^CMSIS_CONFIG_TOOL := $(SDK_ROOT)\/external_tools\/cmsisconfig\/CMSIS_Configuration_Wizard.jar$/;"	m
+DEVICE	pca10040/s132/armgcc/Makefile	/^DEVICE=nrf52832_xxaa$/;"	m
+LINKER_SCRIPT	pca10040/s132/armgcc/Makefile	/^  LINKER_SCRIPT  := ble_app_uart_gcc_nrf52.ld$/;"	m
+NRFJPRO_DIR	pca10040/s132/armgcc/Makefile	/^NRFJPRO_DIR=\/home\/dani\/nrfjprog\/$/;"	m
+OPT	pca10040/s132/armgcc/Makefile	/^OPT = -ggdb$/;"	m
+OUTPUT_DIRECTORY	pca10040/s132/armgcc/Makefile	/^OUTPUT_DIRECTORY := _build$/;"	m
+PROJECT_NAME	pca10040/s132/armgcc/Makefile	/^PROJECT_NAME     := ble_app_uart_pca10040_s132$/;"	m
+PROJ_DIR	pca10040/s132/armgcc/Makefile	/^PROJ_DIR := ..\/..\/..$/;"	m
+SDK_CONFIG_FILE	pca10040/s132/armgcc/Makefile	/^SDK_CONFIG_FILE := ..\/config\/sdk_config.h$/;"	m
+SDK_ROOT	pca10040/s132/armgcc/Makefile	/^SDK_ROOT := \/home\/dani\/workspace\/nrf5x\/nRF5_SDK_14.2.0_17b948a$/;"	m
+TARGETS	pca10040/s132/armgcc/Makefile	/^TARGETS          := nrf52832_xxaa$/;"	m
+TEMPLATE_PATH	pca10040/s132/armgcc/Makefile	/^TEMPLATE_PATH := $(SDK_ROOT)\/components\/toolchain\/gcc$/;"	m
+TOOLS	pca10040/s132/armgcc/Makefile	/^TOOLS =\/usr\/local\/gcc-arm-none-eabi-4_9-2015q3\/bin\/$/;"	m
+APP_FIFO_ENABLED	pca10040/s132/config/sdk_config.h	2029;"	d
+APP_GPIOTE_ENABLED	pca10040/s132/config/sdk_config.h	2036;"	d
+APP_PWM_ENABLED	pca10040/s132/config/sdk_config.h	2043;"	d
+APP_SCHEDULER_ENABLED	pca10040/s132/config/sdk_config.h	2049;"	d
+APP_SCHEDULER_WITH_PAUSE	pca10040/s132/config/sdk_config.h	2055;"	d
+APP_SCHEDULER_WITH_PROFILER	pca10040/s132/config/sdk_config.h	2062;"	d
+APP_TIMER_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	2099;"	d
+APP_TIMER_CONFIG_OP_QUEUE_SIZE	pca10040/s132/config/sdk_config.h	2109;"	d
+APP_TIMER_CONFIG_RTC_FREQUENCY	pca10040/s132/config/sdk_config.h	2082;"	d
+APP_TIMER_CONFIG_SWI_NUMBER	pca10040/s132/config/sdk_config.h	2142;"	d
+APP_TIMER_CONFIG_USE_SCHEDULER	pca10040/s132/config/sdk_config.h	2116;"	d
+APP_TIMER_ENABLED	pca10040/s132/config/sdk_config.h	2070;"	d
+APP_TIMER_KEEPS_RTC_ACTIVE	pca10040/s132/config/sdk_config.h	2133;"	d
+APP_TIMER_WITH_PROFILER	pca10040/s132/config/sdk_config.h	2123;"	d
+APP_TWI_ENABLED	pca10040/s132/config/sdk_config.h	2151;"	d
+APP_UART_DRIVER_INSTANCE	pca10040/s132/config/sdk_config.h	2164;"	d
+APP_UART_ENABLED	pca10040/s132/config/sdk_config.h	2157;"	d
+APP_USBD_CDC_ACM_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4590;"	d
+APP_USBD_CDC_ACM_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4574;"	d
+APP_USBD_CDC_ACM_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4547;"	d
+APP_USBD_CDC_ACM_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4558;"	d
+APP_USBD_CLASS_AUDIO_ENABLED	pca10040/s132/config/sdk_config.h	2173;"	d
+APP_USBD_CLASS_CDC_ACM_ENABLED	pca10040/s132/config/sdk_config.h	2180;"	d
+APP_USBD_CLASS_HID_ENABLED	pca10040/s132/config/sdk_config.h	2187;"	d
+APP_USBD_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	462;"	d
+APP_USBD_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	446;"	d
+APP_USBD_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	419;"	d
+APP_USBD_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	430;"	d
+APP_USBD_CONFIG_PROVIDE_SOF_TIMESTAMP	pca10040/s132/config/sdk_config.h	413;"	d
+APP_USBD_DEVICE_VER_MAJOR	pca10040/s132/config/sdk_config.h	370;"	d
+APP_USBD_DEVICE_VER_MINOR	pca10040/s132/config/sdk_config.h	379;"	d
+APP_USBD_ENABLED	pca10040/s132/config/sdk_config.h	344;"	d
+APP_USBD_EVENT_QUEUE_ENABLE	pca10040/s132/config/sdk_config.h	390;"	d
+APP_USBD_EVENT_QUEUE_SIZE	pca10040/s132/config/sdk_config.h	398;"	d
+APP_USBD_HID_GENERIC_ENABLED	pca10040/s132/config/sdk_config.h	2194;"	d
+APP_USBD_HID_KBD_ENABLED	pca10040/s132/config/sdk_config.h	2201;"	d
+APP_USBD_HID_MOUSE_ENABLED	pca10040/s132/config/sdk_config.h	2208;"	d
+APP_USBD_MSC_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4641;"	d
+APP_USBD_MSC_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4625;"	d
+APP_USBD_MSC_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4598;"	d
+APP_USBD_MSC_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4609;"	d
+APP_USBD_MSC_ENABLED	pca10040/s132/config/sdk_config.h	2215;"	d
+APP_USBD_PID	pca10040/s132/config/sdk_config.h	361;"	d
+APP_USBD_VID	pca10040/s132/config/sdk_config.h	352;"	d
+BLE_ADVERTISING_ENABLED	pca10040/s132/config/sdk_config.h	69;"	d
+BLE_ADV_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5294;"	d
+BLE_ADV_SOC_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5761;"	d
+BLE_ANCS_C_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5301;"	d
+BLE_ANCS_C_ENABLED	pca10040/s132/config/sdk_config.h	159;"	d
+BLE_ANS_C_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5308;"	d
+BLE_ANS_C_ENABLED	pca10040/s132/config/sdk_config.h	166;"	d
+BLE_BAS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5315;"	d
+BLE_BAS_C_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5322;"	d
+BLE_BAS_C_ENABLED	pca10040/s132/config/sdk_config.h	173;"	d
+BLE_BAS_ENABLED	pca10040/s132/config/sdk_config.h	180;"	d
+BLE_BPS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5329;"	d
+BLE_CONN_PARAMS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5336;"	d
+BLE_CONN_STATE_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5343;"	d
+BLE_CSCS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5350;"	d
+BLE_CSCS_ENABLED	pca10040/s132/config/sdk_config.h	187;"	d
+BLE_CTS_C_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5357;"	d
+BLE_CTS_C_ENABLED	pca10040/s132/config/sdk_config.h	194;"	d
+BLE_DB_DISC_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5364;"	d
+BLE_DFU_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5371;"	d
+BLE_DFU_ENABLED	pca10040/s132/config/sdk_config.h	322;"	d
+BLE_DFU_SOC_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5768;"	d
+BLE_DIS_ENABLED	pca10040/s132/config/sdk_config.h	201;"	d
+BLE_DTM_ENABLED	pca10040/s132/config/sdk_config.h	76;"	d
+BLE_GLS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5378;"	d
+BLE_GLS_ENABLED	pca10040/s132/config/sdk_config.h	208;"	d
+BLE_HIDS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5385;"	d
+BLE_HIDS_ENABLED	pca10040/s132/config/sdk_config.h	215;"	d
+BLE_HRS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5392;"	d
+BLE_HRS_C_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5399;"	d
+BLE_HRS_C_ENABLED	pca10040/s132/config/sdk_config.h	222;"	d
+BLE_HRS_ENABLED	pca10040/s132/config/sdk_config.h	229;"	d
+BLE_HTS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5406;"	d
+BLE_HTS_ENABLED	pca10040/s132/config/sdk_config.h	236;"	d
+BLE_IAS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5413;"	d
+BLE_IAS_C_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5420;"	d
+BLE_IAS_C_ENABLED	pca10040/s132/config/sdk_config.h	243;"	d
+BLE_IAS_ENABLED	pca10040/s132/config/sdk_config.h	250;"	d
+BLE_LBS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5427;"	d
+BLE_LBS_C_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5434;"	d
+BLE_LBS_C_ENABLED	pca10040/s132/config/sdk_config.h	257;"	d
+BLE_LBS_ENABLED	pca10040/s132/config/sdk_config.h	264;"	d
+BLE_LLS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5441;"	d
+BLE_LLS_ENABLED	pca10040/s132/config/sdk_config.h	271;"	d
+BLE_LNS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5448;"	d
+BLE_NUS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5455;"	d
+BLE_NUS_C_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5462;"	d
+BLE_NUS_C_ENABLED	pca10040/s132/config/sdk_config.h	278;"	d
+BLE_NUS_ENABLED	pca10040/s132/config/sdk_config.h	285;"	d
+BLE_OTS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5469;"	d
+BLE_OTS_C_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5476;"	d
+BLE_RACP_ENABLED	pca10040/s132/config/sdk_config.h	83;"	d
+BLE_RSCS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5483;"	d
+BLE_RSCS_C_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5490;"	d
+BLE_RSCS_C_ENABLED	pca10040/s132/config/sdk_config.h	292;"	d
+BLE_RSCS_ENABLED	pca10040/s132/config/sdk_config.h	299;"	d
+BLE_TPS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5497;"	d
+BLE_TPS_ENABLED	pca10040/s132/config/sdk_config.h	306;"	d
+BSP_BTN_BLE_ENABLED	pca10040/s132/config/sdk_config.h	56;"	d
+BSP_BTN_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5504;"	d
+BUTTON_ENABLED	pca10040/s132/config/sdk_config.h	2222;"	d
+CLOCK_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3455;"	d
+CLOCK_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3439;"	d
+CLOCK_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	507;"	d
+CLOCK_CONFIG_LF_SRC	pca10040/s132/config/sdk_config.h	490;"	d
+CLOCK_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3412;"	d
+CLOCK_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3423;"	d
+CLOCK_CONFIG_SOC_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5775;"	d
+CLOCK_CONFIG_STATE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5679;"	d
+CLOCK_CONFIG_XTAL_FREQ	pca10040/s132/config/sdk_config.h	479;"	d
+CLOCK_ENABLED	pca10040/s132/config/sdk_config.h	472;"	d
+COMMON_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3506;"	d
+COMMON_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3490;"	d
+COMMON_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3463;"	d
+COMMON_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3474;"	d
+COMP_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3557;"	d
+COMP_CONFIG_HYST	pca10040/s132/config/sdk_config.h	554;"	d
+COMP_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3541;"	d
+COMP_CONFIG_INPUT	pca10040/s132/config/sdk_config.h	580;"	d
+COMP_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	597;"	d
+COMP_CONFIG_ISOURCE	pca10040/s132/config/sdk_config.h	565;"	d
+COMP_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3514;"	d
+COMP_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3525;"	d
+COMP_CONFIG_MAIN_MODE	pca10040/s132/config/sdk_config.h	535;"	d
+COMP_CONFIG_REF	pca10040/s132/config/sdk_config.h	526;"	d
+COMP_CONFIG_SPEED_MODE	pca10040/s132/config/sdk_config.h	545;"	d
+COMP_ENABLED	pca10040/s132/config/sdk_config.h	515;"	d
+CRC16_ENABLED	pca10040/s132/config/sdk_config.h	2229;"	d
+CRC32_ENABLED	pca10040/s132/config/sdk_config.h	2236;"	d
+ECC_ENABLED	pca10040/s132/config/sdk_config.h	2243;"	d
+EGU_ENABLED	pca10040/s132/config/sdk_config.h	606;"	d
+FDS_BACKEND	pca10040/s132/config/sdk_config.h	2293;"	d
+FDS_CRC_CHECK_ON_READ	pca10040/s132/config/sdk_config.h	2322;"	d
+FDS_CRC_CHECK_ON_WRITE	pca10040/s132/config/sdk_config.h	2333;"	d
+FDS_ENABLED	pca10040/s132/config/sdk_config.h	2249;"	d
+FDS_MAX_USERS	pca10040/s132/config/sdk_config.h	2346;"	d
+FDS_OP_QUEUE_SIZE	pca10040/s132/config/sdk_config.h	2306;"	d
+FDS_VIRTUAL_PAGES	pca10040/s132/config/sdk_config.h	2261;"	d
+FDS_VIRTUAL_PAGE_SIZE	pca10040/s132/config/sdk_config.h	2274;"	d
+GPIOTE_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3608;"	d
+GPIOTE_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3592;"	d
+GPIOTE_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	633;"	d
+GPIOTE_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3565;"	d
+GPIOTE_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3576;"	d
+GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS	pca10040/s132/config/sdk_config.h	616;"	d
+GPIOTE_ENABLED	pca10040/s132/config/sdk_config.h	612;"	d
+HARDFAULT_HANDLER_ENABLED	pca10040/s132/config/sdk_config.h	2357;"	d
+HARDFAULT_HANDLER_GDB_PSP_BACKTRACE	pca10040/s132/config/sdk_config.h	2371;"	d
+HCI_MAX_PACKET_SIZE_IN_BITS	pca10040/s132/config/sdk_config.h	2464;"	d
+HCI_MEM_POOL_ENABLED	pca10040/s132/config/sdk_config.h	2379;"	d
+HCI_RX_BUF_QUEUE_SIZE	pca10040/s132/config/sdk_config.h	2393;"	d
+HCI_RX_BUF_SIZE	pca10040/s132/config/sdk_config.h	2388;"	d
+HCI_SLIP_ENABLED	pca10040/s132/config/sdk_config.h	2401;"	d
+HCI_TRANSPORT_ENABLED	pca10040/s132/config/sdk_config.h	2460;"	d
+HCI_TX_BUF_SIZE	pca10040/s132/config/sdk_config.h	2383;"	d
+HCI_UART_BAUDRATE	pca10040/s132/config/sdk_config.h	2423;"	d
+HCI_UART_CTS_PIN	pca10040/s132/config/sdk_config.h	2452;"	d
+HCI_UART_FLOW_CONTROL	pca10040/s132/config/sdk_config.h	2432;"	d
+HCI_UART_RTS_PIN	pca10040/s132/config/sdk_config.h	2447;"	d
+HCI_UART_RX_PIN	pca10040/s132/config/sdk_config.h	2437;"	d
+HCI_UART_TX_PIN	pca10040/s132/config/sdk_config.h	2442;"	d
+I2S_CONFIG_ALIGN	pca10040/s132/config/sdk_config.h	700;"	d
+I2S_CONFIG_CHANNELS	pca10040/s132/config/sdk_config.h	720;"	d
+I2S_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3659;"	d
+I2S_CONFIG_FORMAT	pca10040/s132/config/sdk_config.h	691;"	d
+I2S_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3643;"	d
+I2S_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	779;"	d
+I2S_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3616;"	d
+I2S_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3627;"	d
+I2S_CONFIG_LRCK_PIN	pca10040/s132/config/sdk_config.h	654;"	d
+I2S_CONFIG_MASTER	pca10040/s132/config/sdk_config.h	682;"	d
+I2S_CONFIG_MCK_PIN	pca10040/s132/config/sdk_config.h	659;"	d
+I2S_CONFIG_MCK_SETUP	pca10040/s132/config/sdk_config.h	746;"	d
+I2S_CONFIG_RATIO	pca10040/s132/config/sdk_config.h	762;"	d
+I2S_CONFIG_SCK_PIN	pca10040/s132/config/sdk_config.h	647;"	d
+I2S_CONFIG_SDIN_PIN	pca10040/s132/config/sdk_config.h	673;"	d
+I2S_CONFIG_SDOUT_PIN	pca10040/s132/config/sdk_config.h	666;"	d
+I2S_CONFIG_SWIDTH	pca10040/s132/config/sdk_config.h	710;"	d
+I2S_ENABLED	pca10040/s132/config/sdk_config.h	641;"	d
+LED_SOFTBLINK_ENABLED	pca10040/s132/config/sdk_config.h	2473;"	d
+LOW_POWER_PWM_ENABLED	pca10040/s132/config/sdk_config.h	2480;"	d
+LPCOMP_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3710;"	d
+LPCOMP_CONFIG_DETECTION	pca10040/s132/config/sdk_config.h	820;"	d
+LPCOMP_CONFIG_HYST	pca10040/s132/config/sdk_config.h	842;"	d
+LPCOMP_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3694;"	d
+LPCOMP_CONFIG_INPUT	pca10040/s132/config/sdk_config.h	835;"	d
+LPCOMP_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	859;"	d
+LPCOMP_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3667;"	d
+LPCOMP_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3678;"	d
+LPCOMP_CONFIG_REFERENCE	pca10040/s132/config/sdk_config.h	810;"	d
+LPCOMP_ENABLED	pca10040/s132/config/sdk_config.h	787;"	d
+MEASUREMENT_PERIOD	pca10040/s132/config/sdk_config.h	2762;"	d
+MEMORY_MANAGER_LARGE_BLOCK_COUNT	pca10040/s132/config/sdk_config.h	2520;"	d
+MEMORY_MANAGER_LARGE_BLOCK_SIZE	pca10040/s132/config/sdk_config.h	2527;"	d
+MEMORY_MANAGER_MEDIUM_BLOCK_COUNT	pca10040/s132/config/sdk_config.h	2506;"	d
+MEMORY_MANAGER_MEDIUM_BLOCK_SIZE	pca10040/s132/config/sdk_config.h	2513;"	d
+MEMORY_MANAGER_SMALL_BLOCK_COUNT	pca10040/s132/config/sdk_config.h	2492;"	d
+MEMORY_MANAGER_SMALL_BLOCK_SIZE	pca10040/s132/config/sdk_config.h	2499;"	d
+MEMORY_MANAGER_XLARGE_BLOCK_COUNT	pca10040/s132/config/sdk_config.h	2534;"	d
+MEMORY_MANAGER_XLARGE_BLOCK_SIZE	pca10040/s132/config/sdk_config.h	2541;"	d
+MEMORY_MANAGER_XSMALL_BLOCK_COUNT	pca10040/s132/config/sdk_config.h	2562;"	d
+MEMORY_MANAGER_XSMALL_BLOCK_SIZE	pca10040/s132/config/sdk_config.h	2569;"	d
+MEMORY_MANAGER_XXLARGE_BLOCK_COUNT	pca10040/s132/config/sdk_config.h	2548;"	d
+MEMORY_MANAGER_XXLARGE_BLOCK_SIZE	pca10040/s132/config/sdk_config.h	2555;"	d
+MEMORY_MANAGER_XXSMALL_BLOCK_COUNT	pca10040/s132/config/sdk_config.h	2576;"	d
+MEMORY_MANAGER_XXSMALL_BLOCK_SIZE	pca10040/s132/config/sdk_config.h	2583;"	d
+MEM_MANAGER_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	2632;"	d
+MEM_MANAGER_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	2616;"	d
+MEM_MANAGER_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	2589;"	d
+MEM_MANAGER_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	2600;"	d
+MEM_MANAGER_DISABLE_API_PARAM_CHECK	pca10040/s132/config/sdk_config.h	2641;"	d
+MEM_MANAGER_ENABLED	pca10040/s132/config/sdk_config.h	2486;"	d
+NFC_BLE_PAIR_LIB_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5511;"	d
+NRF_BALLOC_CONFIG_BASIC_CHECKS_ENABLED	pca10040/s132/config/sdk_config.h	2674;"	d
+NRF_BALLOC_CONFIG_DATA_TRASHING_CHECK_ENABLED	pca10040/s132/config/sdk_config.h	2688;"	d
+NRF_BALLOC_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4692;"	d
+NRF_BALLOC_CONFIG_DEBUG_ENABLED	pca10040/s132/config/sdk_config.h	2654;"	d
+NRF_BALLOC_CONFIG_DOUBLE_FREE_CHECK_ENABLED	pca10040/s132/config/sdk_config.h	2681;"	d
+NRF_BALLOC_CONFIG_HEAD_GUARD_WORDS	pca10040/s132/config/sdk_config.h	2660;"	d
+NRF_BALLOC_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4676;"	d
+NRF_BALLOC_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4649;"	d
+NRF_BALLOC_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4660;"	d
+NRF_BALLOC_CONFIG_TAIL_GUARD_WORDS	pca10040/s132/config/sdk_config.h	2667;"	d
+NRF_BALLOC_ENABLED	pca10040/s132/config/sdk_config.h	2649;"	d
+NRF_BLE_BMS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5518;"	d
+NRF_BLE_CGMS_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5525;"	d
+NRF_BLE_CONN_PARAMS_ENABLED	pca10040/s132/config/sdk_config.h	89;"	d
+NRF_BLE_CONN_PARAMS_MAX_SLAVE_LATENCY_DEVIATION	pca10040/s132/config/sdk_config.h	95;"	d
+NRF_BLE_CONN_PARAMS_MAX_SUPERVISION_TIMEOUT_DEVIATION	pca10040/s132/config/sdk_config.h	102;"	d
+NRF_BLE_ES_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5532;"	d
+NRF_BLE_GATTS_C_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5539;"	d
+NRF_BLE_GATT_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5546;"	d
+NRF_BLE_GATT_ENABLED	pca10040/s132/config/sdk_config.h	111;"	d
+NRF_BLE_QWR_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5553;"	d
+NRF_BLE_QWR_ENABLED	pca10040/s132/config/sdk_config.h	118;"	d
+NRF_CLI_ARGC_MAX	pca10040/s132/config/sdk_config.h	2983;"	d
+NRF_CLI_BLE_UART_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4743;"	d
+NRF_CLI_BLE_UART_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4727;"	d
+NRF_CLI_BLE_UART_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4700;"	d
+NRF_CLI_BLE_UART_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4711;"	d
+NRF_CLI_BUILD_IN_CMDS_ENABLED	pca10040/s132/config/sdk_config.h	2990;"	d
+NRF_CLI_CMD_BUFF_SIZE	pca10040/s132/config/sdk_config.h	2995;"	d
+NRF_CLI_ECHO_STATUS	pca10040/s132/config/sdk_config.h	3002;"	d
+NRF_CLI_ENABLED	pca10040/s132/config/sdk_config.h	2978;"	d
+NRF_CLI_HISTORY_ELEMENT_COUNT	pca10040/s132/config/sdk_config.h	3022;"	d
+NRF_CLI_HISTORY_ELEMENT_SIZE	pca10040/s132/config/sdk_config.h	3017;"	d
+NRF_CLI_HISTORY_ENABLED	pca10040/s132/config/sdk_config.h	3013;"	d
+NRF_CLI_LOG_BACKEND	pca10040/s132/config/sdk_config.h	3045;"	d
+NRF_CLI_PRINTF_BUFF_SIZE	pca10040/s132/config/sdk_config.h	3007;"	d
+NRF_CLI_STATISTICS_ENABLED	pca10040/s132/config/sdk_config.h	3038;"	d
+NRF_CLI_UART_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4794;"	d
+NRF_CLI_UART_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4778;"	d
+NRF_CLI_UART_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4751;"	d
+NRF_CLI_UART_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4762;"	d
+NRF_CLI_USES_TASK_MANAGER_ENABLED	pca10040/s132/config/sdk_config.h	3052;"	d
+NRF_CLI_VT100_COLORS_ENABLED	pca10040/s132/config/sdk_config.h	3031;"	d
+NRF_CSENSE_ENABLED	pca10040/s132/config/sdk_config.h	2698;"	d
+NRF_CSENSE_MAX_PADS_NUMBER	pca10040/s132/config/sdk_config.h	2717;"	d
+NRF_CSENSE_MAX_VALUE	pca10040/s132/config/sdk_config.h	2722;"	d
+NRF_CSENSE_MIN_PAD_VALUE	pca10040/s132/config/sdk_config.h	2712;"	d
+NRF_CSENSE_OUTPUT_PIN	pca10040/s132/config/sdk_config.h	2729;"	d
+NRF_CSENSE_PAD_DEVIATION	pca10040/s132/config/sdk_config.h	2707;"	d
+NRF_CSENSE_PAD_HYSTERESIS	pca10040/s132/config/sdk_config.h	2702;"	d
+NRF_DFU_BLE_BUTTONLESS_SUPPORTS_BONDS	pca10040/s132/config/sdk_config.h	329;"	d
+NRF_DRV_CSENSE_ENABLED	pca10040/s132/config/sdk_config.h	2737;"	d
+NRF_DRV_USBD_DMASCHEDULER_MODE	pca10040/s132/config/sdk_config.h	1972;"	d
+NRF_FPRINTF_ENABLED	pca10040/s132/config/sdk_config.h	2773;"	d
+NRF_FSTORAGE_ENABLED	pca10040/s132/config/sdk_config.h	2779;"	d
+NRF_FSTORAGE_SD_MAX_RETRIES	pca10040/s132/config/sdk_config.h	2797;"	d
+NRF_FSTORAGE_SD_MAX_WRITE_SIZE	pca10040/s132/config/sdk_config.h	2807;"	d
+NRF_FSTORAGE_SD_QUEUE_SIZE	pca10040/s132/config/sdk_config.h	2789;"	d
+NRF_LOG_ALLOW_OVERFLOW	pca10040/s132/config/sdk_config.h	3190;"	d
+NRF_LOG_BACKEND_RTT_ENABLED	pca10040/s132/config/sdk_config.h	3067;"	d
+NRF_LOG_BACKEND_RTT_TEMP_BUFFER_SIZE	pca10040/s132/config/sdk_config.h	3076;"	d
+NRF_LOG_BUFSIZE	pca10040/s132/config/sdk_config.h	3180;"	d
+NRF_LOG_CLI_CMDS	pca10040/s132/config/sdk_config.h	3213;"	d
+NRF_LOG_COLOR_DEFAULT	pca10040/s132/config/sdk_config.h	3107;"	d
+NRF_LOG_DEFAULT_LEVEL	pca10040/s132/config/sdk_config.h	3153;"	d
+NRF_LOG_DEFERRED	pca10040/s132/config/sdk_config.h	3162;"	d
+NRF_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3087;"	d
+NRF_LOG_ERROR_COLOR	pca10040/s132/config/sdk_config.h	3123;"	d
+NRF_LOG_FILTERS_ENABLED	pca10040/s132/config/sdk_config.h	3206;"	d
+NRF_LOG_MSGPOOL_ELEMENT_COUNT	pca10040/s132/config/sdk_config.h	3236;"	d
+NRF_LOG_MSGPOOL_ELEMENT_SIZE	pca10040/s132/config/sdk_config.h	3226;"	d
+NRF_LOG_USES_COLORS	pca10040/s132/config/sdk_config.h	3092;"	d
+NRF_LOG_USES_TIMESTAMP	pca10040/s132/config/sdk_config.h	3199;"	d
+NRF_LOG_WARNING_COLOR	pca10040/s132/config/sdk_config.h	3139;"	d
+NRF_MAXIMUM_LATENCY_US	pca10040/s132/config/sdk_config.h	1320;"	d
+NRF_MEMOBJ_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4845;"	d
+NRF_MEMOBJ_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4829;"	d
+NRF_MEMOBJ_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4802;"	d
+NRF_MEMOBJ_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4813;"	d
+NRF_MEMOBJ_ENABLED	pca10040/s132/config/sdk_config.h	2819;"	d
+NRF_MPU_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3296;"	d
+NRF_MPU_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3280;"	d
+NRF_MPU_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3253;"	d
+NRF_MPU_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3264;"	d
+NRF_PWR_MGMT_CONFIG_AUTO_SHUTDOWN_RETRY	pca10040/s132/config/sdk_config.h	2910;"	d
+NRF_PWR_MGMT_CONFIG_CPU_USAGE_MONITOR_ENABLED	pca10040/s132/config/sdk_config.h	2882;"	d
+NRF_PWR_MGMT_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4896;"	d
+NRF_PWR_MGMT_CONFIG_DEBUG_PIN_ENABLED	pca10040/s132/config/sdk_config.h	2832;"	d
+NRF_PWR_MGMT_CONFIG_FPU_SUPPORT_ENABLED	pca10040/s132/config/sdk_config.h	2903;"	d
+NRF_PWR_MGMT_CONFIG_HANDLER_PRIORITY_COUNT	pca10040/s132/config/sdk_config.h	2924;"	d
+NRF_PWR_MGMT_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4880;"	d
+NRF_PWR_MGMT_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4853;"	d
+NRF_PWR_MGMT_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4864;"	d
+NRF_PWR_MGMT_CONFIG_STANDBY_TIMEOUT_ENABLED	pca10040/s132/config/sdk_config.h	2888;"	d
+NRF_PWR_MGMT_CONFIG_STANDBY_TIMEOUT_S	pca10040/s132/config/sdk_config.h	2894;"	d
+NRF_PWR_MGMT_CONFIG_USE_SCHEDULER	pca10040/s132/config/sdk_config.h	2917;"	d
+NRF_PWR_MGMT_ENABLED	pca10040/s132/config/sdk_config.h	2825;"	d
+NRF_PWR_MGMT_SLEEP_DEBUG_PIN	pca10040/s132/config/sdk_config.h	2871;"	d
+NRF_QUEUE_ENABLED	pca10040/s132/config/sdk_config.h	2933;"	d
+NRF_SDH_ANT_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4947;"	d
+NRF_SDH_ANT_INFO_COLOR	pca10040/s132/config/sdk_config.h	4931;"	d
+NRF_SDH_ANT_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4904;"	d
+NRF_SDH_ANT_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4915;"	d
+NRF_SDH_ANT_STACK_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5708;"	d
+NRF_SDH_BLE_CENTRAL_LINK_COUNT	pca10040/s132/config/sdk_config.h	5238;"	d
+NRF_SDH_BLE_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4998;"	d
+NRF_SDH_BLE_ENABLED	pca10040/s132/config/sdk_config.h	5224;"	d
+NRF_SDH_BLE_GAP_EVENT_LENGTH	pca10040/s132/config/sdk_config.h	5248;"	d
+NRF_SDH_BLE_GATTS_ATTR_TAB_SIZE	pca10040/s132/config/sdk_config.h	5258;"	d
+NRF_SDH_BLE_GATT_MAX_MTU_SIZE	pca10040/s132/config/sdk_config.h	5253;"	d
+NRF_SDH_BLE_INFO_COLOR	pca10040/s132/config/sdk_config.h	4982;"	d
+NRF_SDH_BLE_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4955;"	d
+NRF_SDH_BLE_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4966;"	d
+NRF_SDH_BLE_OBSERVER_PRIO_LEVELS	pca10040/s132/config/sdk_config.h	5284;"	d
+NRF_SDH_BLE_PERIPHERAL_LINK_COUNT	pca10040/s132/config/sdk_config.h	5233;"	d
+NRF_SDH_BLE_SERVICE_CHANGED	pca10040/s132/config/sdk_config.h	5270;"	d
+NRF_SDH_BLE_STACK_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5717;"	d
+NRF_SDH_BLE_TOTAL_LINK_COUNT	pca10040/s132/config/sdk_config.h	5243;"	d
+NRF_SDH_BLE_VS_UUID_COUNT	pca10040/s132/config/sdk_config.h	5263;"	d
+NRF_SDH_CLOCK_LF_RC_CTIV	pca10040/s132/config/sdk_config.h	5613;"	d
+NRF_SDH_CLOCK_LF_RC_TEMP_CTIV	pca10040/s132/config/sdk_config.h	5622;"	d
+NRF_SDH_CLOCK_LF_SRC	pca10040/s132/config/sdk_config.h	5607;"	d
+NRF_SDH_CLOCK_LF_XTAL_ACCURACY	pca10040/s132/config/sdk_config.h	5638;"	d
+NRF_SDH_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	5049;"	d
+NRF_SDH_DISPATCH_MODEL	pca10040/s132/config/sdk_config.h	5590;"	d
+NRF_SDH_ENABLED	pca10040/s132/config/sdk_config.h	5573;"	d
+NRF_SDH_INFO_COLOR	pca10040/s132/config/sdk_config.h	5033;"	d
+NRF_SDH_LOG_ENABLED	pca10040/s132/config/sdk_config.h	5006;"	d
+NRF_SDH_LOG_LEVEL	pca10040/s132/config/sdk_config.h	5017;"	d
+NRF_SDH_REQ_OBSERVER_PRIO_LEVELS	pca10040/s132/config/sdk_config.h	5652;"	d
+NRF_SDH_SOC_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	5100;"	d
+NRF_SDH_SOC_ENABLED	pca10040/s132/config/sdk_config.h	5741;"	d
+NRF_SDH_SOC_INFO_COLOR	pca10040/s132/config/sdk_config.h	5084;"	d
+NRF_SDH_SOC_LOG_ENABLED	pca10040/s132/config/sdk_config.h	5057;"	d
+NRF_SDH_SOC_LOG_LEVEL	pca10040/s132/config/sdk_config.h	5068;"	d
+NRF_SDH_SOC_OBSERVER_PRIO_LEVELS	pca10040/s132/config/sdk_config.h	5751;"	d
+NRF_SDH_SOC_STACK_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5726;"	d
+NRF_SDH_STACK_OBSERVER_PRIO_LEVELS	pca10040/s132/config/sdk_config.h	5668;"	d
+NRF_SDH_STATE_OBSERVER_PRIO_LEVELS	pca10040/s132/config/sdk_config.h	5660;"	d
+NRF_SECTION_ITER_ENABLED	pca10040/s132/config/sdk_config.h	2940;"	d
+NRF_SORTLIST_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	5151;"	d
+NRF_SORTLIST_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	5135;"	d
+NRF_SORTLIST_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	5108;"	d
+NRF_SORTLIST_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	5119;"	d
+NRF_SPI_DRV_MISO_PULLUP_CFG	pca10040/s132/config/sdk_config.h	1519;"	d
+NRF_STACK_GUARD_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3347;"	d
+NRF_STACK_GUARD_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3331;"	d
+NRF_STACK_GUARD_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3304;"	d
+NRF_STACK_GUARD_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3315;"	d
+NRF_STRERROR_ENABLED	pca10040/s132/config/sdk_config.h	2947;"	d
+NRF_TWI_MNGR_ENABLED	pca10040/s132/config/sdk_config.h	2954;"	d
+PDM_CONFIG_CLOCK_FREQ	pca10040/s132/config/sdk_config.h	894;"	d
+PDM_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3761;"	d
+PDM_CONFIG_EDGE	pca10040/s132/config/sdk_config.h	884;"	d
+PDM_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3745;"	d
+PDM_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	911;"	d
+PDM_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3718;"	d
+PDM_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3729;"	d
+PDM_CONFIG_MODE	pca10040/s132/config/sdk_config.h	875;"	d
+PDM_ENABLED	pca10040/s132/config/sdk_config.h	867;"	d
+PEER_MANAGER_ENABLED	pca10040/s132/config/sdk_config.h	124;"	d
+PERIPHERAL_RESOURCE_SHARING_ENABLED	pca10040/s132/config/sdk_config.h	920;"	d
+PM_BLE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5558;"	d
+PM_CENTRAL_ENABLED	pca10040/s132/config/sdk_config.h	144;"	d
+PM_FLASH_BUFFERS	pca10040/s132/config/sdk_config.h	135;"	d
+PM_MAX_REGISTRANTS	pca10040/s132/config/sdk_config.h	128;"	d
+POWER_CONFIG_DEFAULT_DCDCEN	pca10040/s132/config/sdk_config.h	951;"	d
+POWER_CONFIG_DEFAULT_DCDCENHV	pca10040/s132/config/sdk_config.h	960;"	d
+POWER_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	942;"	d
+POWER_CONFIG_SOC_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5782;"	d
+POWER_CONFIG_STATE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5686;"	d
+POWER_ENABLED	pca10040/s132/config/sdk_config.h	926;"	d
+PPI_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3812;"	d
+PPI_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3796;"	d
+PPI_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3769;"	d
+PPI_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3780;"	d
+PPI_ENABLED	pca10040/s132/config/sdk_config.h	969;"	d
+PWM0_ENABLED	pca10040/s132/config/sdk_config.h	1075;"	d
+PWM1_ENABLED	pca10040/s132/config/sdk_config.h	1082;"	d
+PWM2_ENABLED	pca10040/s132/config/sdk_config.h	1089;"	d
+PWM_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3863;"	d
+PWM_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3847;"	d
+PWM_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3820;"	d
+PWM_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3831;"	d
+PWM_DEFAULT_CONFIG_BASE_CLOCK	pca10040/s132/config/sdk_config.h	1017;"	d
+PWM_DEFAULT_CONFIG_COUNT_MODE	pca10040/s132/config/sdk_config.h	1026;"	d
+PWM_DEFAULT_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	1068;"	d
+PWM_DEFAULT_CONFIG_LOAD_MODE	pca10040/s132/config/sdk_config.h	1042;"	d
+PWM_DEFAULT_CONFIG_OUT0_PIN	pca10040/s132/config/sdk_config.h	981;"	d
+PWM_DEFAULT_CONFIG_OUT1_PIN	pca10040/s132/config/sdk_config.h	988;"	d
+PWM_DEFAULT_CONFIG_OUT2_PIN	pca10040/s132/config/sdk_config.h	995;"	d
+PWM_DEFAULT_CONFIG_OUT3_PIN	pca10040/s132/config/sdk_config.h	1002;"	d
+PWM_DEFAULT_CONFIG_STEP_MODE	pca10040/s132/config/sdk_config.h	1051;"	d
+PWM_DEFAULT_CONFIG_TOP_VALUE	pca10040/s132/config/sdk_config.h	1031;"	d
+PWM_ENABLED	pca10040/s132/config/sdk_config.h	975;"	d
+PWM_NRF52_ANOMALY_109_EGU_INSTANCE	pca10040/s132/config/sdk_config.h	1115;"	d
+PWM_NRF52_ANOMALY_109_WORKAROUND_ENABLED	pca10040/s132/config/sdk_config.h	1103;"	d
+QDEC_CONFIG_DBFEN	pca10040/s132/config/sdk_config.h	1196;"	d
+QDEC_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3914;"	d
+QDEC_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3898;"	d
+QDEC_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	1220;"	d
+QDEC_CONFIG_LEDPOL	pca10040/s132/config/sdk_config.h	1189;"	d
+QDEC_CONFIG_LEDPRE	pca10040/s132/config/sdk_config.h	1180;"	d
+QDEC_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3871;"	d
+QDEC_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3882;"	d
+QDEC_CONFIG_PIO_A	pca10040/s132/config/sdk_config.h	1161;"	d
+QDEC_CONFIG_PIO_B	pca10040/s132/config/sdk_config.h	1168;"	d
+QDEC_CONFIG_PIO_LED	pca10040/s132/config/sdk_config.h	1175;"	d
+QDEC_CONFIG_REPORTPER	pca10040/s132/config/sdk_config.h	1139;"	d
+QDEC_CONFIG_SAMPLEPER	pca10040/s132/config/sdk_config.h	1154;"	d
+QDEC_CONFIG_SAMPLE_INTEN	pca10040/s132/config/sdk_config.h	1203;"	d
+QDEC_ENABLED	pca10040/s132/config/sdk_config.h	1125;"	d
+RETARGET_ENABLED	pca10040/s132/config/sdk_config.h	2961;"	d
+RNG_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3965;"	d
+RNG_CONFIG_ERROR_CORRECTION	pca10040/s132/config/sdk_config.h	1234;"	d
+RNG_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3949;"	d
+RNG_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	1256;"	d
+RNG_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3922;"	d
+RNG_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3933;"	d
+RNG_CONFIG_POOL_SIZE	pca10040/s132/config/sdk_config.h	1239;"	d
+RNG_CONFIG_RANDOM_NUMBER_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3972;"	d
+RNG_CONFIG_STATE_OBSERVER_PRIO	pca10040/s132/config/sdk_config.h	5693;"	d
+RNG_ENABLED	pca10040/s132/config/sdk_config.h	1228;"	d
+RTC0_ENABLED	pca10040/s132/config/sdk_config.h	1301;"	d
+RTC1_ENABLED	pca10040/s132/config/sdk_config.h	1308;"	d
+RTC2_ENABLED	pca10040/s132/config/sdk_config.h	1315;"	d
+RTC_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4023;"	d
+RTC_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4007;"	d
+RTC_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3980;"	d
+RTC_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3991;"	d
+RTC_DEFAULT_CONFIG_FREQUENCY	pca10040/s132/config/sdk_config.h	1270;"	d
+RTC_DEFAULT_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	1294;"	d
+RTC_DEFAULT_CONFIG_RELIABLE	pca10040/s132/config/sdk_config.h	1277;"	d
+RTC_ENABLED	pca10040/s132/config/sdk_config.h	1264;"	d
+SAADC_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4074;"	d
+SAADC_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4058;"	d
+SAADC_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	1378;"	d
+SAADC_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4031;"	d
+SAADC_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4042;"	d
+SAADC_CONFIG_LP_MODE	pca10040/s132/config/sdk_config.h	1361;"	d
+SAADC_CONFIG_OVERSAMPLE	pca10040/s132/config/sdk_config.h	1354;"	d
+SAADC_CONFIG_RESOLUTION	pca10040/s132/config/sdk_config.h	1338;"	d
+SAADC_ENABLED	pca10040/s132/config/sdk_config.h	1328;"	d
+SDK_CONFIG_H	pca10040/s132/config/sdk_config.h	44;"	d
+SEGGER_RTT_CONFIG_BUFFER_SIZE_DOWN	pca10040/s132/config/sdk_config.h	5189;"	d
+SEGGER_RTT_CONFIG_BUFFER_SIZE_UP	pca10040/s132/config/sdk_config.h	5179;"	d
+SEGGER_RTT_CONFIG_DEFAULT_MODE	pca10040/s132/config/sdk_config.h	5209;"	d
+SEGGER_RTT_CONFIG_MAX_NUM_DOWN_BUFFERS	pca10040/s132/config/sdk_config.h	5194;"	d
+SEGGER_RTT_CONFIG_MAX_NUM_UP_BUFFERS	pca10040/s132/config/sdk_config.h	5184;"	d
+SLIP_ENABLED	pca10040/s132/config/sdk_config.h	2968;"	d
+SPI0_ENABLED	pca10040/s132/config/sdk_config.h	1525;"	d
+SPI0_USE_EASY_DMA	pca10040/s132/config/sdk_config.h	1531;"	d
+SPI1_ENABLED	pca10040/s132/config/sdk_config.h	1539;"	d
+SPI1_USE_EASY_DMA	pca10040/s132/config/sdk_config.h	1545;"	d
+SPI2_ENABLED	pca10040/s132/config/sdk_config.h	1553;"	d
+SPI2_USE_EASY_DMA	pca10040/s132/config/sdk_config.h	1559;"	d
+SPIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED	pca10040/s132/config/sdk_config.h	1575;"	d
+SPIS0_ENABLED	pca10040/s132/config/sdk_config.h	1443;"	d
+SPIS1_ENABLED	pca10040/s132/config/sdk_config.h	1450;"	d
+SPIS2_ENABLED	pca10040/s132/config/sdk_config.h	1457;"	d
+SPIS_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4125;"	d
+SPIS_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4109;"	d
+SPIS_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4082;"	d
+SPIS_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4093;"	d
+SPIS_DEFAULT_BIT_ORDER	pca10040/s132/config/sdk_config.h	1422;"	d
+SPIS_DEFAULT_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	1402;"	d
+SPIS_DEFAULT_DEF	pca10040/s132/config/sdk_config.h	1429;"	d
+SPIS_DEFAULT_MODE	pca10040/s132/config/sdk_config.h	1413;"	d
+SPIS_DEFAULT_ORC	pca10040/s132/config/sdk_config.h	1436;"	d
+SPIS_ENABLED	pca10040/s132/config/sdk_config.h	1386;"	d
+SPIS_NRF52_ANOMALY_109_WORKAROUND_ENABLED	pca10040/s132/config/sdk_config.h	1471;"	d
+SPI_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4176;"	d
+SPI_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4160;"	d
+SPI_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4133;"	d
+SPI_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4144;"	d
+SPI_DEFAULT_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	1495;"	d
+SPI_DEFAULT_FREQUENCY	pca10040/s132/config/sdk_config.h	1509;"	d
+SPI_ENABLED	pca10040/s132/config/sdk_config.h	1479;"	d
+SWI_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4227;"	d
+SWI_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4211;"	d
+SWI_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4184;"	d
+SWI_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4195;"	d
+TASK_MANAGER_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	3398;"	d
+TASK_MANAGER_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	3382;"	d
+TASK_MANAGER_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	3355;"	d
+TASK_MANAGER_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	3366;"	d
+TIMER0_ENABLED	pca10040/s132/config/sdk_config.h	1643;"	d
+TIMER0_FOR_CSENSE	pca10040/s132/config/sdk_config.h	2748;"	d
+TIMER1_ENABLED	pca10040/s132/config/sdk_config.h	1650;"	d
+TIMER1_FOR_CSENSE	pca10040/s132/config/sdk_config.h	2753;"	d
+TIMER2_ENABLED	pca10040/s132/config/sdk_config.h	1657;"	d
+TIMER3_ENABLED	pca10040/s132/config/sdk_config.h	1664;"	d
+TIMER4_ENABLED	pca10040/s132/config/sdk_config.h	1671;"	d
+TIMER_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4278;"	d
+TIMER_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4262;"	d
+TIMER_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4235;"	d
+TIMER_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4246;"	d
+TIMER_DEFAULT_CONFIG_BIT_WIDTH	pca10040/s132/config/sdk_config.h	1619;"	d
+TIMER_DEFAULT_CONFIG_FREQUENCY	pca10040/s132/config/sdk_config.h	1599;"	d
+TIMER_DEFAULT_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	1636;"	d
+TIMER_DEFAULT_CONFIG_MODE	pca10040/s132/config/sdk_config.h	1608;"	d
+TIMER_ENABLED	pca10040/s132/config/sdk_config.h	1583;"	d
+TWI0_ENABLED	pca10040/s132/config/sdk_config.h	1811;"	d
+TWI0_USE_EASY_DMA	pca10040/s132/config/sdk_config.h	1817;"	d
+TWI1_ENABLED	pca10040/s132/config/sdk_config.h	1825;"	d
+TWI1_USE_EASY_DMA	pca10040/s132/config/sdk_config.h	1831;"	d
+TWIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED	pca10040/s132/config/sdk_config.h	1846;"	d
+TWIS0_ENABLED	pca10040/s132/config/sdk_config.h	1732;"	d
+TWIS1_ENABLED	pca10040/s132/config/sdk_config.h	1739;"	d
+TWIS_ASSUME_INIT_AFTER_RESET_ONLY	pca10040/s132/config/sdk_config.h	1748;"	d
+TWIS_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4329;"	d
+TWIS_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4313;"	d
+TWIS_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4286;"	d
+TWIS_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4297;"	d
+TWIS_DEFAULT_CONFIG_ADDR0	pca10040/s132/config/sdk_config.h	1683;"	d
+TWIS_DEFAULT_CONFIG_ADDR1	pca10040/s132/config/sdk_config.h	1688;"	d
+TWIS_DEFAULT_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	1725;"	d
+TWIS_DEFAULT_CONFIG_SCL_PULL	pca10040/s132/config/sdk_config.h	1698;"	d
+TWIS_DEFAULT_CONFIG_SDA_PULL	pca10040/s132/config/sdk_config.h	1708;"	d
+TWIS_ENABLED	pca10040/s132/config/sdk_config.h	1679;"	d
+TWIS_NO_SYNC_MODE	pca10040/s132/config/sdk_config.h	1757;"	d
+TWI_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4380;"	d
+TWI_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4364;"	d
+TWI_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4337;"	d
+TWI_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4348;"	d
+TWI_DEFAULT_CONFIG_CLR_BUS_INIT	pca10040/s132/config/sdk_config.h	1781;"	d
+TWI_DEFAULT_CONFIG_FREQUENCY	pca10040/s132/config/sdk_config.h	1774;"	d
+TWI_DEFAULT_CONFIG_HOLD_BUS_UNINIT	pca10040/s132/config/sdk_config.h	1788;"	d
+TWI_DEFAULT_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	1805;"	d
+TWI_ENABLED	pca10040/s132/config/sdk_config.h	1765;"	d
+UART0_CONFIG_USE_EASY_DMA	pca10040/s132/config/sdk_config.h	1937;"	d
+UART0_ENABLED	pca10040/s132/config/sdk_config.h	1931;"	d
+UART_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4431;"	d
+UART_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4415;"	d
+UART_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4388;"	d
+UART_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4399;"	d
+UART_DEFAULT_CONFIG_BAUDRATE	pca10040/s132/config/sdk_config.h	1894;"	d
+UART_DEFAULT_CONFIG_HWFC	pca10040/s132/config/sdk_config.h	1862;"	d
+UART_DEFAULT_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	1911;"	d
+UART_DEFAULT_CONFIG_PARITY	pca10040/s132/config/sdk_config.h	1871;"	d
+UART_EASY_DMA_SUPPORT	pca10040/s132/config/sdk_config.h	1918;"	d
+UART_ENABLED	pca10040/s132/config/sdk_config.h	1854;"	d
+UART_LEGACY_SUPPORT	pca10040/s132/config/sdk_config.h	1925;"	d
+USBD_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4482;"	d
+USBD_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4466;"	d
+USBD_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	1963;"	d
+USBD_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4439;"	d
+USBD_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4450;"	d
+USBD_ENABLED	pca10040/s132/config/sdk_config.h	1947;"	d
+USE_COMP	pca10040/s132/config/sdk_config.h	2744;"	d
+WDT_CONFIG_BEHAVIOUR	pca10040/s132/config/sdk_config.h	1990;"	d
+WDT_CONFIG_DEBUG_COLOR	pca10040/s132/config/sdk_config.h	4533;"	d
+WDT_CONFIG_INFO_COLOR	pca10040/s132/config/sdk_config.h	4517;"	d
+WDT_CONFIG_IRQ_PRIORITY	pca10040/s132/config/sdk_config.h	2014;"	d
+WDT_CONFIG_LOG_ENABLED	pca10040/s132/config/sdk_config.h	4490;"	d
+WDT_CONFIG_LOG_LEVEL	pca10040/s132/config/sdk_config.h	4501;"	d
+WDT_CONFIG_RELOAD_VALUE	pca10040/s132/config/sdk_config.h	1997;"	d
+WDT_ENABLED	pca10040/s132/config/sdk_config.h	1980;"	d

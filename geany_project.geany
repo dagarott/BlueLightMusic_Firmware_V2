@@ -1,0 +1,84 @@
+[editor]
+line_wrapping=false
+line_break_column=72
+auto_continue_multiline=true
+
+[file_prefs]
+final_new_line=true
+ensure_convert_new_lines=false
+strip_trailing_spaces=false
+replace_tabs=false
+
+[indentation]
+indent_width=4
+indent_type=1
+indent_hard_tab_width=8
+detect_indent=false
+detect_indent_width=false
+indent_mode=3
+
+[project]
+name=BlueLightMusic
+base_path=/home/dani/workspace/nrf5x/TEST
+description=
+file_patterns=
+
+[long line marker]
+long_line_behaviour=1
+long_line_column=72
+
+[files]
+current_page=8
+FILE_NAME_0=2405;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2Fmain.c;0;4
+FILE_NAME_1=7046;Make;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2Fpca10040%2Fs132%2Farmgcc%2FMakefile;0;4
+FILE_NAME_2=920;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2FAdafruit_NeoPixel.h;0;4
+FILE_NAME_3=1634;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2FAdafruit_NeoPixel.c;0;4
+FILE_NAME_4=2598;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2FLedPatterns.c;0;4
+FILE_NAME_5=405;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2Fproject.h;0;4
+FILE_NAME_6=430;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2FLedPatterns.h;0;4
+FILE_NAME_7=0;C++;0;EUTF-8;1;1;0;%2Fusr%2Flocal%2Fgcc-arm-none-eabi-4_9-2015q3%2Farm-none-eabi%2Finclude%2Fstdint.h;0;4
+FILE_NAME_8=743;None;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2F.ssh%2Fid_rsa.pub;0;4
+
+[VTE]
+last_dir=/home/dani
+
+[prjorg]
+source_patterns=*.c;*.C;*.cpp;*.cxx;*.c++;*.cc;*.m;
+header_patterns=*.h;*.H;*.hpp;*.hxx;*.h++;*.hh;
+ignored_dirs_patterns=.*;CVS;
+ignored_file_patterns=*.o;*.obj;*.a;*.lib;*.so;*.dll;*.lo;*.la;*.class;*.jar;*.pyc;*.mo;*.gmo;
+generate_tag_prefs=1
+external_dirs=/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a;
+
+[build-menu]
+EX_00_LB=
+EX_00_CM=make debug
+EX_00_WD=%d/pca10040/s132/armgcc/
+CFT_01_LB=Clean
+CFT_01_CM=make clean
+CFT_01_WD=%d/pca10040/s132/armgcc/
+CFT_02_LB=none
+CFT_02_CM=
+CFT_02_WD=%d/pca10040/s132/armgcc/
+filetypes=C;C++;
+NF_00_LB=Program App
+NF_00_CM=make  flash
+NF_00_WD=%d/pca10040/s132/armgcc/
+NF_01_LB=Program Softdevice
+NF_01_CM=make flash_softdevice
+NF_01_WD=%d/pca10040/s132/armgcc/
+NF_03_LB=Ozone
+NF_03_CM=Ozone %d/nrf52.jdebug
+NF_03_WD=%d/pca10040/s132/armgcc/
+C++FT_00_LB=Make All
+C++FT_00_CM=make
+C++FT_00_WD=%d/pca10040/s132/armgcc/
+C++FT_01_LB=Clean
+C++FT_01_CM=make clean
+C++FT_01_WD=%d/pca10040/s132/armgcc/
+C++FT_02_LB=_Lint
+C++FT_02_CM=cppcheck --language=c++ --enable=warning,style --template=gcc "%f"
+C++FT_02_WD=%d/pca10040/s132/armgcc/
+NF_02_LB=Erase nrf52
+NF_02_CM=make erase
+NF_02_WD=%d/pca10040/s132/armgcc/

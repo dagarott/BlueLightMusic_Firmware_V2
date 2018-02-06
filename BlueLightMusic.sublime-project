@@ -1,0 +1,59 @@
+{
+	"SublimeLinter":
+	{
+		"linters":
+		{
+			"clang":
+			{
+				"extra_flags": "-Wall -I${project_folder}/",
+				"include_dirs":
+				[
+					"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/",
+					"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/config/",
+					"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/",
+          "/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/ble/ble_advertising/",
+          "/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/",
+          "/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/libraries/timer/",
+				]
+			}
+		}
+	},
+	"include_autocomplete_settings":
+    {
+        "include_locations":
+        [
+            {
+              "path": ".",
+              "path":"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/",
+              "path":"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/config/",
+              "path":"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/",
+              "path":"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/ble/ble_advertising/",
+              "path":"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/",
+              "path":"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/libraries/timer/",
+              "ignore": []
+            }
+        ]
+    },
+	"common_flags":
+	[
+		"-I$project_base_path/",
+    "-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/",
+		"-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/config/",
+		"-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/",
+    "-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/libraries/timer/",
+    "-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/ble/ble_advertising/",
+    "-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/",
+		"-I/usr/lib/clang/$clang_version/include"
+	],
+	"folders":
+	[
+		{
+			"path": "/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a"
+		},
+		{
+			"path": "."
+		}
+	]
+	,
+	
+}
