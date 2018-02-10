@@ -18,10 +18,16 @@ void OnProjectLoad (void) {
   Project.SetTIFSpeed ("1 MHz");
   Project.AddSvdFile ("Cortex-M4F.svd");
   Project.AddSvdFile ("$(InstallDir)/Config/Peripherals/ARMv7M.svd");
+ 
+  
   //
   // User settings
   //
+  
+  Exec.Connect();
+  Exec.Reset();
   File.Open ("/home/dani/workspace/nrf5x/TEST/pca10040/s132/armgcc/_build/nrf52832_xxaa.out");
+  //Debug.SetConnectMode(CM_DOWNLOAD_RESET);    
 }
 
 /*********************************************************************
@@ -44,7 +50,7 @@ void OnProjectLoad (void) {
 //  unsigned int VectorTableAddr;                                     
 //                                                                    
 //  Exec.Reset();                                                     
-//                                                                    
+//                                                                    File.Open ("/home/dani/workspace/nrf5x/TEST/pca10040/s132/armgcc/_build/nrf52832_xxaa.out");
 //  VectorTableAddr = Elf.GetBaseAddr();                              
 //                                                                    
 //  if (VectorTableAddr != 0xFFFFFFFF) {                              
@@ -92,7 +98,7 @@ void OnProjectLoad (void) {
 *                                                                     
 **********************************************************************
 */                                                                    
-//void DebugStart (void) {                                            
+//void DebugStart (void) {                                
 //}                                                                   
 
 /*********************************************************************
@@ -104,7 +110,7 @@ void OnProjectLoad (void) {
 *                                                                     
 **********************************************************************
 */                                                                    
-//void TargetConnect (void) {                                         
+//void TargetConnect (void) {           
 //}                                                                   
 
 /*********************************************************************

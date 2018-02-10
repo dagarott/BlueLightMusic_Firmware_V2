@@ -22,7 +22,7 @@
 #define RING '7'
  
  
-#define DELAYFADE 1
+#define DELAYFADE 2     //255_up/down_values)*2*1ms_Systick_time=1020ms
 #define DELAYCYCLON 80
 #define DELAYFLASHLED 500
 #define DELAYFLASHFADE 1

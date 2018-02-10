@@ -130,6 +130,9 @@ static uint16_t m_ble_nus_max_data_len = BLE_GATT_ATT_MTU_DEFAULT -
 static ble_uuid_t m_adv_uuids[] = /**< Universally unique service identifier. */
 { { BLE_UUID_NUS_SERVICE, NUS_SERVICE_UUID_TYPE } };
 
+//debug
+uint8_t  ws2812bpattern=FADE;
+//debug
 /**@brief Function for assert macro callback.
  *
  * @details This function will be called in case of an assert in the SoftDevice.
@@ -603,7 +606,7 @@ static void advertising_init(void)
     APP_ERROR_CHECK(err_code);
 
     ble_advertising_conn_cfg_tag_set(&m_advertising, APP_BLE_CONN_CFG_TAG);
-    b
+
 }
 
 /**@brief Function for initializing buttons and leds.
@@ -641,37 +644,176 @@ static void log_init(void)
     APP_ERROR_CHECK(err_code);
 }*/
 
-// debug
-// void in_pin_handler(nrf_drv_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
-//{
-// nrf_drv_gpiote_out_toggle(PIN_OUT);
-//}
 /**
- * @brief Function for configuring: PIN_IN pin for input, PIN_OUT pin for output,
- * and configures GPIOTE to give an interrupt on pin change.
+ * @brief      { function_description }
+ *
+ * @param[in]  OnOff  On off
  */
 static void PowerSystem(uint8_t OnOff)
 {
 
     if (OnOff == true) {
-        nrf_gpio_cfg_output(28);
         nrf_gpio_pin_write(28, 1);
     } else if (OnOff == false)  {
-        nrf_gpio_cfg_output(28);
+
         nrf_gpio_pin_write(28, 0);
     }
 
 }
-// debug
-/**@brief Application main function.
+/*
+**@brief function for handling the systick timer timeout.
+ *
+ * @details this function will be called each time the systick timer expires.
+ *          this function will start update_leds(), update_buzzer(), update_motor(),
+ *                  get_pin_status() and update_power_state() functions.
+ *
+ * @param[in] p_context   pointer used for passing some arbitrary information (context) from the
+ *                        app_start_timer() call to the timeout handler.
+ */
+//void systick_timeout_handler(nrf_timer_event_t event_type, void* p_context)
+//{
+//UNUSED_PARAMETER(p_context);
+//    static uint8_t delayws2812b=0;
+//    static uint8_t delaybuzzer=0;
+// if(!flag_off_leds) {
+//     if(delayws2812b == 0) {
+
+//         switch(ws2812bpattern) {
+
+//         case FADE: {
+//             delayws2812b = FadeInOut();
+//             break;
+//         }
+//         case CYCLON: {
+//             delayws2812b = Cyclon();
+//             break;
+//         }
+//         case FLASH: {
+//             delayws2812b = Flash();
+//             break;
+//         }
+//         case FLASHFADE: {
+//             delayws2812b = FlashFadeInOut();
+//             break;
+//         }
+//         case WIPE: {
+//             delayws2812b = Wipe();
+//             break;
+//         }
+//         case RING: {
+//             delayws2812b = Ring();
+//             break;
+//         }
+//         default:
+//             break;
+//         }
+//     } else
+//         delayws2812b--;
+// } else if(flag_off_leds)
+//     OffLeds();
+// /*songs part*/
+// if(flag_song_runnig == 1) {
+//     if(delaysong == 0) {
+//         delaysong = PlayMusic(ptr_songs);
+//         if(delaysong == END_SONG)
+//             flag_song_runnig = 0;
+//     } else {
+//         delaysong--;
+//     }
+// }
+//}
+void SysTick_Handler(void)
+{
+    static uint8_t delayws2812b = 0;
+
+    if (delayws2812b == 0) {
+
+        switch (ws2812bpattern) {
+
+        case FADE: {
+            delayws2812b = FadeInOut();
+            break;
+        }
+        case CYCLON: {
+            delayws2812b = Cyclon();
+            break;
+        }
+        case FLASHLED: {
+            delayws2812b = Flash();
+            break;
+        }
+        case FLASHFADE: {
+            delayws2812b = FlashFadeInOut();
+            break;
+        }
+        case WIPE: {
+            delayws2812b = Wipe();
+            break;
+        }
+        case RING: {
+            delayws2812b = Ring();
+            break;
+        }
+        default:
+            break;
+        }
+    } else
+        delayws2812b--;
+}
+/**@brief function for the timer initialization.
+ *
+ * @details initializes the timer module. this creates and starts application timers.
+ */
+// static void timer_init(void)
+// {
+//     uint32_t err_code;
+
+//     // // initialize timer module.
+//     // APP_TIMER_INIT(APP_TIMER_PRESCALER, APP_TIMER_OP_QUEUE_SIZE, false);
+
+//     // // create battery timer.
+//     // err_code = app_timer_create(&systick_timer_id, APP_TIMER_MODE_REPEATED, systick_timeout_handler);
+//     // APP_ERROR_CHECK(err_code);
+//     const nrf_drv_timer_t TIMER = NRF_DRV_TIMER_INSTANCE(0);
+//     uint32_t time_ms = 1; //Time(in miliseconds) between consecutive compare events.
+//     uint32_t time_ticks;
+//     //Configure TIMER_LED for generating simple light effect - leds on board will invert his state one after the other.
+//     nrf_drv_timer_config_t timer_cfg = NRF_DRV_TIMER_DEFAULT_CONFIG;
+//     err_code = nrf_drv_timer_init(&TIMER, &timer_cfg, systick_timeout_handler);
+//     APP_ERROR_CHECK(err_code);
+
+//     time_ticks = nrf_drv_timer_ms_to_ticks(&TIMER, time_ms);
+
+//     nrf_drv_timer_extended_compare(&TIMER, NRF_TIMER_CC_CHANNEL0, time_ticks, NRF_TIMER_SHORT_COMPARE0_CLEAR_MASK, true);
+
+//     nrf_drv_timer_enable(&TIMER);
+// }
+
+/**@brief function for the timer starting.
+ *
+ * @details start the timer module. this starts application timers.
+ */
+// static void timer_start(void)
+// {
+//     uint32_t err_code;
+//     // start battery timer
+//     err_code = app_timer_start(systick_timer_id, SYSTICK_INTERVAL, NULL);
+//     APP_ERROR_CHECK(err_code);
+// }
+
+/**
+ * @brief      { main funciton, set GPIO, init BT stack, SystTick, for ever loop }
+ *
+ * @return     { none }
+ * @par
  */
 int main(void)
 {
     uint32_t err_code;
-    uint8_t tmp;
     // bool     erase_bonds;
 
     // debug
+    nrf_gpio_cfg_output(28);
     PowerSystem(true);
     Adafruit_NeoPixel_Init(3, 25, NEO_GRB + NEO_KHZ800);
     Adafruit_NeoPixel_Begin();
@@ -685,7 +827,7 @@ int main(void)
     // Initialize.
     err_code = app_timer_init();
     APP_ERROR_CHECK(err_code);
-
+    SysTick_Config(SystemCoreClock / 1000); //1ms
     // uart_init();
     log_init();
 
@@ -704,11 +846,8 @@ int main(void)
 
     // Enter main loop.
     for (;;) {
-        //UNUSED_RETURN_VALUE(NRF_LOG_PROCESS());
+        UNUSED_RETURN_VALUE(NRF_LOG_PROCESS());
         //power_manage();
-        tmp = Flash();
-        if (tmp != 0)
-            nrf_delay_ms(Ring());
     }
 }
 

@@ -28,16 +28,14 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=8
-FILE_NAME_0=2405;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2Fmain.c;0;4
-FILE_NAME_1=7046;Make;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2Fpca10040%2Fs132%2Farmgcc%2FMakefile;0;4
-FILE_NAME_2=920;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2FAdafruit_NeoPixel.h;0;4
-FILE_NAME_3=1634;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2FAdafruit_NeoPixel.c;0;4
-FILE_NAME_4=2598;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2FLedPatterns.c;0;4
-FILE_NAME_5=405;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2Fproject.h;0;4
-FILE_NAME_6=430;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FTEST%2FLedPatterns.h;0;4
-FILE_NAME_7=0;C++;0;EUTF-8;1;1;0;%2Fusr%2Flocal%2Fgcc-arm-none-eabi-4_9-2015q3%2Farm-none-eabi%2Finclude%2Fstdint.h;0;4
-FILE_NAME_8=743;None;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2F.ssh%2Fid_rsa.pub;0;4
+current_page=6
+FILE_NAME_0=12530;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FNordic-Thingy52-FW-master%2Fproject%2Fpca20020_s132%2Fmain.c;0;4
+FILE_NAME_1=23674;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FNordic-Thingy52-FW-master%2Fsource%2Fdrivers%2Fdrv_ext_light.c;0;4
+FILE_NAME_2=6648;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FNordic-Thingy52-FW-master%2Fsource%2Fmodules%2Fm_ble_flash.c;0;4
+FILE_NAME_3=9486;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FNordic-Thingy52-FW-master%2Fexternal%2Fsdk13%2Fcomponents%2Flibraries%2Fscheduler%2Fapp_scheduler_serconn.c;0;4
+FILE_NAME_4=12582;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FNordic-Thingy52-FW-master%2Fsource%2Fdrivers%2Fdrv_speaker.c;0;4
+FILE_NAME_5=2561;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FnRF5_SDK_14.2.0_17b948a%2Fexamples%2Fperipheral%2Ftimer%2Fmain.c;0;4
+FILE_NAME_6=11553;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FnRF5_SDK_14.2.0_17b948a%2Fcomponents%2Fdrivers_nrf%2Ftimer%2Fnrf_drv_timer.h;0;4
 
 [VTE]
 last_dir=/home/dani
@@ -48,7 +46,7 @@ header_patterns=*.h;*.H;*.hpp;*.hxx;*.h++;*.hh;
 ignored_dirs_patterns=.*;CVS;
 ignored_file_patterns=*.o;*.obj;*.a;*.lib;*.so;*.dll;*.lo;*.la;*.class;*.jar;*.pyc;*.mo;*.gmo;
 generate_tag_prefs=1
-external_dirs=/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a;
+external_dirs=/home/dani/workspace/nrf5x/Nordic-Thingy52-FW-master;/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a;
 
 [build-menu]
 EX_00_LB=

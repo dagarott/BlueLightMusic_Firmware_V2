@@ -50,12 +50,12 @@ void tone(uint8_t pin, unsigned int frequency, unsigned long duration)
 	if((frequency < 20) | (frequency > 25000)) return;
 	
 
-	float per=float(1)/frequency;
+	float per=(float)(1/frequency);
 	time_per=per/0.000008;
 	unsigned int duty=time_per/2;
 	if(duration > 0){
 		no_stop = false;
-		float mil=float(duration)/1000;
+		float mil=(float)(duration/1000);
 		if(per>mil)
 			count_duration=1;
 		else

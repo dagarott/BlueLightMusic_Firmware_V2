@@ -43,7 +43,11 @@
     "-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/libraries/timer/",
     "-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/ble/ble_advertising/",
     "-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/",
-		"-I/usr/lib/clang/$clang_version/include"
+		"-I/usr/lib/clang/$clang_version/include",
+    "-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/",
+    "-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/config/",
+    "-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/examples/",
+    "-I/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/svd",
 	],
 	"folders":
 	[

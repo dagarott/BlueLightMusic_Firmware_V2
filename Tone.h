@@ -16,14 +16,21 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef _WIRING_TONE_
-#define _WIRING_TONE_
+#ifndef TONE_H__
+#define TONE_H__
 
+#include <stdint.h>
+#include <string.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include "nrf_drv_pwm.h"
+#include "nrf_drv_gpiote.h"
+#include "nrf_gpiote.h"
+#include "app_pwm.h"
 
-
-void tone(uint8_t pin, unsigned int frequency, unsigned long duration = 0);
+void tone(uint8_t pin, unsigned int frequency, unsigned long duration);
 void noTone(uint8_t pin);
 
 
 
-#endif /* _WIRING_TONE_ */
+#endif /* TONE__ */
