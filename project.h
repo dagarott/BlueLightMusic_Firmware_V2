@@ -10,13 +10,6 @@
 #include "Adafruit_NeoPixel.h"
 #include "LedPatterns.h"
 #include "nrf_drv_timer.h"
-//#include "i2s_ws2812b_drive.h"
-//#include "drv_speaker.h"
-//#include "sounds.h "
-//#include "notes.h "
-
-//#include "softdevice_handler.h"
-
-
+#include "drv_Buzzer.h"
 
 #endif // PROJECT_H

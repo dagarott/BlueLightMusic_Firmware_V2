@@ -36,17 +36,15 @@
   OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "drv_speaker.h"
+#include "drv_Buzzer.h"
 #include "nrf_gpio.h"
 #include "nrf_drv_pwm.h"
 #include "nrf_delay.h"
 #include "app_util_platform.h"
-#include "pca20020.h"
 #include "math.h"
 #include "arm_math.h"
 #include "app_scheduler.h"
 #include "nrf_delay.h"
-#include "drv_ext_gpio.h"
 #include "sounds.h"
 #define  NRF_LOG_MODULE_NAME "drv_speaker   "
 #include "nrf_log.h"
@@ -87,63 +85,6 @@ typedef struct
 static pwm_pcm_t s_pcm;
 static const uint8_t ramp_down_dat[] = {0x7d, 0x76, 0x6f, 0x69, 0x62, 0x5c, 0x55, 0x4e, 0x48, 0x41, 0x3b, 0x34, 0x2e, 0x27, 0x20, 0x1a, 0x13, 0x0d, 0x06, 0x00};
 
-#if defined(THINGY_HW_v0_8_0)
-static bool speaker_powered = false;
-
-static void power_off_spkr_sceduled(void * p_event_data, uint16_t event_size)
-{
-    if (speaker_powered == false)
-    {
-            uint32_t err_code;
-            err_code = drv_ext_gpio_pin_clear(SX_SPK_PWR_CTRL);
-            APP_ERROR_CHECK(err_code);
-    }
-}
-#endif
-
-/**@brief Turn off power to speaker.
- */
-static void power_off_spkr(bool sheduled)
-{
-    #if defined(THINGY_HW_v0_8_0)
-        if (speaker_powered == true)
-        {
-            speaker_powered = false;
-
-            if (sheduled)
-            {
-                uint32_t err_code;
-                err_code = app_sched_event_put(0, 0, power_off_spkr_sceduled);
-                APP_ERROR_CHECK(err_code);
-            }
-            else
-            {
-                power_off_spkr_sceduled(0, 0);
-            }
-        }
-    #else
-        nrf_gpio_pin_clear(SPK_PWR_CTRL);
-    #endif
-}
-
-
-/**@brief Turn on power to speaker.
- */
-static void power_spkr_on(void)
-{
-    #if defined(THINGY_HW_v0_8_0)
-        if (speaker_powered == false)
-        {
-            speaker_powered = true;
-
-                uint32_t err_code;
-                err_code = drv_ext_gpio_pin_set(SX_SPK_PWR_CTRL);
-                APP_ERROR_CHECK(err_code);
-        }
-    #else
-        nrf_gpio_pin_set(SPK_PWR_CTRL);
-    #endif
-}
 
 
 static void ramp_down(uint16_t * p_seq_buf, nrf_pwm_sequence_t * p_seq)
@@ -249,7 +190,7 @@ static uint32_t seq1_buffer_update(void)
             // Buffer empty
             buf_size = i;
             pwm_flag = NRF_DRV_PWM_FLAG_STOP;
-            break;
+            break;g
         }
         s_pcm.seq1_buf[i] = (uint16_t)s_pcm.p_dat[s_pcm.dat_head];
         s_pcm.dat_head = (s_pcm.dat_head + 1) % s_pcm.buf_size;
@@ -281,11 +222,6 @@ static void pwm_handler(nrf_drv_pwm_evt_type_t event_type)
     switch (event_type)
     {
         case NRF_DRV_PWM_EVT_STOPPED:
-            #if defined(THINGY_HW_v0_8_0)
-                nrf_gpio_pin_clear(SPEAKER_VOLUME);
-            #endif
-            power_off_spkr(true);
-
             NRF_LOG_DEBUG("NRF_DRV_PWM_EVT_STOPPED\r\n");
             s_params.evt_handler(DRV_SPEAKER_EVT_FINISHED);
             break;
@@ -524,13 +460,10 @@ uint32_t drv_speaker_tone_start(uint16_t freq_hz, uint32_t duration_ms, uint8_t 
         .end_delay       = 0
     };
 
-    power_spkr_on();
 
     (void)nrf_drv_pwm_simple_playback(&m_speaker_pwm, &seq, loop, NRF_DRV_PWM_FLAG_STOP);
 
-    #if defined(THINGY_HW_v0_8_0)
-        nrf_gpio_pin_set(SPEAKER_VOLUME);
-    #endif
+ 
 
     return NRF_SUCCESS;
 }
@@ -548,19 +481,6 @@ uint32_t drv_speaker_init(drv_speaker_init_t *p_params)
     s_pcm.is_activ          = false;
     s_pcm.ramp_down_started = false;
 
-    #if defined(THINGY_HW_v0_8_0)
-        err_code = drv_ext_gpio_cfg_output(SX_SPK_PWR_CTRL);
-        RETURN_IF_ERROR(err_code);
-
-        err_code = drv_ext_gpio_pin_clear(SX_SPK_PWR_CTRL);
-        APP_ERROR_CHECK(err_code);
-
-        nrf_gpio_cfg_output(SPEAKER_VOLUME);
-        nrf_gpio_pin_clear(SPEAKER_VOLUME);
-    #else
-        nrf_gpio_cfg_output(SPK_PWR_CTRL);
-        nrf_gpio_pin_clear(SPK_PWR_CTRL);
-    #endif
 
     nrf_drv_pwm_config_t const pwm_config =
     {
