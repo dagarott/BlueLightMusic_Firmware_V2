@@ -46,7 +46,7 @@
 #include "app_scheduler.h"
 #include "nrf_delay.h"
 #include "sounds.h"
-#define  NRF_LOG_MODULE_NAME "drv_speaker   "
+//#define  NRF_LOG_MODULE_NAME "drv_speaker   "
 #include "nrf_log.h"
 #include "macros_common.h"
 
@@ -190,7 +190,7 @@ static uint32_t seq1_buffer_update(void)
             // Buffer empty
             buf_size = i;
             pwm_flag = NRF_DRV_PWM_FLAG_STOP;
-            break;g
+            break;
         }
         s_pcm.seq1_buf[i] = (uint16_t)s_pcm.p_dat[s_pcm.dat_head];
         s_pcm.dat_head = (s_pcm.dat_head + 1) % s_pcm.buf_size;
@@ -255,7 +255,7 @@ uint32_t drv_speaker_flash_pcm_play(uint8_t const * const p_sound, uint32_t size
     pwm_flags = seq0_buffer_update();
     pwm_flags |= seq1_buffer_update();
 
-    power_spkr_on();
+    
 
     (void)nrf_drv_pwm_complex_playback(&m_speaker_pwm, &s_pcm.seq0, &s_pcm.seq1, 1, (pwm_flags | NRF_DRV_PWM_FLAG_LOOP));
 
@@ -342,7 +342,7 @@ uint32_t drv_speaker_ble_pcm_play(uint8_t * p_sound, uint32_t length)
             pwm_flags = seq0_buffer_update();
             pwm_flags |= seq1_buffer_update();
 
-            power_spkr_on();
+            
 
             (void)nrf_drv_pwm_complex_playback(&m_speaker_pwm, &s_pcm.seq0, &s_pcm.seq1, 1, (pwm_flags | NRF_DRV_PWM_FLAG_LOOP));
 
@@ -435,7 +435,7 @@ uint32_t drv_speaker_tone_start(uint16_t freq_hz, uint32_t duration_ms, uint8_t 
 
     if ((volume <= 0) || (duration_ms <= 0))
     {
-        power_off_spkr(false);
+        
         (void)nrf_drv_pwm_stop(&m_speaker_pwm, true);
 
         return NRF_SUCCESS;
@@ -486,7 +486,7 @@ uint32_t drv_speaker_init(drv_speaker_init_t *p_params)
     {
         .output_pins =
         {
-            SPEAKER,                    // channel 0
+            2,                    // channel 0
             NRF_DRV_PWM_PIN_NOT_USED,   // channel 1
             NRF_DRV_PWM_PIN_NOT_USED,   // channel 2
             NRF_DRV_PWM_PIN_NOT_USED,   // channel 3

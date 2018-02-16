@@ -120,6 +120,7 @@
 #define UART_TX_BUF_SIZE 256 /**< UART TX buffer size. */
 #define UART_RX_BUF_SIZE 256 /**< UART RX buffer size. */
 
+
 BLE_NUS_DEF(m_nus);                 /**< BLE NUS service instance. */
 NRF_BLE_GATT_DEF(m_gatt);           /**< GATT module instance. */
 BLE_ADVERTISING_DEF(m_advertising); /**< Advertising module instance. */
@@ -131,7 +132,14 @@ static ble_uuid_t m_adv_uuids[] = /**< Universally unique service identifier. */
 { { BLE_UUID_NUS_SERVICE, NUS_SERVICE_UUID_TYPE } };
 
 //debug
-uint8_t  ws2812bpattern=FADE;
+uint8_t  ws2812bpattern = FADE;
+uint8_t  songpattern = 2;
+uint16_t delaysong = 0;
+bool  flag_song_run = 1;
+bool  flag_haptic_running = 0;
+bool  flag_haptic_enable=0;
+song_param_t record[NUM_SONGS];
+//song_param_t(*ptr_songs);
 //debug
 /**@brief Function for assert macro callback.
  *
@@ -323,7 +331,8 @@ static void on_adv_evt(ble_adv_evt_t ble_adv_evt)
 /**@brief Function for handling BLE events.
  *
  * @param[in]   p_ble_evt   Bluetooth stack event.
- * @param[in]   p_context   Unused.
+ * @param[in]   p_contclang: cache cleared
+ext   Unused.
  */
 static void ble_evt_handler(ble_evt_t const* p_ble_evt, void* p_context)
 {
@@ -670,61 +679,10 @@ static void PowerSystem(uint8_t OnOff)
  * @param[in] p_context   pointer used for passing some arbitrary information (context) from the
  *                        app_start_timer() call to the timeout handler.
  */
-//void systick_timeout_handler(nrf_timer_event_t event_type, void* p_context)
-//{
-//UNUSED_PARAMETER(p_context);
-//    static uint8_t delayws2812b=0;
-//    static uint8_t delaybuzzer=0;
-// if(!flag_off_leds) {
-//     if(delayws2812b == 0) {
-
-//         switch(ws2812bpattern) {
-
-//         case FADE: {
-//             delayws2812b = FadeInOut();
-//             break;
-//         }
-//         case CYCLON: {
-//             delayws2812b = Cyclon();
-//             break;
-//         }
-//         case FLASH: {
-//             delayws2812b = Flash();
-//             break;
-//         }
-//         case FLASHFADE: {
-//             delayws2812b = FlashFadeInOut();
-//             break;
-//         }
-//         case WIPE: {
-//             delayws2812b = Wipe();
-//             break;
-//         }
-//         case RING: {
-//             delayws2812b = Ring();
-//             break;
-//         }
-//         default:
-//             break;
-//         }
-//     } else
-//         delayws2812b--;
-// } else if(flag_off_leds)
-//     OffLeds();
-// /*songs part*/
-// if(flag_song_runnig == 1) {
-//     if(delaysong == 0) {
-//         delaysong = PlayMusic(ptr_songs);
-//         if(delaysong == END_SONG)
-//             flag_song_runnig = 0;
-//     } else {
-//         delaysong--;
-//     }
-// }
-//}
 void SysTick_Handler(void)
 {
-    static uint8_t delayws2812b = 0;
+    static uint16_t delayws2812b = 0;
+    static uint16_t delayhaptic = 0;
 
     if (delayws2812b == 0) {
 
@@ -757,49 +715,126 @@ void SysTick_Handler(void)
         default:
             break;
         }
-    } else
+    } else {
         delayws2812b--;
+    }
+
+
+    if (_flag_song_run == 1) {
+        if (delaysong == 0) {
+
+            if (songpattern == 0) {
+                delaysong = PlayMusic(&record[0]);
+            } else if (songpattern == 1) {
+                delaysong = PlayMusic(&record[1]);
+            } else if (songpattern == 2) {
+                delaysong = PlayMusic(&record[2]);
+            }
+
+            if (delaysong == END_SONG)
+                _flag_song_run = 0;
+        } else {
+            delaysong--;
+        }
+    }
+
+    if (flag_haptic_enable==1) {
+        if(delayhaptic==0){
+            haptic_motor_start();
+            flag_haptic_running=1;
+            delayhaptic++;
+        }
+        else if (delayhaptic<1500)  //1.5 sec
+            delayhaptic++;   
+        else if (delayhaptic==1500){
+            haptic_motor_stop();
+            flag_haptic_running=0;
+            flag_haptic_enable=0;
+            delayhaptic=0;
+        }
+
+    }
 }
-/**@brief function for the timer initialization.
- *
- * @details initializes the timer module. this creates and starts application timers.
- */
-// static void timer_init(void)
-// {
-//     uint32_t err_code;
 
-//     // // initialize timer module.
-//     // APP_TIMER_INIT(APP_TIMER_PRESCALER, APP_TIMER_OP_QUEUE_SIZE, false);
+static void drv_speaker_evt_handler(drv_speaker_evt_t evt)
+{
+    switch (evt) {
+    case DRV_SPEAKER_EVT_FINISHED: {
+        // debug_printf(0, "drv_speaker_evt_handler: drv_speaker_evt_finished\r\n");
+        //(void)ble_tss_spkr_stat_set(&m_tss, ble_tss_spkr_stat_finished);
+    } break;
 
-//     // // create battery timer.
-//     // err_code = app_timer_create(&systick_timer_id, APP_TIMER_MODE_REPEATED, systick_timeout_handler);
-//     // APP_ERROR_CHECK(err_code);
-//     const nrf_drv_timer_t TIMER = NRF_DRV_TIMER_INSTANCE(0);
-//     uint32_t time_ms = 1; //Time(in miliseconds) between consecutive compare events.
-//     uint32_t time_ticks;
-//     //Configure TIMER_LED for generating simple light effect - leds on board will invert his state one after the other.
-//     nrf_drv_timer_config_t timer_cfg = NRF_DRV_TIMER_DEFAULT_CONFIG;
-//     err_code = nrf_drv_timer_init(&TIMER, &timer_cfg, systick_timeout_handler);
-//     APP_ERROR_CHECK(err_code);
+    case DRV_SPEAKER_EVT_BUFFER_WARNING: {
+        // debug_printf(0, "drv_speaker_evt_handler: drv_speaker_evt_buffer_warning\r\n");
+        //(void)ble_tss_spkr_stat_set(&m_tss, ble_tss_spkr_stat_buffer_warning);
+    } break;
+    //
+    case DRV_SPEAKER_EVT_BUFFER_READY: {
+        // debug_printf(0, "drv_speaker_evt_handler: drv_speaker_evt_buffer_ready\r\n");
+        //(void)ble_tss_spkr_stat_set(&m_tss, ble_tss_spkr_stat_buffer_ready);
+    } break;
+    //
+    default:
+        APP_ERROR_CHECK_BOOL(false);
+        break;
+    }
+}
+void pwm_ready_callback(uint32_t pwm_id)    // PWM callback function
+{
+    //static volatile bool ready_flag;            // A flag indicating PWM status.
+    //ready_flag = true;
+}
 
-//     time_ticks = nrf_drv_timer_ms_to_ticks(&TIMER, time_ms);
+nrf_pwm_sequence_t const m_haptic_seq = {
+        .values.p_common = &m_duty_value,
+        .length = NRF_PWM_VALUES_LENGTH(m_duty_value),
+        .repeats = 1,
+        .end_delay = 0,
+    };
 
-//     nrf_drv_timer_extended_compare(&TIMER, NRF_TIMER_CC_CHANNEL0, time_ticks, NRF_TIMER_SHORT_COMPARE0_CLEAR_MASK, true);
+void  haptic_motor_init(void)
+{
 
-//     nrf_drv_timer_enable(&TIMER);
-// }
+    static nrf_drv_pwm_t m_pwm2 = NRF_DRV_PWM_INSTANCE(1);
+    static nrf_pwm_values_common_t m_duty_value;
+    uint32_t err_code;
 
-/**@brief function for the timer starting.
- *
- * @details start the timer module. this starts application timers.
- */
-// static void timer_start(void)
-// {
-//     uint32_t err_code;
-//     // start battery timer
-//     err_code = app_timer_start(systick_timer_id, SYSTICK_INTERVAL, NULL);
-//     APP_ERROR_CHECK(err_code);
-// }
+    m_duty_value = 20000;
+
+    
+
+    nrf_drv_pwm_config_t const config0 = {
+        .output_pins =
+
+        {
+            NRF_DRV_PWM_PIN_NOT_USED,             // channel 0
+            0 | NRF_DRV_PWM_PIN_INVERTED,                                    // channel 1
+            NRF_DRV_PWM_PIN_NOT_USED,             // channel 2
+            NRF_DRV_PWM_PIN_NOT_USED,             // channel 3
+        },
+        .irq_priority = APP_IRQ_PRIORITY_LOW,
+        .base_clock   = NRF_PWM_CLK_16MHz,
+        .count_mode   = NRF_PWM_MODE_UP,
+        .top_value    = 32000,    //1kHz
+        .load_mode    = NRF_PWM_LOAD_COMMON,
+        .step_mode    = NRF_PWM_STEP_AUTO
+    };
+    err_code = nrf_drv_pwm_init(&m_pwm2, &config0, NULL);
+    if (err_code != NRF_SUCCESS) {
+        // Initialization failed. Take recovery action.
+    }
+}
+void haptic_motor_start(void)
+{
+    tatic nrf_drv_pwm_t m_pwm2 = NRF_DRV_PWM_INSTANCE(1);
+    nrf_drv_pwm_simple_playback(&m_pwm2, &m_haptic_seq, 1, 0);
+}
+void haptic_motor_stop(void)
+{
+    static nrf_drv_pwm_t m_pwm2 = NRF_DRV_PWM_INSTANCE(1);
+    nrf_drv_pwm_stop(&m_pwm2, false);
+}
+
 
 /**
  * @brief      { main funciton, set GPIO, init BT stack, SystTick, for ever loop }
@@ -810,45 +845,44 @@ void SysTick_Handler(void)
 int main(void)
 {
     uint32_t err_code;
+    drv_speaker_init_t speaker_init;
+    speaker_init.evt_handler = drv_speaker_evt_handler;
     // bool     erase_bonds;
 
     // debug
     nrf_gpio_cfg_output(28);
     PowerSystem(true);
-    Adafruit_NeoPixel_Init(3, 25, NEO_GRB + NEO_KHZ800);
-    Adafruit_NeoPixel_Begin();
-    Adafruit_NeoPixel_setPixelColor(0, 255, 0, 0); // Moderately bright green color.
-    Adafruit_NeoPixel_setPixelColor(1, 0, 255, 0); // Moderately bright green color.
-    Adafruit_NeoPixel_setPixelColor(2, 0, 0, 255); // Moderately bright green color.
-    Adafruit_NeoPixel_Show();
-
     // debug
 
     // Initialize.
     err_code = app_timer_init();
     APP_ERROR_CHECK(err_code);
-    SysTick_Config(SystemCoreClock / 1000); //1ms
-    // uart_init();
-    log_init();
 
-    // buttons_leds_init(&erase_bonds);
+    log_init();
     ble_stack_init();
     gap_params_init();
     gatt_init();
     services_init();
     advertising_init();
     conn_params_init();
-
+    //debug
+    drv_speaker_init(&speaker_init);
+    haptic_motor_init();
+    //Adafruit_NeoPixel_Init(3, 25, NEO_GRB + NEO_KHZ800);
+    //Adafruit_NeoPixel_Begin();
+    //debug
     // printf("\r\nUART Start!\r\n");
     NRF_LOG_INFO("UART Start!");
     err_code = ble_advertising_start(&m_advertising, BLE_ADV_MODE_FAST);
     APP_ERROR_CHECK(err_code);
 
+    //debug
+    InitSongStruct();
+    SysTick_Config(SystemCoreClock / 1000); //1ms
+    //nrf_gpio_cfg_output(0);
+    //nrf_gpio_pin_write(0, 1);
 
     //debug
-    drv_speaker_sample_play(0);
-    //debug
-    
     // Enter main loop.
     for (;;) {
         UNUSED_RETURN_VALUE(NRF_LOG_PROCESS());

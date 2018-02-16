@@ -51,10 +51,12 @@ SRC_FILES += \
   $(SDK_ROOT)/components/libraries/bsp/bsp.c \
   $(SDK_ROOT)/components/libraries/bsp/bsp_btn_ble.c \
   $(SDK_ROOT)/components/libraries/bsp/bsp_nfc.c \
+  $(SDK_ROOT)/components/drivers_nrf/pwm/nrf_drv_pwm.c \
   $(PROJ_DIR)/main.c \
   $(PROJ_DIR)/Adafruit_NeoPixel.c \
   $(PROJ_DIR)/LedPatterns.c \
   $(PROJ_DIR)/drv_Buzzer.c \
+  $(PROJ_DIR)/SongPatterns.c \
   $(SDK_ROOT)/components/drivers_nrf/timer/nrf_drv_timer.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT_Syscalls_GCC.c \
@@ -183,6 +185,7 @@ INC_FOLDERS += \
   $(SDK_ROOT)/components/ble/ble_services/ble_lbs_c \
   $(SDK_ROOT)/components/ble/ble_racp \
   $(SDK_ROOT)/components/toolchain/gcc \
+  $(SDK_ROOT)/components/toolchain/cmsis/include \
   $(SDK_ROOT)/components/libraries/fds \
   $(SDK_ROOT)/components/libraries/twi \
   $(SDK_ROOT)/components/drivers_nrf/clock \
@@ -193,8 +196,9 @@ INC_FOLDERS += \
 
  
 # Libraries common to all targets
-LIB_FILES += \
-
+#debug
+LIB_FILES += $(SDK_ROOT)/components/toolchain/cmsis/dsp/GCC/libarm_cortexM4lf_math.a
+#debug
 # Optimization flags
 #OPT = -O3 -g3
 OPT = -ggdb
@@ -213,8 +217,10 @@ CFLAGS += -DNRF_SD_BLE_API_VERSION=5
 CFLAGS += -DS132
 CFLAGS += -DSOFTDEVICE_PRESENT
 CFLAGS += -DSWI_DISABLE0
+#debug
 CFLAGS += -DARM_MATH_CM4
 CFLAGS += -mcpu=cortex-m4
+#debug
 CFLAGS += -mthumb -mabi=aapcs
 CFLAGS +=  -Wall -Werror
 CFLAGS += -mfloat-abi=hard -mfpu=fpv4-sp-d16
@@ -241,6 +247,9 @@ ASMFLAGS += -DNRF_SD_BLE_API_VERSION=5
 ASMFLAGS += -DS132
 ASMFLAGS += -DSOFTDEVICE_PRESENT
 ASMFLAGS += -DSWI_DISABLE0
+#debugg
+ASMFLAGS += -DARM_MATH_CM4
+#debug
 
 # Linker flags
 LDFLAGS += $(OPT)

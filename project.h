@@ -11,5 +11,6 @@
 #include "LedPatterns.h"
 #include "nrf_drv_timer.h"
 #include "drv_Buzzer.h"
+#include "SongPatterns.h"
 
 #endif // PROJECT_H

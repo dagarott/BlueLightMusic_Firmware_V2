@@ -1,0 +1,2224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="test_codelite" Version="10.0.0" InternalType="">
+  <VirtualDirectory Name="config">
+    <File Name="../nRF5_SDK_14.2.0_17b948a/config/sdk_config.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="components">
+    <File Name="../nRF5_SDK_14.2.0_17b948a/components/sdk_validation.h"/>
+    <VirtualDirectory Name="boards">
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/pca10036.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/n5_starterkit.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/boards.c"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/pca10000.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/pca10040.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/pca10031.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/d52_starterkit.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/pca10028.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/arduino_primo.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/pca20006.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/pca10001.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/pca10003.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/wt51822.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/pca10056.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/boards.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/boards/nrf6310.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="iot">
+      <VirtualDirectory Name="iot_file">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_file/iot_file.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_file/iot_file_port.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_file/iot_file.h"/>
+        <VirtualDirectory Name="static">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_file/static/iot_file_static.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_file/static/iot_file_static.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="medium">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/medium/ipv6_medium_platform_dummy.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/medium/ipv6_medium.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/medium/ipv6_medium_ble.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/medium/ipv6_medium_ble.c"/>
+        <VirtualDirectory Name="ble_ncfgs">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/medium/ble_ncfgs/ble_ncfgs.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/medium/ble_ncfgs/ble_ncfgs.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="commissioning">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/medium/commissioning/commissioning.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/medium/commissioning/commissioning.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="context_manager">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/context_manager/iot_context_manager.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/context_manager/iot_context_manager.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="mqtt">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/mqtt/mqtt_rx.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/mqtt/mqtt.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/mqtt/mqtt_transport.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/mqtt/mqtt_transport_tls.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/mqtt/mqtt_transport.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/mqtt/mqtt_transport_lwip.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/mqtt/mqtt.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/mqtt/mqtt_transport_socket.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/mqtt/mqtt_decoder.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/mqtt/mqtt_internal.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/mqtt/mqtt_rx.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/mqtt/mqtt_encoder.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="background_dfu">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/background_dfu/background_dfu_state.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/background_dfu/background_dfu_block.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/background_dfu/background_dfu_operation.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/background_dfu/background_dfu_block.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/background_dfu/background_dfu_state.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/background_dfu/background_dfu_operation.c"/>
+        <VirtualDirectory Name="transport">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/background_dfu/transport/background_dfu_transport.h"/>
+          <VirtualDirectory Name="tftp">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/background_dfu/transport/tftp/tftp_dfu.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/background_dfu/transport/tftp/tftp_dfu.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="common">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/common/iot_defines.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/common/iot_errors.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/common/iot_common.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ipv6_parse">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_parse/ipv6_parse.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_parse/ipv6_parse.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ble_6lowpan">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ble_6lowpan/ble_6lowpan.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ble_6lowpan/ble_6lowpan.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ipv6_stack">
+        <VirtualDirectory Name="ipv6">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/ipv6/ipv6.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="utils">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/utils/ipv6_utils.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/utils/ipv6_utils.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="dns6">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/dns6/dns6.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="icmp6">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/icmp6/icmp6.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/icmp6/icmp6.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="tftp">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/tftp/iot_tftp.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/tftp/iot_tftp.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="udp">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/udp/udp.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/udp/udp6.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="include">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/include/ipv6_api.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/include/udp_api.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/include/dns6_api.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/include/icmp6_api.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="pbuffer">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/pbuffer/iot_pbuffer.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/pbuffer/iot_pbuffer.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="sntp_client">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/sntp_client/sntp_client.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/ipv6_stack/sntp_client/sntp_client.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="socket">
+        <VirtualDirectory Name="transport">
+          <VirtualDirectory Name="ipv6">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/transport/ipv6/transport_handler.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="lwip">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/transport/lwip/transport_handler.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="common">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/common/socket_common.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/common/socket.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/common/sleep.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/common/socket_trace.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/common/transport_if.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/common/socket_config.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="libraries">
+          <VirtualDirectory Name="addr_util">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/libraries/addr_util/inet_pton.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="fifo">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/libraries/fifo/nrf_fifo.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/libraries/fifo/nrf_fifo.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="portdb">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/libraries/portdb/portdb.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/libraries/portdb/portdb.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="mbuf">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/libraries/mbuf/mbuf.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/libraries/mbuf/mbuf.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="platform">
+          <VirtualDirectory Name="ble">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/platform/ble/socket_ble.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="api">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/api/unistd.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/api/socket_api.h"/>
+          <VirtualDirectory Name="arpa">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/api/arpa/inet.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="sys">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/api/sys/select.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/api/sys/socket.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="netinet">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/api/netinet/in.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="config">
+          <VirtualDirectory Name="medium">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/config/medium/config_medium.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/socket/config/medium/config_medium.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="errno">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/errno/errno.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/errno/errno.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="iot_timer">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_timer/iot_timer.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_timer/iot_timer.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="iot_dfu">
+        <VirtualDirectory Name="common">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_dfu/common/dfu_types.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="bootloader">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_dfu/bootloader/bootloader.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_dfu/bootloader/dfu_boot.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_dfu/bootloader/dfu_dual_bank.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_dfu/bootloader/bootloader_api.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="app">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_dfu/app/iot_dfu.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/iot_dfu/app/iot_dfu.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="lwm2m">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m_objects_tlv.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/ipso_objects.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m_bootstrap.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m_objects_tlv.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m_objects.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m_tlv.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m_coap_util.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/ipso_objects_tlv.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/ipso_objects_tlv.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m_tlv.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m_api.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/ipso_objects.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m_register.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m_register.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m_bootstrap.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/lwm2m/lwm2m_objects.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="coap">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_block.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_resource.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_codes.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_message.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_queue.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_observe.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_resource.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_api.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_block.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_option.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_message.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_transport.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_transport_dtls.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_option.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_transport_ipv6.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_transport_socket.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_observe_api.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_transport_lwip.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_observe.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/iot/coap/coap_queue.c"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="nfc">
+      <VirtualDirectory Name="t2t_lib">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t2t_lib/nfc_fixes.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t2t_lib/nfc_t2t_lib.h"/>
+        <VirtualDirectory Name="hal_t2t">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t2t_lib/hal_t2t/hal_nfc_t2t.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t2t_lib/hal_t2t/hal_nfc_t2t.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="t4t_parser">
+        <VirtualDirectory Name="cc_file">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t4t_parser/cc_file/nfc_t4t_cc_file.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t4t_parser/cc_file/nfc_t4t_cc_file.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="apdu">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t4t_parser/apdu/nfc_t4t_apdu.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t4t_parser/apdu/nfc_t4t_apdu.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="hl_detection_procedure">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t4t_parser/hl_detection_procedure/nfc_t4t_hl_detection_procedures.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t4t_parser/hl_detection_procedure/nfc_t4t_hl_detection_procedures.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="tlv">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t4t_parser/tlv/nfc_t4t_tlv_block.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t4t_parser/tlv/nfc_t4t_tlv_block.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ndef">
+        <VirtualDirectory Name="generic">
+          <VirtualDirectory Name="record">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/generic/record/nfc_ndef_record.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/generic/record/nfc_ndef_record.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="message">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/generic/message/nfc_ndef_msg.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/generic/message/nfc_ndef_msg.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="parser">
+          <VirtualDirectory Name="record">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/parser/record/nfc_ndef_record_parser.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/parser/record/nfc_ndef_record_parser.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="message">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/parser/message/nfc_ndef_msg_parser_local.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/parser/message/nfc_ndef_msg_parser_local.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/parser/message/nfc_ndef_msg_parser.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/parser/message/nfc_ndef_msg_parser.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="text">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/text/nfc_text_rec.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/text/nfc_text_rec.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="uri">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/uri/nfc_uri_msg.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/uri/nfc_uri_rec.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/uri/nfc_uri_rec.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/uri/nfc_uri_msg.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="connection_handover">
+          <VirtualDirectory Name="ble_oob_advdata">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/ble_oob_advdata/nfc_ble_oob_advdata.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/ble_oob_advdata/nfc_ble_oob_advdata.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="ble_pair_lib">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/ble_pair_lib/nfc_ble_pair_lib.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/ble_pair_lib/nfc_ble_pair_lib.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="ac_rec">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/ac_rec/nfc_ac_rec.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/ac_rec/nfc_ac_rec.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="ble_pair_msg">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/ble_pair_msg/nfc_ble_pair_msg.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/ble_pair_msg/nfc_ble_pair_msg.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="hs_rec">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/hs_rec/nfc_hs_rec.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/hs_rec/nfc_hs_rec.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="ep_oob_rec">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/ep_oob_rec/nfc_ep_oob_rec.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/ep_oob_rec/nfc_ep_oob_rec.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="le_oob_rec">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/le_oob_rec/nfc_le_oob_rec.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/le_oob_rec/nfc_le_oob_rec.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="common">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/common/nfc_ble_pair_common.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/connection_handover/common/nfc_ble_pair_common.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="conn_hand_parser">
+          <VirtualDirectory Name="le_oob_rec_parser">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/conn_hand_parser/le_oob_rec_parser/nfc_le_oob_rec_parser.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/conn_hand_parser/le_oob_rec_parser/nfc_le_oob_rec_parser.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="ac_rec_parser">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/conn_hand_parser/ac_rec_parser/nfc_ac_rec_parser.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/conn_hand_parser/ac_rec_parser/nfc_ac_rec_parser.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="ble_oob_advdata_parser">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/conn_hand_parser/ble_oob_advdata_parser/nfc_ble_oob_advdata_parser.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/conn_hand_parser/ble_oob_advdata_parser/nfc_ble_oob_advdata_parser.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="launchapp">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/launchapp/nfc_launchapp_rec.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/launchapp/nfc_launchapp_msg.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/launchapp/nfc_launchapp_rec.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/ndef/launchapp/nfc_launchapp_msg.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="t2t_parser">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t2t_parser/nfc_t2t_parser.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t2t_parser/nfc_tlv_block.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t2t_parser/nfc_t2t_parser.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="t4t_lib">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t4t_lib/nfc_t4t_lib.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t4t_lib/nfc_fixes.h"/>
+        <VirtualDirectory Name="hal_t4t">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t4t_lib/hal_t4t/hal_nfc_t4t.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/nfc/t4t_lib/hal_t4t/hal_nfc_t4t.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="serialization">
+      <VirtualDirectory Name="common">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/ble_serialization.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/ser_config.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/cond_field_serialization.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/ser_dbg_sd_str.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/ser_dbg_sd_str.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/ble_serialization.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/cond_field_serialization.h"/>
+        <VirtualDirectory Name="transport">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_hal_transport.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy_debug_comm.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/dtm_uart_params.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_hal_transport.c"/>
+          <VirtualDirectory Name="ser_phy">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/ser_phy_nohci.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/ser_phy.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/ser_phy_spi_5W_master.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/ser_phy.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/ser_phy_spi_slave.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/ser_phy_spi_master.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/ser_phy_uart.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/ser_phy_hci_slip.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/ser_phy_hci.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/ser_phy_hci.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/ser_phy_spi_5W_slave.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/ser_phy_hci_slip_cdc.c"/>
+            <VirtualDirectory Name="config">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/config/ser_phy_config_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/config/ser_phy_debug_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/config/ser_phy_config_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/config/ser_config_5W_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/transport/ser_phy/config/ser_phy_debug_app.h"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="struct_ser">
+          <VirtualDirectory Name="ant">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ant/ant_struct_serialization.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ant/ant_struct_serialization.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="ble">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/ble_gattc_struct_serialization.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/ble_gap_struct_serialization.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/ble_gatt_struct_serialization.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/ble_struct_serialization.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/ble_gatts_struct_serialization.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/ble_l2cap_struct_serialization.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/ble_gattc_struct_serialization.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/nrf_soc_struct_serialization.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/nrf_soc_struct_serialization.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/ble_gatts_struct_serialization.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/ble_gap_struct_serialization.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/ble_l2cap_struct_serialization.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/ble_struct_serialization.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/common/struct_ser/ble/ble_gatt_struct_serialization.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="connectivity">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_cmd_decoder.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_dtm_cmd_decoder.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_event_encoder.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_cmd_decoder.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_handlers.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_reset_cmd_decoder.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_event_encoder.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_pkt_decoder.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/pstorage_platform.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_handlers.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_pkt_decoder.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_error_handling.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_dtm_cmd_decoder.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/ser_conn_reset_cmd_decoder.c"/>
+        <VirtualDirectory Name="hal">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/hal/dtm_uart.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/hal/dtm_uart.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="codecs">
+          <VirtualDirectory Name="common">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/common/ble_dtm_init.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/common/conn_mw_items.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/common/conn_mw_nrf_soc.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/common/conn_mw.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/common/conn_mw_nrf_soc.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/common/conn_mw.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/common/ble_dtm_conn.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="ant">
+            <VirtualDirectory Name="serializers">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_crypto_channel_enable.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_low_priority_rx_search_timout_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_acknowledge_message_tx.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_id_list_config.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_event_rx.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_period_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_id_list_add.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_rx_scan_mode_start.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_coex_config_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_assign.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_rx_search_timeout_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_crypto_key_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_status_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_lib_config_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_lib_config_clear.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_open_with_offset.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_active_search_sharing_cycles_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_unassign.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_id_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_crypto_info_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_coex_config_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_network_address_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_search_channel_priority_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_active_search_sharing_cycles_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_enable.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_close.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_broadcast_message_tx.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_version_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_radio_freq_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_stack_reset.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_event_rx.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_event.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_radio_tx_power_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_prox_search_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_crypto_info_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_adv_burst_config_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_period_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_capabilities_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_lib_config_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_event.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_search_waveform_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_cw_test_mode_init.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_cw_test_mode.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_radio_freq_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/serializers/ant_channel_id_get.c"/>
+            </VirtualDirectory>
+            <VirtualDirectory Name="middleware">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/middleware/conn_mw_ant.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ant/middleware/conn_mw_ant.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+          <VirtualDirectory Name="ble">
+            <VirtualDirectory Name="serializers">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_gatts_evt_conn.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_gattc_evt_conn.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/conn_ble_user_mem.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_evt_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_gatts_conn.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_gattc_conn.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/conn_ble_gap_sec_keys.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_l2cap_evt_conn.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/nrf_soc_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/nrf_soc_conn.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_l2cap_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_gap_evt_conn.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/conn_ble_gap_sec_keys.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_l2cap_evt_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_event_enc.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_gattc_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_gap_evt_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_gap_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_evt_conn.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_gap_conn.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_conn.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_gattc_evt_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_gatts_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/conn_ble_l2cap_sdu_pool.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/conn_ble_l2cap_sdu_pool.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_gatts_evt_conn.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/conn_ble_user_mem.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/serializers/ble_l2cap_conn.c"/>
+            </VirtualDirectory>
+            <VirtualDirectory Name="middleware">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/middleware/conn_mw_ble_gattc.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/middleware/conn_mw_ble.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/middleware/conn_mw.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/middleware/conn_mw_ble_gatts.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/middleware/conn_mw_ble_gatts.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/middleware/conn_mw_ble_gattc.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/middleware/conn_mw_ble.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/middleware/conn_mw_ble_l2cap.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/middleware/conn_mw_ble_gap.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/middleware/conn_mw_ble_l2cap.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/connectivity/codecs/ble/middleware/conn_mw_ble_gap.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="application">
+        <VirtualDirectory Name="hal">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/hal/ser_app_hal.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/hal/ser_app_power_system_off.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/hal/ser_app_power_system_off.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/hal/ser_app_hal_nrf5x.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="codecs">
+          <VirtualDirectory Name="common">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/common/ble_dtm_init.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/common/conn_systemreset.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/common/ble_dtm_app.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/common/conn_systemreset.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/common/ble_dtm_app.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="ant">
+            <VirtualDirectory Name="serializers">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_crypto_channel_enable.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_acknowledge_message_tx.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_id_list_config.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_period_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_id_list_add.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_rx_scan_mode_start.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_coex_config_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_assign.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_rx_search_timeout_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_crypto_key_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_status_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_lib_config_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_lib_config_clear.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_open_with_offset.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_low_priority_rx_search_timeout_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_active_search_sharing_cycles_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_unassign.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_id_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_crypto_info_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_coex_config_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_network_address_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_search_channel_priority_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_active_search_sharing_cycles_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_enable.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_close.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_broadcast_message_tx.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_version_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_radio_freq_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_stack_reset.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_event.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_radio_tx_power_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_prox_search_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_crypto_info_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_adv_burst_config_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_period_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_capabilities_get.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_lib_config_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_event.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_search_waveform_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_cw_test_mode_init.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_cw_test_mode.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_radio_freq_set.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/serializers/ant_channel_id_get.c"/>
+            </VirtualDirectory>
+            <VirtualDirectory Name="middleware">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ant/middleware/app_mw_ant.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+          <VirtualDirectory Name="ble">
+            <VirtualDirectory Name="serializers">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_gattc_evt_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_gap_app.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_gap_evt_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_gap_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/app_ble_gap_sec_keys.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_app.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/app_ble_user_mem.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_gatts_evt_app.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_gap_evt_app.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_evt_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_gattc_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/nrf_soc_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_gatts_evt_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_l2cap_evt_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_l2cap_app.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/app_ble_user_mem.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_gattc_app.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_l2cap_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_l2cap_evt_app.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/app_ble_gap_sec_keys.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_gatts_app.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_gattc_evt_app.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_gatts_app.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_event.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/nrf_soc_app.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/serializers/ble_evt_app.c"/>
+            </VirtualDirectory>
+            <VirtualDirectory Name="middleware">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/middleware/app_mw_ble_gap.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/middleware/app_mw_ble_gattc.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/middleware/app_mw_nrf_soc.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/middleware/app_mw_ble.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/middleware/app_mw_ble_l2cap.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/codecs/ble/middleware/app_mw_ble_gatts.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="transport">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/transport/ser_sd_transport.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/transport/ser_softdevice_handler.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/transport/ser_softdevice_handler.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/serialization/application/transport/ser_sd_transport.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="ant">
+      <VirtualDirectory Name="ant_state_indicator">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_state_indicator/ant_state_indicator.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_state_indicator/ant_state_indicator.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ant_key_manager">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_key_manager/ant_key_manager.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_key_manager/ant_key_manager.c"/>
+        <VirtualDirectory Name="config">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_key_manager/config/ant_key_manager_config.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ant_profiles">
+        <VirtualDirectory Name="ant_hrm">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/ant_hrm.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/ant_hrm_local.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/ant_hrm.h"/>
+          <VirtualDirectory Name="pages">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/pages/ant_hrm_page_2.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/pages/ant_hrm_page_3.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/pages/ant_hrm_page_4.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/pages/ant_hrm_page_4.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/pages/ant_hrm_page_2.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/pages/ant_hrm_page_1.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/pages/ant_hrm_page_0.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/pages/ant_hrm_page_1.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/pages/ant_hrm_page_0.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/pages/ant_hrm_pages.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/pages/ant_hrm_page_3.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="utils">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/utils/ant_hrm_utils.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="simulator">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/simulator/ant_hrm_simulator.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/simulator/ant_hrm_simulator_local.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_hrm/simulator/ant_hrm_simulator.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ant_common">
+          <VirtualDirectory Name="pages">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_common/pages/ant_common_page_80.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_common/pages/ant_common_page_70.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_common/pages/ant_common_page_81.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_common/pages/ant_common_page_80.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_common/pages/ant_common_page_81.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_common/pages/ant_common_page_70.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="ant_request_controller">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_common/ant_request_controller/ant_request_controller.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_common/ant_request_controller/ant_request_controller.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ant_bpwr">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/ant_bpwr.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/ant_bpwr.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/ant_bpwr_local.h"/>
+          <VirtualDirectory Name="pages">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_page_16.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_common_data.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_common_data.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_page_17.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_page_1.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_page_torque.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_page_18.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_page_1.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_page_torque.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_pages.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_page_16.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_page_18.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/pages/ant_bpwr_page_17.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="utils">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/utils/ant_bpwr_utils.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="simulator">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/simulator/ant_bpwr_simulator.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/simulator/ant_bpwr_simulator.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bpwr/simulator/ant_bpwr_simulator_local.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ant_bsc">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/ant_bsc_local.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/ant_bsc.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/ant_bsc.h"/>
+          <VirtualDirectory Name="pages">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_page_0.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_page_2.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_page_3.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_page_1.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_combined_page_0.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_page_1.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_page_5.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_pages.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_page_4.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_combined_page_0.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_page_5.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_page_2.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_page_4.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_page_3.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/pages/ant_bsc_page_0.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="utils">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/utils/ant_bsc_utils.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="simulator">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/simulator/ant_bsc_simulator.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/simulator/ant_bsc_simulator.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_bsc/simulator/ant_bsc_simulator_local.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ant_sdm">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/ant_sdm.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/ant_sdm.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/ant_sdm_local.h"/>
+          <VirtualDirectory Name="pages">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_page_3.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_pages.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_page_2.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_page_2.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_common_data.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_page_3.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_page_1.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_page_22.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_page_16.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_common_data.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_page_16.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_page_1.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/pages/ant_sdm_page_22.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="utils">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/utils/ant_sdm_utils.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="simulator">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/simulator/ant_sdm_simulator_local.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/simulator/ant_sdm_simulator.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_profiles/ant_sdm/simulator/ant_sdm_simulator.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ant_channel_config">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_channel_config/ant_channel_config.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_channel_config/ant_channel_config.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ant_encryption">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_encryption/ant_encrypt_negotiation_slave.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_encryption/ant_encrypt_config.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_encryption/ant_encrypt_config.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_encryption/ant_encrypt_negotiation_slave.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ant_fs">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_fs/crc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_fs/defines.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_fs/antfs.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_fs/crc.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_fs/antfs.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ant_stack_config">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_stack_config/ant_stack_config.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_stack_config/ant_stack_config.c"/>
+        <VirtualDirectory Name="config">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_stack_config/config/ant_stack_config_defs.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ant_search_config">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_search_config/ant_search_config.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ant/ant_search_config/ant_search_config.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="device">
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf51_to_nrf52.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf51.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf52.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf52_to_nrf52840.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf52832_peripherals.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf52810.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf51_to_nrf52840.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf52_bitfields.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf51422_peripherals.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf51_to_nrf52810.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf52810_bitfields.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf51_bitfields.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf52840_bitfields.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf51_deprecated.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf52_name_change.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf52_to_nrf52810.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf52840_peripherals.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf51822_peripherals.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf51802_peripherals.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf52810_peripherals.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/compiler_abstraction.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/device/nrf52840.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="softdevice">
+      <VirtualDirectory Name="s132">
+        <VirtualDirectory Name="headers">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/nrf_sdm.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/nrf_error_sdm.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/nrf_sd_def.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/ble_err.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/ble.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/nrf_error_soc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/nrf_nvic.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/ble_gattc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/ble_types.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/ble_gap.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/nrf_soc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/ble_ranges.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/ble_gatt.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/ble_gatts.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/nrf_svc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/nrf_error.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/ble_l2cap.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/ble_hci.h"/>
+          <VirtualDirectory Name="nrf52">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s132/headers/nrf52/nrf_mbr.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="s112">
+        <VirtualDirectory Name="headers">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/nrf_sdm.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/nrf_error_sdm.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/nrf_sd_def.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/ble_err.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/ble.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/nrf_error_soc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/nrf_nvic.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/ble_gattc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/ble_types.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/ble_gap.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/nrf_soc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/ble_ranges.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/ble_gatt.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/ble_gatts.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/nrf_svc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/nrf_error.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/ble_hci.h"/>
+          <VirtualDirectory Name="nrf52">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s112/headers/nrf52/nrf_mbr.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="s140">
+        <VirtualDirectory Name="headers">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/nrf_sdm.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/nrf_error_sdm.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/nrf_sd_def.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/ble_err.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/ble.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/nrf_error_soc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/nrf_nvic.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/ble_gattc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/ble_types.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/ble_gap.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/nrf_soc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/ble_ranges.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/ble_gatt.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/ble_gatts.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/nrf_svc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/nrf_error.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/ble_l2cap.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/ble_hci.h"/>
+          <VirtualDirectory Name="nrf52">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/s140/headers/nrf52/nrf_mbr.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="common">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/common/nrf_sdh_freertos.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/common/nrf_sdh.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/common/nrf_sdh.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/common/nrf_sdh_ant.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/common/nrf_sdh_ble.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/common/nrf_sdh_ant.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/common/nrf_sdh_soc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/common/nrf_sdh_freertos.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/common/nrf_sdh_ble.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/softdevice/common/nrf_sdh_soc.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="experimental_802_15_4">
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/802_15_4_config.h"/>
+      <VirtualDirectory Name="src">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/src/rng_entity.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/src/sec_aes_entity.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="api">
+        <VirtualDirectory Name="SysAL">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_memory_manager.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_init.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_ringbuffer.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_utils.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_debug.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_events.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_fsm.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_task_scheduler.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_queue.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_crc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_list.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_time.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SysAL/sys_sleep.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="HAL">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_debug_interface.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_timer.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_timer_critical.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_sleep.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_atomic.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_uart_task_scheduler.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_mutex.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_uart.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_led.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_clock.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_trace_interface.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_rng.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_delay.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/hal_task_scheduler.h"/>
+          <VirtualDirectory Name="nrf52_soc">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/nrf52_soc/hal_nrf52_rtc.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/nrf52_soc/hal_nrf52_exceptions.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/HAL/nrf52_soc/hal_nrf52_timer.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="SecAL">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SecAL/sec_aes_ccm.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/SecAL/sec_aes_entity.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="MAC">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_panid_conflict.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_beacon_notify.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_poll.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_comm_status.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_orphan.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_associate.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_common.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_auto_request.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_disassociate.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mcps_purge.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_pib.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_security.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_rx_enable.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_time.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_gts.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_start.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_reset.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mcps_data.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_scan.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_mlme_sync.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/MAC/mac_task_scheduler.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="PHY">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/PHY/phy_common.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/PHY/phy_plme_ed.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/PHY/phy_plme_pib.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/PHY/phy_plme_trx.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/PHY/phy_pd_data.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/PHY/phy_plme_cca.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="RAL">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/RAL/ral_api.h"/>
+          <VirtualDirectory Name="nrf52_soc">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/RAL/nrf52_soc/ral_irq_handlers.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/RAL/nrf52_soc/ral_fsm.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/RAL/nrf52_soc/ral_rf_init.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/RAL/nrf52_soc/ral_fsm_private.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/RAL/nrf52_soc/ral_api_spec.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/experimental_802_15_4/api/RAL/nrf52_soc/ral_critical_queue.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="drivers_nrf">
+      <VirtualDirectory Name="hal">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_clock.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_saadc.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_twi.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_twim.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_usbd.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_comp.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_gpiote.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_qdec.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_power.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_uart.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_egu.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_nvmc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_systick.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_saadc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_temp.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_wdt.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_lpcomp.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_ppi.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_ecb.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_spim.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_qspi.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_spis.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_twis.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_gpio.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_pwm.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_rng.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_timer.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_rtc.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_nvmc.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_pdm.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_spi.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_uarte.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_peripherals.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_i2s.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_ecb.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="timer">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/timer/nrf_drv_timer.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/timer/nrf_drv_timer.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="clock">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/clock/nrf_drv_clock.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/clock/nrf_drv_clock.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ble_flash">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/ble_flash/ble_flash.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/ble_flash/ble_flash.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="lpcomp">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/lpcomp/nrf_drv_lpcomp.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/lpcomp/nrf_drv_lpcomp.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="gpiote">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/gpiote/nrf_drv_gpiote.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/gpiote/nrf_drv_gpiote.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="power">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/power/nrf_drv_power.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/power/nrf_drv_power.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="qspi">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/qspi/nrf_drv_qspi.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/qspi/nrf_drv_qspi.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="rng">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/rng/nrf_drv_rng.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/rng/nrf_drv_rng.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="twis_slave">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/twis_slave/nrf_drv_twis.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/twis_slave/nrf_drv_twis.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="nrf_soc_nosd">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/nrf_soc_nosd/nrf_soc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/nrf_soc_nosd/nrf_nvic.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/nrf_soc_nosd/nrf_soc.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/nrf_soc_nosd/nrf_nvic.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/nrf_soc_nosd/nrf_error.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="uart">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/uart/nrf_drv_uart.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/uart/nrf_drv_uart.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="saadc">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/saadc/nrf_drv_saadc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/saadc/nrf_drv_saadc.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="pwm">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/pwm/nrf_drv_pwm.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/pwm/nrf_drv_pwm.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="common">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/common/nrf_drv_common.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/common/nrf_drv_common.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="rtc">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/rtc/nrf_drv_rtc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/rtc/nrf_drv_rtc.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="wdt">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/wdt/nrf_drv_wdt.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/wdt/nrf_drv_wdt.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ppi">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/ppi/nrf_drv_ppi.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/ppi/nrf_drv_ppi.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="usbd">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/usbd/nrf_drv_usbd_errata.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/usbd/nrf_drv_usbd.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/usbd/nrf_drv_usbd.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="comp">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/comp/nrf_drv_comp.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/comp/nrf_drv_comp.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="radio_config">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/radio_config/radio_config.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/radio_config/radio_config.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="sdio">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/sdio/sdio.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/sdio/sdio.c"/>
+        <VirtualDirectory Name="config">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/sdio/config/sdio_config.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="systick">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/systick/nrf_drv_systick.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/systick/nrf_drv_systick.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="twi_master">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/twi_master/nrf_drv_twi.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/twi_master/nrf_drv_twi.h"/>
+        <VirtualDirectory Name="deprecated">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/twi_master/deprecated/twi_master.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/twi_master/deprecated/twi_hw_master.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/twi_master/deprecated/twi_sw_master.c"/>
+          <VirtualDirectory Name="config">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/twi_master/deprecated/config/twi_master_config.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="i2s">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/i2s/nrf_drv_i2s.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/i2s/nrf_drv_i2s.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="spi_master">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/spi_master/nrf_drv_spi.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/spi_master/nrf_drv_spi.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/spi_master/spi_5W_master.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/spi_master/spi_5W_master.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="delay">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/delay/nrf_delay.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="spi_slave">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/spi_slave/nrf_drv_spis.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/spi_slave/nrf_drv_spis.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="swi">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/swi/nrf_drv_swi.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/swi/nrf_drv_swi.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="qdec">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/qdec/nrf_drv_qdec.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/qdec/nrf_drv_qdec.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="pdm">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/pdm/nrf_drv_pdm.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/pdm/nrf_drv_pdm.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="proprietary_rf">
+      <VirtualDirectory Name="esb">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/esb/nrf_esb.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/esb/nrf_esb.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/esb/nrf_esb_resources.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/esb/nrf_esb_error_codes.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="gzll">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/gzll/nrf_gzll_constants.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/gzll/nrf_gzp_host.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/gzll/nrf_gzp_device.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/gzll/nrf_gzp_host_nrf5x.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/gzll/nrf_gzll_error.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/gzll/nrf_gzll.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/gzll/nrf_gzp.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/gzll/nrf_gzll_resources.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/gzll/nrf_gzp.c"/>
+        <VirtualDirectory Name="config">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/proprietary_rf/gzll/config/nrf_gzp_config.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="libraries">
+      <VirtualDirectory Name="sha256">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/sha256/sha256.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/sha256/sha256.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="pwr_mgmt">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/pwr_mgmt/nrf_pwr_mgmt.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/pwr_mgmt/nrf_pwr_mgmt.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="sdcard">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/sdcard/app_sdcard.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/sdcard/app_sdcard.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="crypto">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_init.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_ecdsa.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_keys.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_mem.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_ecdh.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_types.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_ecdh.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_svc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_keys.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_rng.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_mem.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_rng.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_ecdsa.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_init.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_hash.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/nrf_crypto_hash.c"/>
+        <VirtualDirectory Name="backend">
+          <VirtualDirectory Name="micro_ecc">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/micro_ecc/micro_ecc_lib_shared.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/micro_ecc/micro_ecc_lib_init.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/micro_ecc/micro_ecc_lib_ecdh.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/micro_ecc/micro_ecc_lib_ecdsa.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/micro_ecc/micro_ecc_lib_ecdsa.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/micro_ecc/micro_ecc_lib_init.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/micro_ecc/micro_ecc_lib_shared.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/micro_ecc/micro_ecc_lib_ecdh.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/micro_ecc/micro_ecc_lib_keys.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/micro_ecc/micro_ecc_lib_keys.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="nrf_crypto_sw">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/nrf_crypto_sw/nrf_crypto_sw_hash.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/nrf_crypto_sw/nrf_crypto_sw_rng.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/nrf_crypto_sw/nrf_crypto_sw_rng.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/nrf_crypto_sw/nrf_crypto_sw_hash.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="cc310_lib">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/cc310_lib/cc310_lib_ecdsa.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/cc310_lib/cc310_lib_rng.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/cc310_lib/cc310_lib_ecdsa.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/cc310_lib/cc310_lib_init.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/cc310_lib/cc310_lib_shared.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/cc310_lib/cc310_lib_hash.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/cc310_lib/cc310_lib_ecdh.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/cc310_lib/cc310_lib_keys.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/cc310_lib/cc310_lib_init.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/cc310_lib/cc310_lib_shared.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/cc310_lib/cc310_lib_hash.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crypto/backend/cc310_lib/cc310_lib_keys.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="timer">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/timer/app_timer.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/timer/app_timer_freertos.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/timer/app_timer_rtx.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/timer/app_timer.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="mutex">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/mutex/nrf_mtx.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="experimental_log">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/nrf_log_backend_interface.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/nrf_log_backend_uart.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/nrf_log.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/nrf_log_str_formatter.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/nrf_log_ctrl.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/nrf_log_default_backends.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/nrf_log_backend_rtt.h"/>
+        <VirtualDirectory Name="src">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/src/nrf_log_backend_rtt.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/src/nrf_log_frontend.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/src/nrf_log_internal.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/src/nrf_log_backend_serial.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/src/nrf_log_default_backends.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/src/nrf_log_backend_uart.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/src/nrf_log_ctrl_internal.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/src/nrf_log_str_formatter.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_log/src/nrf_log_backend_serial.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="atomic_fifo">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/atomic_fifo/nrf_atfifo.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/atomic_fifo/nrf_atfifo_internal.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/atomic_fifo/nrf_atfifo.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="experimental_mpu">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_mpu/nrf_mpu.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_mpu/nrf_mpu.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="svc">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/svc/nrf_svci.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/svc/nrf_svci_async_handler.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/svc/nrf_svc_handler.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/svc/nrf_svc_function.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/svc/nrf_svci_async_function.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="scheduler">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/scheduler/app_scheduler.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/scheduler/app_scheduler.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/scheduler/app_scheduler_serconn.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="gpiote">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/gpiote/app_gpiote.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/gpiote/app_gpiote.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="atomic">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/atomic/nrf_atomic_internal.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/atomic/nrf_atomic_sanity_check.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/atomic/nrf_atomic.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="crc16">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crc16/crc16.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crc16/crc16.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="eddystone">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_gatts_read.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_flash.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_gatts.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_tlm.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_gatts_write.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_security.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_adv_timing_resolver.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_adv.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_battery_voltage_saadc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_adv.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_slot.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_stopwatch.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_adv_timing.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_slot_reg.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_stopwatch.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_adv_frame.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_adv_frame.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_util.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_adv_timing_resolver.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_flash.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_battery_voltage.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_slot_reg.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_gatts.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_adv_timing.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_battery_voltage_adc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_tlm.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_gatts_read.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_slot.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/nrf_ble_es.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/nrf_ble_es.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_gatts_write.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/eddystone/es_security.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="button">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/button/app_button.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/button/app_button.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="mem_manager">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/mem_manager/mem_manager.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/mem_manager/mem_manager.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="low_power_pwm">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/low_power_pwm/low_power_pwm.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/low_power_pwm/low_power_pwm.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="led_softblink">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/led_softblink/led_softblink.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/led_softblink/led_softblink.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="cli">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/cli/nrf_cli_types.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/cli/nrf_cli.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/cli/nrf_cli.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/cli/nrf_cli_vt100.h"/>
+        <VirtualDirectory Name="cdc_acm">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/cli/cdc_acm/nrf_cli_cdc_acm.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/cli/cdc_acm/nrf_cli_cdc_acm.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="uart">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/cli/uart/nrf_cli_uart.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/cli/uart/nrf_cli_uart.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_uart">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/cli/ble_uart/nrf_cli_ble_uart.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/cli/ble_uart/nrf_cli_ble_uart.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="rtt">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/cli/rtt/nrf_cli_rtt.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/cli/rtt/nrf_cli_rtt.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="uart">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/uart/app_uart.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/uart/app_uart_fifo.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/uart/retarget.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/uart/app_uart.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="bsp">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bsp/bsp_btn_ant.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bsp/bsp.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bsp/bsp_btn_ble.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bsp/bsp_nfc.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bsp/bsp_btn_ble.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bsp/bsp_btn_ant.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bsp/bsp.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bsp/bsp_nfc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bsp/bsp_config.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="hardfault">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hardfault/hardfault.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hardfault/hardfault_genhf.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hardfault/hardfault_implementation.c"/>
+        <VirtualDirectory Name="nrf51">
+          <VirtualDirectory Name="handler">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hardfault/nrf51/handler/hardfault_handler_keil.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hardfault/nrf51/handler/hardfault_handler_gcc.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hardfault/nrf51/handler/hardfault_handler_iar.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="nrf52">
+          <VirtualDirectory Name="handler">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hardfault/nrf52/handler/hardfault_handler_keil.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hardfault/nrf52/handler/hardfault_handler_gcc.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hardfault/nrf52/handler/hardfault_handler_iar.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="fds">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/fds/fds.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/fds/fds.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/fds/fds_internal_defs.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="experimental_stack_guard">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_stack_guard/nrf_stack_guard.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_stack_guard/nrf_stack_guard.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="balloc">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/balloc/nrf_balloc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/balloc/nrf_balloc.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="pwm">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/pwm/app_pwm.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/pwm/app_pwm.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="slip">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/slip/slip.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/slip/slip.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="twi_mngr">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/twi_mngr/nrf_twi_mngr.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/twi_mngr/nrf_twi_mngr.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="csense_drv">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/csense_drv/nrf_drv_csense.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/csense_drv/nrf_drv_csense.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="experimental_task_manager">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_task_manager/task_manager.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_task_manager/task_manager.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="sortlist">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/sortlist/nrf_sortlist.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/sortlist/nrf_sortlist.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="gfx">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/gfx/nrf_gfx.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/gfx/nrf_lcd.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/gfx/nrf_gfx.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="twi">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/twi/app_twi.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/twi/app_twi.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="bootloader">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/nrf_bootloader.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/nrf_bootloader_app_start.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/nrf_bootloader_app_start.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/nrf_bootloader_info.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/nrf_bootloader.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/nrf_bootloader_app_start_asm.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/nrf_bootloader_info.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/nrf_bootloader_app_start_nosd.c"/>
+        <VirtualDirectory Name="usb_dfu">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/usb_dfu/nrf_usb_dfu.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/usb_dfu/nrf_usb_dfu.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="dfu">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_types.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_settings.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_flash.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_svci.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_svci.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_flash.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_utils.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_svci_handler.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_transport.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_transport.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_utils.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_mbr.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_handling_error.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_mbr.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_handling_error.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_settings.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_req_handler.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/dfu/nrf_dfu_settings_svci.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="serial_dfu">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/serial_dfu/nrf_serial_dfu.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/serial_dfu/nrf_serial_dfu.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_dfu">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/ble_dfu/nrf_ble_dfu.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/bootloader/ble_dfu/nrf_ble_dfu.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="csense">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/csense/nrf_csense.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/csense/nrf_csense.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/csense/nrf_csense_macros.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="experimental_section_vars">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_section_vars/nrf_section.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_section_vars/nrf_section_iter.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_section_vars/nrf_section_iter.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="usbd">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/app_usbd.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/app_usbd_string_desc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/app_usbd_class_base.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/app_usbd_langid.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/app_usbd_request.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/app_usbd.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/app_usbd_core.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/app_usbd_descriptor.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/app_usbd_string_desc.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/app_usbd_core.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/app_usbd_types.h"/>
+        <VirtualDirectory Name="class">
+          <VirtualDirectory Name="msc">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/msc/app_usbd_msc_scsi.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/msc/app_usbd_msc_internal.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/msc/app_usbd_msc_desc.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/msc/app_usbd_msc.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/msc/app_usbd_msc.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/msc/app_usbd_msc_types.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="audio">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/audio/app_usbd_audio_desc.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/audio/app_usbd_audio.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/audio/app_usbd_audio.c"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/audio/app_usbd_audio_types.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/audio/app_usbd_audio_internal.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="hid">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/app_usbd_hid.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/app_usbd_hid_types.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/app_usbd_hid.c"/>
+            <VirtualDirectory Name="generic">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/generic/app_usbd_hid_generic.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/generic/app_usbd_hid_generic.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/generic/app_usbd_hid_generic_internal.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/generic/app_usbd_hid_generic_desc.h"/>
+            </VirtualDirectory>
+            <VirtualDirectory Name="kbd">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/kbd/app_usbd_hid_kbd_desc.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/kbd/app_usbd_hid_kbd.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/kbd/app_usbd_hid_kbd_internal.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/kbd/app_usbd_hid_kbd.c"/>
+            </VirtualDirectory>
+            <VirtualDirectory Name="mouse">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/mouse/app_usbd_hid_mouse_internal.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/mouse/app_usbd_hid_mouse.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/mouse/app_usbd_hid_mouse_desc.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/hid/mouse/app_usbd_hid_mouse.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+          <VirtualDirectory Name="cdc">
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/cdc/app_usbd_cdc_types.h"/>
+            <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/cdc/app_usbd_cdc_desc.h"/>
+            <VirtualDirectory Name="acm">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/cdc/acm/app_usbd_cdc_acm.c"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/cdc/acm/app_usbd_cdc_acm.h"/>
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/class/cdc/acm/app_usbd_cdc_acm_internal.h"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="config">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/usbd/config/app_usbd_string_config.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="util">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/app_util_bds.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/nrf_assert.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/app_util_platform.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/sdk_common.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/sdk_macros.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/nrf_bitmask.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/app_error.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/sdk_os.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/app_util_platform.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/nordic_common.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/app_util.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/sdk_mapped_flags.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/app_error.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/nrf_assert.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/sdk_resources.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/app_error_weak.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/sdk_mapped_flags.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/sdk_errors.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/util/app_error_weak.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="block_dev">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/block_dev/nrf_block_dev.h"/>
+        <VirtualDirectory Name="qspi">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/block_dev/qspi/nrf_block_dev_qspi.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/block_dev/qspi/nrf_serial_flash_params.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/block_dev/qspi/nrf_block_dev_qspi.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/block_dev/qspi/nrf_serial_flash_params.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ram">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/block_dev/ram/nrf_block_dev_ram.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/block_dev/ram/nrf_block_dev_ram.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="empty">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/block_dev/empty/nrf_block_dev_empty.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/block_dev/empty/nrf_block_dev_empty.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="sdc">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/block_dev/sdc/nrf_block_dev_sdc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/block_dev/sdc/nrf_block_dev_sdc.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ecc">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/ecc/ecc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/ecc/ecc.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="serial">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/serial/nrf_serial.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/serial/nrf_serial.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="crc32">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crc32/crc32.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/crc32/crc32.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="sensorsim">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/sensorsim/sensorsim.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/sensorsim/sensorsim.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="fifo">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/fifo/app_fifo.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/fifo/app_fifo.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="hci">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hci/hci_slip.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hci/hci_slip.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hci/hci_transport.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hci/hci_transport.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hci/hci_mem_pool.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/hci/hci_mem_pool.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="simple_timer">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/simple_timer/app_simple_timer.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/simple_timer/app_simple_timer.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="queue">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/queue/nrf_queue.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/queue/nrf_queue.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="strerror">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/strerror/nrf_strerror.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/strerror/nrf_strerror.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="experimental_ringbuf">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_ringbuf/nrf_ringbuf.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_ringbuf/nrf_ringbuf.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="spi_mngr">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/spi_mngr/nrf_spi_mngr.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/spi_mngr/nrf_spi_mngr.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="experimental_memobj">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_memobj/nrf_memobj.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/experimental_memobj/nrf_memobj.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="fstorage">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/fstorage/nrf_fstorage.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/fstorage/nrf_fstorage_sd.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/fstorage/nrf_fstorage_nvmc.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/fstorage/nrf_fstorage.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/fstorage/nrf_fstorage_nvmc.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/libraries/fstorage/nrf_fstorage_sd.c"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="ble">
+      <VirtualDirectory Name="peer_manager">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/pm_mutex.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/security_manager.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/security_dispatcher.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/peer_data_storage.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/gatt_cache_manager.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/id_manager.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/gatt_cache_manager.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/peer_id.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/peer_manager_internal.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/gatts_cache_manager.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/peer_id.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/peer_manager.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/pm_buffer.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/peer_manager.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/gatts_cache_manager.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/peer_database.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/pm_mutex.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/peer_database.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/peer_data_storage.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/id_manager.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/security_dispatcher.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/security_manager.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/peer_manager_types.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/peer_manager/pm_buffer.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ble_radio_notification">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_radio_notification/ble_radio_notification.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_radio_notification/ble_radio_notification.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ble_db_discovery">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_db_discovery/ble_db_discovery.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_db_discovery/ble_db_discovery.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ble_racp">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_racp/ble_racp.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_racp/ble_racp.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="common">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/common/ble_srv_common.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/common/ble_date_time.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/common/ble_advdata.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/common/ble_sensor_location.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/common/ble_srv_common.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/common/ble_conn_params.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/common/ble_gatt_db.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/common/ble_advdata.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/common/ble_conn_state.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/common/ble_conn_state.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/common/ble_conn_params.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ble_dtm">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_dtm/ble_dtm.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_dtm/ble_dtm.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_dtm/ble_dtm_hw.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_dtm/ble_dtm_hw_nrf51.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_dtm/ble_dtm_hw_nrf52.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ble_services">
+        <VirtualDirectory Name="nrf_ble_bms">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/nrf_ble_bms/nrf_ble_bms.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/nrf_ble_bms/nrf_ble_bms.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="experimental_gatts_c">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_gatts_c/nrf_ble_gatts_c.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_gatts_c/nrf_ble_gatts_c.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="experimental_ble_ots">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_ots/ble_ots_object.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_ots/ble_ots_oacp.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_ots/ble_ots_oacp.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_ots/ble_ots_l2cap.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_ots/ble_ots_object.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_ots/ble_ots.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_ots/ble_hvx_buffering.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_ots/ble_ots.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_ots/ble_hvx_buffering.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_ots/ble_ots_l2cap.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_hrs">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_hrs/ble_hrs.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_hrs/ble_hrs.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_hids">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_hids/ble_hids.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_hids/ble_hids.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_rscs">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_rscs/ble_rscs.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_rscs/ble_rscs.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_lbs_c">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_lbs_c/ble_lbs_c.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_lbs_c/ble_lbs_c.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_ipsp">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ipsp/ble_ipsp.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ipsp/ble_ipsp.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_lls">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_lls/ble_lls.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_lls/ble_lls.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_nus">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_nus/ble_nus.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_nus/ble_nus.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_bas">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_bas/ble_bas.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_bas/ble_bas.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_ans_c">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ans_c/ble_ans_c.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ans_c/ble_ans_c.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_tps">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_tps/ble_tps.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_tps/ble_tps.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_hts">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_hts/ble_hts.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_hts/ble_hts.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_cscs">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_cscs/ble_sc_ctrlpt.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_cscs/ble_sc_ctrlpt.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_cscs/ble_cscs.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_cscs/ble_cscs.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_bps">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_bps/ble_bps.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_bps/ble_bps.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_ias_c">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ias_c/ble_ias_c.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ias_c/ble_ias_c.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="experimental_nrf_ble_cgms">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_cgms/cgms_meas.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_cgms/nrf_ble_cgms.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_cgms/cgms_meas.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_cgms/cgms_socp.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_cgms/nrf_ble_cgms.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_cgms/cgms_db.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_cgms/cgms_racp.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_cgms/cgms_socp.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_cgms/cgms_db.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_cgms/cgms_racp.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_cgms/cgms_sst.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_cgms/cgms_sst.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_gls">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_gls/ble_gls_db.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_gls/ble_gls_db.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_gls/ble_gls.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_gls/ble_gls.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_dis">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_dis/ble_dis.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_dis/ble_dis.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_bas_c">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_bas_c/ble_bas_c.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_bas_c/ble_bas_c.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_rscs_c">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_rscs_c/ble_rscs_c.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_rscs_c/ble_rscs_c.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_ias">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ias/ble_ias.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ias/ble_ias.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_nus_c">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_nus_c/ble_nus_c.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_nus_c/ble_nus_c.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_hrs_c">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_hrs_c/ble_hrs_c.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_hrs_c/ble_hrs_c.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_lbs">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_lbs/ble_lbs.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_lbs/ble_lbs.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_ancs_c">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ancs_c/ancs_attr_parser.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ancs_c/ancs_attr_parser.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ancs_c/ancs_tx_buffer.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ancs_c/nrf_ble_ancs_c.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ancs_c/ancs_tx_buffer.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ancs_c/ancs_app_attr_get.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ancs_c/ancs_app_attr_get.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_ancs_c/nrf_ble_ancs_c.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_cts_c">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_cts_c/ble_cts_c.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_cts_c/ble_cts_c.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="experimental_nrf_ble_ots_c">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_ots_c/nrf_ble_ots_c.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_ots_c/nrf_ble_ots_c_oacp.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_ots_c/nrf_ble_ots_c_l2cap.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_ots_c/ots_tx_buffer.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_ots_c/nrf_ble_ots_c.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_ots_c/nrf_ble_ots_c_l2cap.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_ots_c/nrf_ble_ots_c_oacp.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_nrf_ble_ots_c/ots_tx_buffer.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_dfu">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_dfu/ble_dfu.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_dfu/ble_dfu_bonded.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_dfu/ble_dfu.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_dfu/ble_dfu_unbonded.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ble_escs">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_escs/nrf_ble_escs.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_escs/nrf_ble_escs.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/ble_escs/escs_defs.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="experimental_ble_lns">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_lns/ble_lns.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_lns/ble_ln_db.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_lns/ble_ln_db.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_lns/ble_lns.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_lns/ble_ln_cp.c"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_lns/ble_ln_cp.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_services/experimental_ble_lns/ble_ln_common.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="nrf_ble_gatt">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/nrf_ble_gatt/nrf_ble_gatt.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/nrf_ble_gatt/nrf_ble_gatt.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="nrf_ble_qwr">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/nrf_ble_qwr/nrf_ble_qwr.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/nrf_ble_qwr/nrf_ble_qwr.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ble_advertising">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_advertising/ble_advertising.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/ble/ble_advertising/ble_advertising.c"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="drivers_ext">
+      <VirtualDirectory Name="max9850">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/max9850/max9850.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/max9850/max9850.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="mpu6050">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/mpu6050/mpu6050.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/mpu6050/mpu6050.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="nrf6350">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/nrf6350/nrf6350.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/nrf6350/nrf6350.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ili9341">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/ili9341/ili9341.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="st7735">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/st7735/st7735.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ds1624">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/ds1624/ds1624.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/ds1624/ds1624.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="synaptics_touchpad">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/synaptics_touchpad/synaptics_touchpad.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/synaptics_touchpad/synaptics_touchpad.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="uda1380">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/uda1380/uda1380.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/uda1380/uda1380.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="tls">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/tls/nrf_tls.h"/>
+        <VirtualDirectory Name="mbedtls">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/tls/mbedtls/tls_interface.c"/>
+          <VirtualDirectory Name="tls">
+            <VirtualDirectory Name="config">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/tls/mbedtls/tls/config/nrf_tls_config.h"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+          <VirtualDirectory Name="dtls">
+            <VirtualDirectory Name="config">
+              <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/tls/mbedtls/dtls/config/nrf_dtls_config.h"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="cherry8x16">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/cherry8x16/cherry8x16.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/cherry8x16/cherry8x16.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="adns2080">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/adns2080/adns2080.h"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/adns2080/adns2080.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="mcp4725">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/mcp4725/mcp4725.c"/>
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/drivers_ext/mcp4725/mcp4725.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="toolchain">
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/system_nrf52.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/system_nrf52810.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/system_nrf52840.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/system_nrf52.c"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/system_nrf52810.c"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/system_nrf51.h"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/system_nrf51.c"/>
+      <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/system_nrf52840.c"/>
+      <VirtualDirectory Name="cmsis">
+        <VirtualDirectory Name="include">
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/cmsis_armcc_V6.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/cmsis_gcc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/arm_math.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/core_cm7.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/core_cmFunc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/core_cm3.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/arm_const_structs.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/core_cm0plus.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/core_cmSimd.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/cmsis_armcc.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/core_cm0.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/core_sc300.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/core_cmInstr.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/arm_common_tables.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/core_cm4.h"/>
+          <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/cmsis/include/core_sc000.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="arm">
+        <File Name="../nRF5_SDK_14.2.0_17b948a/components/toolchain/arm/uicr_config.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <VirtualDirectory Name="TEST">
+    <File Name="project.h"/>
+    <File Name="drv_Buzzer.c"/>
+    <File Name="Adafruit_NeoPixel.h"/>
+    <File Name="LedPatterns.h"/>
+    <File Name="main.c"/>
+    <File Name="SongPatterns.c"/>
+    <File Name="SongPatterns.h"/>
+    <File Name="sounds.h"/>
+    <File Name="LedPatterns.c"/>
+    <File Name="drv_Buzzer.h"/>
+    <File Name="Adafruit_NeoPixel.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="pca10040">
+    <VirtualDirectory Name="s132">
+      <File Name="pca10040/s132/armgcc/Makefile"/>
+      <VirtualDirectory Name="config">
+        <File Name="pca10040/s132/config/sdk_config.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <Settings Type="Dynamic Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="gcc_arm" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g" C_Options="-g" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <Target Name="Flash App">make flash</Target>
+        <Target Name="Debug">make debug</Target>
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make -j8</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>/home/dani/workspace/nrf5x/TEST/pca10040/s132/armgcc</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths>/home/dani/workspace/nrf5x/TEST/
+/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/</SearchPaths>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="gcc_arm" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="" C_Options="" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-O2" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="./Release" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(WorkspacePath)</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>

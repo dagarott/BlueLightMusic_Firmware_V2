@@ -46,7 +46,7 @@ void SetAll(uint8_t red, uint8_t green, uint8_t blue)
  *
  * @retval     Number of bytes actually placed in p_buff.
  */
-uint8_t FadeInOut(void)
+uint16_t FadeInOut(void)
 {
     // static uint16_t i=0,j=0, k=255;
     static uint16_t index_color = 0;
@@ -98,7 +98,7 @@ uint8_t FadeInOut(void)
     return (0);
 }
 
-uint8_t Cyclon(void)
+uint16_t Cyclon(void)
 {
 
     static uint16_t index_led0 = 0, index_led1 = 2;
