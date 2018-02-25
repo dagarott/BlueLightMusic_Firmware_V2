@@ -9,34 +9,32 @@
 #include "LedPatterns.h"
 #include "Adafruit_NeoPixel.h"
 
+
+
 /*#define first_red (10)
 #define first_blue (2)
 #define first_green (127)*/
 
-// rgb_led_t led_array[NUM_LEDS];
-void showStrip()
-{
-
-    Adafruit_NeoPixel_Show();
-}
-void OffLeds(void)
-{
-    SetAll(0, 0, 0);
-    showStrip();
-}
+rgb_led_t led_array[NUM_LEDS];
 
 void SetPixel(uint8_t pixel, uint8_t red, uint8_t green, uint8_t blue)
 {
-    Adafruit_NeoPixel_setPixelColor(pixel, red, green, blue);
+        led_array[pixel].red=red;
+        led_array[pixel].green=green;
+        led_array[pixel].blue=blue;
 }
 
 void SetAll(uint8_t red, uint8_t green, uint8_t blue)
 {
-    for(int i = 0; i < NUM_LEDS; i++) {
-
-        SetPixel(i, red, green, blue);
-    }
-    showStrip();
+        led_array[0].red=red;
+        led_array[0].green=green;
+        led_array[0].blue=blue;
+        led_array[1].red=red;
+        led_array[1].green=green;
+        led_array[1].blue=blue;
+        led_array[2].red=red;
+        led_array[2].green=green;
+        led_array[2].blue=blue;
 }
 
 /** @brief Function for getting vector of random numbers.
@@ -69,7 +67,7 @@ uint16_t FadeInOut(void)
                 break;
             }
             up_value++;
-            showStrip();
+            i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
             return (DELAYFADE);
 
         } else if(down_value > 0) {
@@ -85,7 +83,7 @@ uint16_t FadeInOut(void)
                 break;
             }
             down_value--;
-            showStrip();
+            i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
             return (DELAYFADE);
         }
         down_value = 255;
@@ -110,13 +108,13 @@ uint16_t Cyclon(void)
 
     if(index_led0 < 3) {
         SetPixel(index_led0, red, blue, 0);
-        showStrip();
+        i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
         index_led0++;
         return (DELAYCYCLON);
     } else if(index_led1 > 0) {
 
         SetPixel(index_led1, red, 0, green);
-        showStrip();
+        i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
         index_led1--;
         return (DELAYCYCLON);
     } else {
@@ -155,7 +153,7 @@ uint16_t Flash(void)
     if(index_led < 3) {
         SetPixel(index_led, tmp_red, tmp_blue, tmp_green);
 
-        showStrip();
+        i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
 
         tmp_red = first_red + second_red - tmp_red;
         tmp_blue = first_blue + second_blue - tmp_blue;
@@ -233,7 +231,7 @@ uint16_t FlashFadeInOut(void)
             }
             }
             up_value++;
-            showStrip();
+            i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
             return (DELAYFLASHFADE);
 
         } else if(down_value > 0) {
@@ -271,7 +269,7 @@ uint16_t FlashFadeInOut(void)
             }
             }
             down_value--;
-            showStrip();
+            i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
             return (DELAYFLASHFADE);
         }
         down_value = 255;
@@ -312,7 +310,7 @@ uint16_t Wipe(void)
         }
         up_value++;
         down_value--;
-        showStrip();
+        i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
         return (DELAYWIPE);
 
     } else {
@@ -358,7 +356,7 @@ uint16_t Ring(void)
             break;
         }
         index0++;
-        showStrip();
+        i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
         return (DELAYRING);
     } else if(index1 > 0) {
         switch(index1) {
@@ -379,7 +377,7 @@ uint16_t Ring(void)
             break;
         }
         index1--;
-        showStrip();
+        i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
         return (DELAYRING);
     } else if(index2 < 3) {
         switch(index2) {
@@ -400,14 +398,14 @@ uint16_t Ring(void)
             break;
         }
         index2++;
-        showStrip();
+        i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
         return (DELAYRING);
     } else {
         index0 = 0;
         index1 = 3;
         index2 = 0;
         SetAll(127, 127, 127);
-        showStrip();
+        i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
         return (DELAYRINGBOUNCE);
     }
     return (0);

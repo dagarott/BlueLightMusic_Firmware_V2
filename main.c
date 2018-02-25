@@ -137,8 +137,14 @@ uint8_t  songpattern = 2;
 uint16_t delaysong = 0;
 bool  flag_song_run = 1;
 bool  flag_haptic_running = 0;
-bool  flag_haptic_enable=0;
+bool  flag_haptic_enable = 0;
 song_param_t record[NUM_SONGS];
+
+nrf_pwm_values_common_t m_duty_value = 250;
+static nrf_drv_pwm_t m_pwm2 = NRF_DRV_PWM_INSTANCE(1);
+
+void haptic_motor_start(void);
+void haptic_motor_stop(void);
 //song_param_t(*ptr_songs);
 //debug
 /**@brief Function for assert macro callback.
@@ -719,8 +725,7 @@ void SysTick_Handler(void)
         delayws2812b--;
     }
 
-
-    if (_flag_song_run == 1) {
+    if (flag_song_run == 1) {
         if (delaysong == 0) {
 
             if (songpattern == 0) {
@@ -732,28 +737,31 @@ void SysTick_Handler(void)
             }
 
             if (delaysong == END_SONG)
-                _flag_song_run = 0;
+            {
+                flag_song_run = 0;
+                delaysong=0;
+            }
         } else {
             delaysong--;
         }
     }
 
-    if (flag_haptic_enable==1) {
-        if(delayhaptic==0){
+    if (flag_haptic_enable == 1) {
+        if (delayhaptic == 0) {
             haptic_motor_start();
-            flag_haptic_running=1;
+            flag_haptic_running = 1;
             delayhaptic++;
-        }
-        else if (delayhaptic<1500)  //1.5 sec
-            delayhaptic++;   
-        else if (delayhaptic==1500){
+        } else if (delayhaptic < 1500) //1.5 sec
+            delayhaptic++;
+        else if (delayhaptic == 1500) {
             haptic_motor_stop();
-            flag_haptic_running=0;
-            flag_haptic_enable=0;
-            delayhaptic=0;
+            flag_haptic_running = 0;
+            flag_haptic_enable = 0;
+            delayhaptic = 0;
         }
 
     }
+
 }
 
 static void drv_speaker_evt_handler(drv_speaker_evt_t evt)
@@ -785,37 +793,59 @@ void pwm_ready_callback(uint32_t pwm_id)    // PWM callback function
     //ready_flag = true;
 }
 
+
 nrf_pwm_sequence_t const m_haptic_seq = {
-        .values.p_common = &m_duty_value,
-        .length = NRF_PWM_VALUES_LENGTH(m_duty_value),
-        .repeats = 1,
-        .end_delay = 0,
-    };
+    .values.p_common = &m_duty_value,
+    .length = NRF_PWM_VALUES_LENGTH(m_duty_value),
+    .repeats = 1,
+    .end_delay = 0,
+};
 
-void  haptic_motor_init(void)
+// void  haptic_motor_init(void)
+// {
+
+//     uint32_t err_code;
+
+//     nrf_drv_pwm_config_t const config0 = {
+//         .output_pins =
+
+//         {
+//             NRF_DRV_PWM_PIN_NOT_USED,             // channel 0
+//             0 | NRF_DRV_PWM_PIN_INVERTED,         // channel 1
+//             NRF_DRV_PWM_PIN_NOT_USED,             // channel 2
+//             NRF_DRV_PWM_PIN_NOT_USED,             // channel 3
+//         },
+//         .irq_priority = APP_IRQ_PRIORITY_LOW,
+//         .base_clock   = NRF_PWM_CLK_16MHz,
+//         .count_mode   = NRF_PWM_MODE_UP,
+//         .top_value    = 500,    //1kHz
+//         .load_mode    = NRF_PWM_LOAD_COMMON,
+//         .step_mode    = NRF_PWM_STEP_AUTO
+//     };
+//     err_code = nrf_drv_pwm_init(&m_pwm2, &config0, NULL);
+//     if (err_code != NRF_SUCCESS) {
+//         // Initialization failed. Take recovery action.
+//     }
+//     nrf_drv_pwm_simple_playback(&m_pwm2, &m_haptic_seq, 1, 0);
+
+// }
+void haptic_motor_start(void)
 {
-
-    static nrf_drv_pwm_t m_pwm2 = NRF_DRV_PWM_INSTANCE(1);
-    static nrf_pwm_values_common_t m_duty_value;
     uint32_t err_code;
-
-    m_duty_value = 20000;
-
-    
 
     nrf_drv_pwm_config_t const config0 = {
         .output_pins =
 
         {
             NRF_DRV_PWM_PIN_NOT_USED,             // channel 0
-            0 | NRF_DRV_PWM_PIN_INVERTED,                                    // channel 1
+            0 | NRF_DRV_PWM_PIN_INVERTED,         // channel 1
             NRF_DRV_PWM_PIN_NOT_USED,             // channel 2
             NRF_DRV_PWM_PIN_NOT_USED,             // channel 3
         },
         .irq_priority = APP_IRQ_PRIORITY_LOW,
         .base_clock   = NRF_PWM_CLK_16MHz,
         .count_mode   = NRF_PWM_MODE_UP,
-        .top_value    = 32000,    //1kHz
+        .top_value    = 500,    //1kHz
         .load_mode    = NRF_PWM_LOAD_COMMON,
         .step_mode    = NRF_PWM_STEP_AUTO
     };
@@ -823,16 +853,13 @@ void  haptic_motor_init(void)
     if (err_code != NRF_SUCCESS) {
         // Initialization failed. Take recovery action.
     }
-}
-void haptic_motor_start(void)
-{
-    tatic nrf_drv_pwm_t m_pwm2 = NRF_DRV_PWM_INSTANCE(1);
     nrf_drv_pwm_simple_playback(&m_pwm2, &m_haptic_seq, 1, 0);
 }
 void haptic_motor_stop(void)
 {
-    static nrf_drv_pwm_t m_pwm2 = NRF_DRV_PWM_INSTANCE(1);
+
     nrf_drv_pwm_stop(&m_pwm2, false);
+    nrf_gpio_pin_write(0, 0);
 }
 
 
@@ -857,7 +884,6 @@ int main(void)
     // Initialize.
     err_code = app_timer_init();
     APP_ERROR_CHECK(err_code);
-
     log_init();
     ble_stack_init();
     gap_params_init();
@@ -865,23 +891,14 @@ int main(void)
     services_init();
     advertising_init();
     conn_params_init();
-    //debug
-    drv_speaker_init(&speaker_init);
-    haptic_motor_init();
-    //Adafruit_NeoPixel_Init(3, 25, NEO_GRB + NEO_KHZ800);
-    //Adafruit_NeoPixel_Begin();
-    //debug
-    // printf("\r\nUART Start!\r\n");
     NRF_LOG_INFO("UART Start!");
     err_code = ble_advertising_start(&m_advertising, BLE_ADV_MODE_FAST);
     APP_ERROR_CHECK(err_code);
 
     //debug
     InitSongStruct();
+    drv_speaker_init(&speaker_init);
     SysTick_Config(SystemCoreClock / 1000); //1ms
-    //nrf_gpio_cfg_output(0);
-    //nrf_gpio_pin_write(0, 1);
-
     //debug
     // Enter main loop.
     for (;;) {

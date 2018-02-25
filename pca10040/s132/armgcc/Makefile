@@ -57,6 +57,8 @@ SRC_FILES += \
   $(PROJ_DIR)/LedPatterns.c \
   $(PROJ_DIR)/drv_Buzzer.c \
   $(PROJ_DIR)/SongPatterns.c \
+  $(PROJ_DIR)/ws2812b_driver/ws2812b_drive.c \
+  $(PROJ_DIR)/i2s_ws2812b_drive/i2s_ws2812b_drive.c \
   $(SDK_ROOT)/components/drivers_nrf/timer/nrf_drv_timer.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT_Syscalls_GCC.c \
@@ -193,6 +195,8 @@ INC_FOLDERS += \
   $(SDK_ROOT)/components/drivers_nrf/usbd \
   $(SDK_ROOT)/components/ble/ble_services/ble_hrs \
   $(PROJ_DIR) \
+  $(PROJ_DIR)/i2s_ws2812b_drive \
+  $(PROJ_DIR)/ws2812b_driver \
 
  
 # Libraries common to all targets
