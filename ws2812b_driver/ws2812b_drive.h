@@ -34,7 +34,7 @@ uint32_t ws2812b_drive_calc_current(rgb_led_t * led_array, uint16_t num_leds);
 
 ret_code_t i2s_ws2812b_drive_xfer(rgb_led_t *led_array, uint16_t num_leds, uint8_t drive_pin);
 
-static void i2s_ws2812b_drive_handler(uint32_t const * p_data_received,
+void i2s_ws2812b_drive_handler(uint32_t const * p_data_received,
                          uint32_t       * p_data_to_send,
                          uint16_t         number_of_words);
 

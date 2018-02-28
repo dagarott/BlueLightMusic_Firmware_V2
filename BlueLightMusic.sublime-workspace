@@ -64,46 +64,50 @@
 	"buffers":
 	[
 		{
-			"file": "LedPatterns.c",
-			"settings":
-			{
-				"buffer_size": 12704,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
+			"contents": "/**\n * Copyright (c) 2014 - 2017, Nordic Semiconductor ASA\n *\n * All rights reserved.\n *\n * Redistribution and use in source and binary forms, with or without modification,\n * are permitted provided that the following conditions are met:\n *\n * 1. Redistributions of source code must retain the above copyright notice, this\n *    list of conditions and the following disclaimer.\n *\n * 2. Redistributions in binary form, except as embedded into a Nordic\n *    Semiconductor ASA integrated circuit in a product or a software update for\n *    such product, must reproduce the above copyright notice, this list of\n *    conditions and the following disclaimer in the documentation and/or other\n *    materials provided with the distribution.\n *\n * 3. Neither the name of Nordic Semiconductor ASA nor the names of its\n *    contributors may be used to endorse or promote products derived from this\n *    software without specific prior written permission.\n *\n * 4. This software, with or without modification, must only be used with a\n *    Nordic Semiconductor ASA integrated circuit.\n *\n * 5. Any software provided in binary form under this license must not be reverse\n *    engineered, decompiled, modified and/or disassembled.\n *\n * THIS SOFTWARE IS PROVIDED BY NORDIC SEMICONDUCTOR ASA \"AS IS\" AND ANY EXPRESS\n * OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\n * OF MERCHANTABILITY, NONINFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE ARE\n * DISCLAIMED. IN NO EVENT SHALL NORDIC SEMICONDUCTOR ASA OR CONTRIBUTORS BE\n * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\n * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\n * GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\n * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n *\n */\n/** @file\n *\n * @defgroup ble_sdk_uart_over_ble_main main.c\n * @{\n * @ingroup  ble_sdk_app_nus_eval\n * @brief    UART over BLE application main file.\n *\n * This file contains the source code for a sample application that uses the Nordic UART service.\n * This application uses the @ref srvlib_conn_params module.\n */\n\n#include \"app_timer.h\"\n#include \"app_uart.h\"\n#include \"app_util_platform.h\"\n#include \"ble_advdata.h\"\n#include \"ble_advertising.h\"\n#include \"ble_conn_params.h\"\n#include \"ble_hci.h\"\n#include \"ble_nus.h\"\n#include \"bsp_btn_ble.h\"\n#include \"nordic_common.h\"\n#include \"nrf.h\"\n#include \"nrf_ble_gatt.h\"\n#include \"nrf_sdh.h\"\n#include \"nrf_sdh_ble.h\"\n#include \"nrf_sdh_soc.h\"\n#include <stdint.h>\n#include <string.h>\n\n#if defined(UART_PRESENT)\n#include \"nrf_uart.h\"\n#endif\n#if defined(UARTE_PRESENT)\n#include \"nrf_uarte.h\"\n#endif\n\n#include \"nrf_log.h\"\n#include \"nrf_log_ctrl.h\"\n#include \"nrf_log_default_backends.h\"\n\n// debug\n#include \"project.h\"\n// debug\n\n#define APP_BLE_CONN_CFG_TAG 1 /**< A tag identifying the SoftDevice BLE configuration. */\n\n#define APP_FEATURE_NOT_SUPPORTED \\\n    BLE_GATT_STATUS_ATTERR_APP_BEGIN + 2 /**< Reply when unsupported features are requested. */\n\n#define DEVICE_NAME \"Nordic_UART\" /**< Name of device. Will be included in the advertising data. */\n#define NUS_SERVICE_UUID_TYPE \\\n    BLE_UUID_TYPE_VENDOR_BEGIN /**< UUID type for the Nordic UART Service (vendor specific). */\n\n#define APP_BLE_OBSERVER_PRIO 3 /**< Application's BLE observer priority. You shouldn't need to modify this value. */\n\n#define APP_ADV_INTERVAL 64 /**< The advertising interval (in units of 0.625 ms. This value corresponds to 40 ms). */\n#define APP_ADV_TIMEOUT_IN_SECONDS 180 /**< The advertising timeout (in units of seconds). */\n\n#define MIN_CONN_INTERVAL \\\n    MSEC_TO_UNITS(20,     \\\n        UNIT_1_25_MS) /**< Minimum acceptable connection interval (20 ms), Connection interval uses 1.25 ms units. */\n#define MAX_CONN_INTERVAL \\\n    MSEC_TO_UNITS(75,     \\\n        UNIT_1_25_MS)   /**< Maximum acceptable connection interval (75 ms), Connection interval uses 1.25 ms units. */\n#define SLAVE_LATENCY 0 /**< Slave latency. */\n#define CONN_SUP_TIMEOUT \\\n    MSEC_TO_UNITS(       \\\n        4000, UNIT_10_MS) /**< Connection supervisory timeout (4 seconds), Supervision Timeout uses 10 ms units. */\n#define FIRST_CONN_PARAMS_UPDATE_DELAY                                                                     \\\n    APP_TIMER_TICKS(5000) /**< Time from initiating event (connect or start of notification) to first time \\\n                             sd_ble_gap_conn_param_update is called (5 seconds). */\n#define NEXT_CONN_PARAMS_UPDATE_DELAY \\\n    APP_TIMER_TICKS(                  \\\n        30000) /**< Time between each call to sd_ble_gap_conn_param_update after the first call (30 seconds). */\n#define MAX_CONN_PARAMS_UPDATE_COUNT 3 /**< Number of attempts before giving up the connection parameter negotiation. \\\n                                          */\n\n#define DEAD_BEEF \\\n    0xDEADBEEF /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */\n\n#define UART_TX_BUF_SIZE 256 /**< UART TX buffer size. */\n#define UART_RX_BUF_SIZE 256 /**< UART RX buffer size. */\n\n\nBLE_NUS_DEF(m_nus);                 /**< BLE NUS service instance. */\nNRF_BLE_GATT_DEF(m_gatt);           /**< GATT module instance. */\nBLE_ADVERTISING_DEF(m_advertising); /**< Advertising module instance. */\n\nstatic uint16_t m_conn_handle = BLE_CONN_HANDLE_INVALID; /**< Handle of the current connection. */\nstatic uint16_t m_ble_nus_max_data_len = BLE_GATT_ATT_MTU_DEFAULT -\n        3; /**< Maximum length of data (in bytes) that can be transmitted to the peer by the Nordic UART service module. */\nstatic ble_uuid_t m_adv_uuids[] = /**< Universally unique service identifier. */\n{ { BLE_UUID_NUS_SERVICE, NUS_SERVICE_UUID_TYPE } };\n\n//debug\nuint8_t  ws2812bpattern = 0;\nuint8_t  songpattern = 0;\nuint16_t delaysong = 0;\nbool  flag_song_run = false;\nbool  flag_haptic_running = false;\nbool  flag_haptic_enable = false;\nbool  flag_off_leds=true;\nsong_param_t record[NUM_SONGS];\n\nnrf_pwm_values_common_t m_duty_value = 250;\nstatic nrf_drv_pwm_t m_pwm2 = NRF_DRV_PWM_INSTANCE(1);\n\nvoid haptic_motor_start(void);\nvoid haptic_motor_stop(void);\n//song_param_t(*ptr_songs);\n//debug\n/**@brief Function for assert macro callback.\n *\n * @details This function will be called in case of an assert in the SoftDevice.\n *\n * @warning This handler is an example only and does not fit a final product. You need to analyse\n *          how your product is supposed to react in case of Assert.\n * @warning On assert from the SoftDevice, the system can only recover on reset.\n *\n * @param[in] line_num    Line number of the failing ASSERT call.\n * @param[in] p_file_name File name of the failing ASSERT call.\n */\nvoid assert_nrf_callback(uint16_t line_num, const uint8_t* p_file_name)\n{\n    app_error_handler(DEAD_BEEF, line_num, p_file_name);\n}\n\n/**@brief Function for the GAP initialization.\n *\n * @details This function will set up all the necessary GAP (Generic Access Profile) parameters of\n *          the device. It also sets the permissions and appearance.\n */\nstatic void gap_params_init(void)\n{\n    uint32_t err_code;\n    ble_gap_conn_params_t gap_conn_params;\n    ble_gap_conn_sec_mode_t sec_mode;\n\n    BLE_GAP_CONN_SEC_MODE_SET_OPEN(&sec_mode);\n\n    err_code = sd_ble_gap_device_name_set(&sec_mode, (const uint8_t*)DEVICE_NAME, strlen(DEVICE_NAME));\n    APP_ERROR_CHECK(err_code);\n\n    memset(&gap_conn_params, 0, sizeof(gap_conn_params));\n\n    gap_conn_params.min_conn_interval = MIN_CONN_INTERVAL;\n    gap_conn_params.max_conn_interval = MAX_CONN_INTERVAL;\n    gap_conn_params.slave_latency = SLAVE_LATENCY;\n    gap_conn_params.conn_sup_timeout = CONN_SUP_TIMEOUT;\n\n    err_code = sd_ble_gap_ppcp_set(&gap_conn_params);\n    APP_ERROR_CHECK(err_code);\n}\n\n/**@brief Function for handling the data from the Nordic UART Service.\n *\n * @details This function will process the data received from the Nordic UART BLE Service and send\n *          it to the UART module.\n *\n * @param[in] p_nus    Nordic UART Service structure.\n * @param[in] p_data   Data to be send to UART module.\n * @param[in] length   Length of the data.\n */\n/**@snippet [Handling the data received over BLE] */\nstatic void nus_data_handler(ble_nus_evt_t* p_evt)\n{\n\n    if (p_evt->type == BLE_NUS_EVT_RX_DATA) {\n        //uint32_t err_code;\n\n        //NRF_LOG_DEBUG(\"Received data from BLE NUS. Writing data on UART.\");\n        //NRF_LOG_HEXDUMP_DEBUG(p_evt->params.rx_data.p_data, p_evt->params.rx_data.length);\n\n        //for (uint32_t i = 0; i < p_evt->params.rx_data.length; i++) {\n            //do {\n                //err_code = app_uart_put(p_evt->params.rx_data.p_data[i]);\n                //if ((err_code != NRF_SUCCESS) && (err_code != NRF_ERROR_BUSY)) {\n                //    NRF_LOG_ERROR(\"Failed receiving NUS message. Error 0x%x. \", err_code);\n                //    APP_ERROR_CHECK(err_code);\n                //}\n            //} while (err_code == NRF_ERROR_BUSY);\n        //}\n        //if (p_evt->params.rx_data.p_data[p_evt->params.rx_data.length - 1] == '\\r') {\n        //    while (app_uart_put('\\n') == NRF_ERROR_BUSY)\n        //       ;\n        //}\n        \n        switch(p_evt->params.rx_data.p_data[0]) {\n    case FADE:\n        ws2812bpattern = FADE;\n        break;\n    case CYCLON:\n        ws2812bpattern = CYCLON;\n        break;\n    case FLASHLED:\n        ws2812bpattern = FLASHLED;\n        break;\n    case FLASHFADE:\n        ws2812bpattern = FLASHFADE;\n        break;\n    case WIPE:\n        ws2812bpattern = WIPE;\n        break;\n    case RING:\n        ws2812bpattern = RING;\n        break;\n    case OFFLEDS:\n        flag_off_leds = true;\n        break;\n    case ONLEDS:\n        flag_off_leds = false;\n        break;\n    case SONG1:\n        delaysong = 0; \n        songpattern = 0; //first song\n        flag_song_run=true; // enable songs\n        break;\n    case SONG2:\n        delaysong = 0; \n        songpattern = 1; //second song\n        flag_song_run=true; // enable songs\n        break;\n    case SONG3:\n        delaysong = 0; \n        songpattern = 2; //n-song\n        flag_song_run=true; // enable songs\n        break;\n        }\n    }\n}\n/**@snippet [Handling the data received over BLE] */\n\n/**@brief Function for initializing services that will be used by the application.\n */\nstatic void services_init(void)\n{\n    uint32_t err_code;\n    ble_nus_init_t nus_init;\n\n    memset(&nus_init, 0, sizeof(nus_init));\n\n    nus_init.data_handler = nus_data_handler;\n\n    err_code = ble_nus_init(&m_nus, &nus_init);\n    APP_ERROR_CHECK(err_code);\n}\n\n/**@brief Function for handling an event from the Connection Parameters Module.\n *\n * @details This function will be called for all events in the Connection Parameters Module\n *          which are passed to the application.\n *\n * @note All this function does is to disconnect. This could have been done by simply setting\n *       the disconnect_on_fail config parameter, but instead we use the event handler\n *       mechanism to demonstrate its use.\n *\n * @param[in] p_evt  Event received from the Connection Parameters Module.\n */\nstatic void on_conn_params_evt(ble_conn_params_evt_t* p_evt)\n{\n    uint32_t err_code;\n\n    if (p_evt->evt_type == BLE_CONN_PARAMS_EVT_FAILED) {\n        err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_CONN_INTERVAL_UNACCEPTABLE);\n        APP_ERROR_CHECK(err_code);\n    }\n}\n\n/**@brief Function for handling errors from the Connection Parameters module.\n *\n * @param[in] nrf_error  Error code containing information about what went wrong.\n */\nstatic void conn_params_error_handler(uint32_t nrf_error)\n{\n    APP_ERROR_HANDLER(nrf_error);\n}\n\n/**@brief Function for initializing the Connection Parameters module.\n */\nstatic void conn_params_init(void)\n{\n    uint32_t err_code;\n    ble_conn_params_init_t cp_init;\n\n    memset(&cp_init, 0, sizeof(cp_init));\n\n    cp_init.p_conn_params = NULL;\n    cp_init.first_conn_params_update_delay = FIRST_CONN_PARAMS_UPDATE_DELAY;\n    cp_init.next_conn_params_update_delay = NEXT_CONN_PARAMS_UPDATE_DELAY;\n    cp_init.max_conn_params_update_count = MAX_CONN_PARAMS_UPDATE_COUNT;\n    cp_init.start_on_notify_cccd_handle = BLE_GATT_HANDLE_INVALID;\n    cp_init.disconnect_on_fail = false;\n    cp_init.evt_handler = on_conn_params_evt;\n    cp_init.error_handler = conn_params_error_handler;\n\n    err_code = ble_conn_params_init(&cp_init);\n    APP_ERROR_CHECK(err_code);\n}\n\n/**@brief Function for putting the chip into sleep mode.\n *\n * @note This function will not return.\n */\nstatic void sleep_mode_enter(void)\n{\n    uint32_t err_code = bsp_indication_set(BSP_INDICATE_IDLE);\n    APP_ERROR_CHECK(err_code);\n\n    // Prepare wakeup buttons.\n    err_code = bsp_btn_ble_sleep_mode_prepare();\n    APP_ERROR_CHECK(err_code);\n\n    // Go to system-off mode (this function will not return; wakeup will cause a reset).\n    err_code = sd_power_system_off();\n    APP_ERROR_CHECK(err_code);\n}\n\n/**@brief Function for handling advertising events.\n *\n * @details This function will be called for advertising events which are passed to the application.\n *\n * @param[in] ble_adv_evt  Advertising event.\n */\nstatic void on_adv_evt(ble_adv_evt_t ble_adv_evt)\n{\n    uint32_t err_code;\n\n    switch (ble_adv_evt) {\n    case BLE_ADV_EVT_FAST:\n        err_code = bsp_indication_set(BSP_INDICATE_ADVERTISING);\n        APP_ERROR_CHECK(err_code);\n        break;\n    case BLE_ADV_EVT_IDLE:\n        sleep_mode_enter();\n        break;\n    default:\n        break;\n    }\n}\n\n/**@brief Function for handling BLE events.\n *\n * @param[in]   p_ble_evt   Bluetooth stack event.\n * @param[in]   p_contclang: cache cleared\next   Unused.\n */\nstatic void ble_evt_handler(ble_evt_t const* p_ble_evt, void* p_context)\n{\n    uint32_t err_code;\n\n    switch (p_ble_evt->header.evt_id) {\n    case BLE_GAP_EVT_CONNECTED:\n        NRF_LOG_INFO(\"Connected\");\n        err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);\n        APP_ERROR_CHECK(err_code);\n        m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;\n        break;\n\n    case BLE_GAP_EVT_DISCONNECTED:\n        NRF_LOG_INFO(\"Disconnected\");\n        // LED indication will be changed when advertising starts.\n        m_conn_handle = BLE_CONN_HANDLE_INVALID;\n        break;\n\n#ifndef S140\n    case BLE_GAP_EVT_PHY_UPDATE_REQUEST: {\n        NRF_LOG_DEBUG(\"PHY update request.\");\n        ble_gap_phys_t const phys = {\n            .rx_phys = BLE_GAP_PHY_AUTO, .tx_phys = BLE_GAP_PHY_AUTO,\n        };\n        err_code = sd_ble_gap_phy_update(p_ble_evt->evt.gap_evt.conn_handle, &phys);\n        APP_ERROR_CHECK(err_code);\n    } break;\n#endif\n\n    case BLE_GAP_EVT_SEC_PARAMS_REQUEST:\n        // Pairing not supported\n        err_code = sd_ble_gap_sec_params_reply(m_conn_handle, BLE_GAP_SEC_STATUS_PAIRING_NOT_SUPP, NULL, NULL);\n        APP_ERROR_CHECK(err_code);\n        break;\n#if !defined(S112)\n//         case BLE_GAP_EVT_DATA_LENGTH_UPDATE_REQUEST:\n//        {\n//            ble_gap_data_length_params_t dl_params;\n//\n//            // Clearing the struct will effectivly set members to @ref BLE_GAP_DATA_LENGTH_AUTO\n//            memset(&dl_params, 0, sizeof(ble_gap_data_length_params_t));\n//            err_code = sd_ble_gap_data_length_update(p_ble_evt->evt.gap_evt.conn_handle, &dl_params, NULL);\n//            APP_ERROR_CHECK(err_code);\n//        } break;\n#endif //! defined (S112)\n    case BLE_GATTS_EVT_SYS_ATTR_MISSING:\n        // No system attributes have been stored.\n        err_code = sd_ble_gatts_sys_attr_set(m_conn_handle, NULL, 0, 0);\n        APP_ERROR_CHECK(err_code);\n        break;\n\n    case BLE_GATTC_EVT_TIMEOUT:\n        // Disconnect on GATT Client timeout event.\n        err_code =\n            sd_ble_gap_disconnect(p_ble_evt->evt.gattc_evt.conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);\n        APP_ERROR_CHECK(err_code);\n        break;\n\n    case BLE_GATTS_EVT_TIMEOUT:\n        // Disconnect on GATT Server timeout event.\n        err_code =\n            sd_ble_gap_disconnect(p_ble_evt->evt.gatts_evt.conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);\n        APP_ERROR_CHECK(err_code);\n        break;\n\n    case BLE_EVT_USER_MEM_REQUEST:\n        err_code = sd_ble_user_mem_reply(p_ble_evt->evt.gattc_evt.conn_handle, NULL);\n        APP_ERROR_CHECK(err_code);\n        break;\n\n    case BLE_GATTS_EVT_RW_AUTHORIZE_REQUEST: {\n        ble_gatts_evt_rw_authorize_request_t req;\n        ble_gatts_rw_authorize_reply_params_t auth_reply;\n\n        req = p_ble_evt->evt.gatts_evt.params.authorize_request;\n\n        if (req.type != BLE_GATTS_AUTHORIZE_TYPE_INVALID) {\n            if ((req.request.write.op == BLE_GATTS_OP_PREP_WRITE_REQ) ||\n                (req.request.write.op == BLE_GATTS_OP_EXEC_WRITE_REQ_NOW) ||\n                (req.request.write.op == BLE_GATTS_OP_EXEC_WRITE_REQ_CANCEL)) {\n                if (req.type == BLE_GATTS_AUTHORIZE_TYPE_WRITE) {\n                    auth_reply.type = BLE_GATTS_AUTHORIZE_TYPE_WRITE;\n                } else {\n                    auth_reply.type = BLE_GATTS_AUTHORIZE_TYPE_READ;\n                }\n                auth_reply.params.write.gatt_status = APP_FEATURE_NOT_SUPPORTED;\n                err_code = sd_ble_gatts_rw_authorize_reply(p_ble_evt->evt.gatts_evt.conn_handle, &auth_reply);\n                APP_ERROR_CHECK(err_code);\n            }\n        }\n    } break; // BLE_GATTS_EVT_RW_AUTHORIZE_REQUEST\n\n    default:\n        // No implementation needed.\n        break;\n    }\n}\n\n/**@brief Function for the SoftDevice initialization.\n *\n * @details This function initializes the SoftDevice and the BLE event interrupt.\n */\nstatic void ble_stack_init(void)\n{\n    ret_code_t err_code;\n\n    err_code = nrf_sdh_enable_request();\n    APP_ERROR_CHECK(err_code);\n\n    // Configure the BLE stack using the default settings.\n    // Fetch the start address of the application RAM.\n    uint32_t ram_start = 0;\n    err_code = nrf_sdh_ble_default_cfg_set(APP_BLE_CONN_CFG_TAG, &ram_start);\n    APP_ERROR_CHECK(err_code);\n\n    // Enable BLE stack.\n    err_code = nrf_sdh_ble_enable(&ram_start);\n    APP_ERROR_CHECK(err_code);\n\n    // Register a handler for BLE events.\n    NRF_SDH_BLE_OBSERVER(m_ble_observer, APP_BLE_OBSERVER_PRIO, ble_evt_handler, NULL);\n}\n\n/**@brief Function for handling events from the GATT library. */\nvoid gatt_evt_handler(nrf_ble_gatt_t* p_gatt, nrf_ble_gatt_evt_t const* p_evt)\n{\n    if ((m_conn_handle == p_evt->conn_handle) && (p_evt->evt_id == NRF_BLE_GATT_EVT_ATT_MTU_UPDATED)) {\n        m_ble_nus_max_data_len = p_evt->params.att_mtu_effective - OPCODE_LENGTH - HANDLE_LENGTH;\n        NRF_LOG_INFO(\"Data len is set to 0x%X(%d)\", m_ble_nus_max_data_len, m_ble_nus_max_data_len);\n    }\n    NRF_LOG_DEBUG(\"ATT MTU exchange completed. central 0x%x peripheral 0x%x\", p_gatt->att_mtu_desired_central,\n                  p_gatt->att_mtu_desired_periph);\n}\n\n/**@brief Function for initializing the GATT library. */\nvoid gatt_init(void)\n{\n    ret_code_t err_code;\n\n    err_code = nrf_ble_gatt_init(&m_gatt, gatt_evt_handler);\n    APP_ERROR_CHECK(err_code);\n\n    // err_code = nrf_ble_gatt_att_mtu_periph_set(&m_gatt, 64);\n    err_code = nrf_ble_gatt_att_mtu_periph_set(&m_gatt, BLE_GATT_ATT_MTU_DEFAULT);\n    APP_ERROR_CHECK(err_code);\n}\n\n/**@brief Function for handling events from the BSP module.\n *\n * @param[in]   event   Event generated by button press.\n */\nvoid bsp_event_handler(bsp_event_t event)\n{\n    uint32_t err_code;\n    switch (event) {\n    case BSP_EVENT_SLEEP:\n        sleep_mode_enter();\n        break;\n\n    case BSP_EVENT_DISCONNECT:\n        err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);\n        if (err_code != NRF_ERROR_INVALID_STATE) {\n            APP_ERROR_CHECK(err_code);\n        }\n        break;\n\n    case BSP_EVENT_WHITELIST_OFF:\n        if (m_conn_handle == BLE_CONN_HANDLE_INVALID) {\n            err_code = ble_advertising_restart_without_whitelist(&m_advertising);\n            if (err_code != NRF_ERROR_INVALID_STATE) {\n                APP_ERROR_CHECK(err_code);\n            }\n        }\n        break;\n\n    default:\n        break;\n    }\n}\n\n/**@brief   Function for handling app_uart events.\n *\n * @details This function will receive a single character from the app_uart module and append it to\n *          a string. The string will be be sent over BLE when the last character received was a\n *          'new line' '\\n' (hex 0x0A) or if the string has reached the maximum data length.\n */\n/**@snippet [Handling the data received over UART] */\nvoid uart_event_handle(app_uart_evt_t* p_event)\n{\n    static uint8_t data_array[BLE_NUS_MAX_DATA_LEN];\n    static uint8_t index = 0;\n    uint32_t err_code;\n\n    switch (p_event->evt_type) {\n    case APP_UART_DATA_READY:\n        UNUSED_VARIABLE(app_uart_get(&data_array[index]));\n        index++;\n\n        if ((data_array[index - 1] == '\\n') || (index >= (m_ble_nus_max_data_len))) {\n            NRF_LOG_DEBUG(\"Ready to send data over BLE NUS\");\n            NRF_LOG_HEXDUMP_DEBUG(data_array, index);\n\n            do {\n                uint16_t length = (uint16_t)index;\n                err_code = ble_nus_string_send(&m_nus, data_array, &length);\n                if ((err_code != NRF_ERROR_INVALID_STATE) && (err_code != NRF_ERROR_BUSY)) {\n                    APP_ERROR_CHECK(err_code);\n                }\n            } while (err_code == NRF_ERROR_BUSY);\n\n            index = 0;\n        }\n        break;\n\n    case APP_UART_COMMUNICATION_ERROR:\n        APP_ERROR_HANDLER(p_event->data.error_communication);\n        break;\n\n    case APP_UART_FIFO_ERROR:\n        APP_ERROR_HANDLER(p_event->data.error_code);\n        break;\n\n    default:\n        break;\n    }\n}\n/**@snippet [Handling the data received over UART] */\n\n/**@brief  Function for initializing the UART module.\n */\n/**@snippet [UART Initialization] */\n// static void uart_init(void)\n//{\n//    uint32_t                     err_code;\n//    app_uart_comm_params_t const comm_params =\n//    {\n//        .rx_pin_no    = RX_PIN_NUMBER,\n//        .tx_pin_no    = TX_PIN_NUMBER,\n//        .rts_pin_no   = RTS_PIN_NUMBER,\n//        .cts_pin_no   = CTS_PIN_NUMBER,\n//        .flow_control = APP_UART_FLOW_CONTROL_DISABLED,\n//        .use_parity   = false,\n//        .baud_rate    = NRF_UART_BAUDRATE_115200\n//    };\n//\n//    APP_UART_FIFO_INIT(&comm_params,\n//                       UART_RX_BUF_SIZE,\n//                       UART_TX_BUF_SIZE,\n//                       uart_event_handle,\n//                       APP_IRQ_PRIORITY_LOWEST,\n//                       err_code);\n//    APP_ERROR_CHECK(err_code);\n//}\n/**@snippet [UART Initialization] */\n\n/**@brief Function for initializing the Advertising functionality.\n */\nstatic void advertising_init(void)\n{\n    uint32_t err_code;\n    ble_advertising_init_t init;\n\n    memset(&init, 0, sizeof(init));\n\n    init.advdata.name_type = BLE_ADVDATA_FULL_NAME;\n    init.advdata.include_appearance = false;\n    init.advdata.flags = BLE_GAP_ADV_FLAGS_LE_ONLY_LIMITED_DISC_MODE;\n\n    init.srdata.uuids_complete.uuid_cnt = sizeof(m_adv_uuids) / sizeof(m_adv_uuids[0]);\n    init.srdata.uuids_complete.p_uuids = m_adv_uuids;\n\n    init.config.ble_adv_fast_enabled = true;\n    init.config.ble_adv_fast_interval = APP_ADV_INTERVAL;\n    init.config.ble_adv_fast_timeout = APP_ADV_TIMEOUT_IN_SECONDS;\n\n    init.evt_handler = on_adv_evt;\n\n    err_code = ble_advertising_init(&m_advertising, &init);\n    APP_ERROR_CHECK(err_code);\n\n    ble_advertising_conn_cfg_tag_set(&m_advertising, APP_BLE_CONN_CFG_TAG);\n\n}\n\n/**@brief Function for initializing buttons and leds.\n *\n * @param[out] p_erase_bonds  Will be true if the clear bonding button was pressed to wake the application up.\n */\n// static void buttons_leds_init(bool * p_erase_bonds)\n//{\n//    bsp_event_t startup_event;\n//\n//    uint32_t err_code = bsp_init(BSP_INIT_LED | BSP_INIT_BUTTONS, bsp_event_handler);\n//    APP_ERROR_CHECK(err_code);\n//\n//    err_code = bsp_btn_ble_init(NULL, &startup_event);\n//    APP_ERROR_CHECK(err_code);\n//\n//    *p_erase_bonds = (startup_event == BSP_EVENT_CLEAR_BONDING_DATA);\n//}\n\n/**@brief Function for initializing the nrf log module.\n */\nstatic void log_init(void)\n{\n    ret_code_t err_code = NRF_LOG_INIT(NULL);\n    APP_ERROR_CHECK(err_code);\n\n    NRF_LOG_DEFAULT_BACKENDS_INIT();\n}\n\n/**@brief Function for placing the application in low power state while waiting for events.\n */\n/*static void power_manage(void)\n{\n    uint32_t err_code = sd_app_evt_wait();\n    APP_ERROR_CHECK(err_code);\n}*/\n\n/**\n * @brief      { function_description }\n *\n * @param[in]  OnOff  On off\n */\nstatic void PowerSystem(uint8_t OnOff)\n{\n\n    if (OnOff == true) {\n        nrf_gpio_pin_write(28, 1);\n    } else if (OnOff == false)  {\n\n        nrf_gpio_pin_write(28, 0);\n    }\n\n}\n/*\n**@brief function for handling the systick timer timeout.\n *\n * @details this function will be called each time the systick timer expires.\n *          this function will start update_leds(), update_buzzer(), update_motor(),\n *                  get_pin_status() and update_power_state() functions.\n *\n * @param[in] p_context   pointer used for passing some arbitrary information (context) from the\n *                        app_start_timer() call to the timeout handler.\n */\nvoid SysTick_Handler(void)\n{\n    static uint16_t delayws2812b = 0;\n    static uint16_t delayhaptic = 0;\n\n    if(!flag_off_leds) {\n    if (delayws2812b == 0) {\n\n        switch (ws2812bpattern) {\n\n        case FADE: {\n            delayws2812b = FadeInOut();\n            break;\n        }\n        case CYCLON: {\n            delayws2812b = Cyclon();\n            break;\n        }\n        case FLASHLED: {\n            delayws2812b = Flash();\n            break;\n        }\n        case FLASHFADE: {\n            delayws2812b = FlashFadeInOut();\n            break;\n        }\n        case WIPE: {\n            delayws2812b = Wipe();\n            break;\n        }\n        case RING: {\n            delayws2812b = Ring();\n            break;\n        }\n        default:\n            break;\n        }\n    } else \n        delayws2812b--;\n    } else if(flag_off_leds)\n        OffLeds();\n    /*songs part*/\n    if (flag_song_run == true) {\n        if (delaysong == 0) {\n\n            if (songpattern == 0) {\n                delaysong = PlayMusic(&record[0]);\n            } else if (songpattern == 1) {\n                delaysong = PlayMusic(&record[1]);\n            } else if (songpattern == 2) {\n                delaysong = PlayMusic(&record[2]);\n            }\n\n            if (delaysong == END_SONG)\n            {\n                flag_song_run = false;\n                delaysong=0;\n                songpattern = 3;\n            }\n        } else {\n            delaysong--;\n        }\n        // drv_speaker_sample_play(0);\n    }\n    \n\n    if (flag_haptic_enable == true) {\n        if (delayhaptic == 0) {\n            haptic_motor_start();\n            flag_haptic_running = 1;\n            delayhaptic++;\n        } else if (delayhaptic < 1500) //1.5 sec\n            delayhaptic++;\n        else if (delayhaptic == 1500) {\n            haptic_motor_stop();\n            flag_haptic_running = false;\n            flag_haptic_enable = false;\n            delayhaptic = 0;\n        }\n\n    }\n\n}\n\nstatic void drv_speaker_evt_handler(drv_speaker_evt_t evt)\n{\n    switch (evt) {\n    case DRV_SPEAKER_EVT_FINISHED: {\n        // debug_printf(0, \"drv_speaker_evt_handler: drv_speaker_evt_finished\\r\\n\");\n        //(void)ble_tss_spkr_stat_set(&m_tss, ble_tss_spkr_stat_finished);\n    } break;\n\n    case DRV_SPEAKER_EVT_BUFFER_WARNING: {\n        // debug_printf(0, \"drv_speaker_evt_handler: drv_speaker_evt_buffer_warning\\r\\n\");\n        //(void)ble_tss_spkr_stat_set(&m_tss, ble_tss_spkr_stat_buffer_warning);\n    } break;\n    //\n    case DRV_SPEAKER_EVT_BUFFER_READY: {\n        // debug_printf(0, \"drv_speaker_evt_handler: drv_speaker_evt_buffer_ready\\r\\n\");\n        //(void)ble_tss_spkr_stat_set(&m_tss, ble_tss_spkr_stat_buffer_ready);\n    } break;\n    //\n    default:\n        APP_ERROR_CHECK_BOOL(false);\n        break;\n    }\n}\nvoid pwm_ready_callback(uint32_t pwm_id)    // PWM callback function\n{\n    //static volatile bool ready_flag;            // A flag indicating PWM status.\n    //ready_flag = true;\n}\n\n\nnrf_pwm_sequence_t const m_haptic_seq = {\n    .values.p_common = &m_duty_value,\n    .length = NRF_PWM_VALUES_LENGTH(m_duty_value),\n    .repeats = 1,\n    .end_delay = 0,\n};\n\n// void  haptic_motor_init(void)\n// {\n\n//     uint32_t err_code;\n\n//     nrf_drv_pwm_config_t const config0 = {\n//         .output_pins =\n\n//         {\n//             NRF_DRV_PWM_PIN_NOT_USED,             // channel 0\n//             0 | NRF_DRV_PWM_PIN_INVERTED,         // channel 1\n//             NRF_DRV_PWM_PIN_NOT_USED,             // channel 2\n//             NRF_DRV_PWM_PIN_NOT_USED,             // channel 3\n//         },\n//         .irq_priority = APP_IRQ_PRIORITY_LOW,\n//         .base_clock   = NRF_PWM_CLK_16MHz,\n//         .count_mode   = NRF_PWM_MODE_UP,\n//         .top_value    = 500,    //1kHz\n//         .load_mode    = NRF_PWM_LOAD_COMMON,\n//         .step_mode    = NRF_PWM_STEP_AUTO\n//     };\n//     err_code = nrf_drv_pwm_init(&m_pwm2, &config0, NULL);\n//     if (err_code != NRF_SUCCESS) {\n//         // Initialization failed. Take recovery action.\n//     }\n//     nrf_drv_pwm_simple_playback(&m_pwm2, &m_haptic_seq, 1, 0);\n\n// }\nvoid haptic_motor_start(void)\n{\n    uint32_t err_code;\n\n    nrf_drv_pwm_config_t const config0 = {\n        .output_pins =\n\n        {\n            NRF_DRV_PWM_PIN_NOT_USED,             // channel 0\n            0 | NRF_DRV_PWM_PIN_INVERTED,         // channel 1\n            NRF_DRV_PWM_PIN_NOT_USED,             // channel 2\n            NRF_DRV_PWM_PIN_NOT_USED,             // channel 3\n        },\n        .irq_priority = APP_IRQ_PRIORITY_LOW,\n        .base_clock   = NRF_PWM_CLK_16MHz,\n        .count_mode   = NRF_PWM_MODE_UP,\n        .top_value    = 500,    //1kHz\n        .load_mode    = NRF_PWM_LOAD_COMMON,\n        .step_mode    = NRF_PWM_STEP_AUTO\n    };\n    err_code = nrf_drv_pwm_init(&m_pwm2, &config0, NULL);\n    if (err_code != NRF_SUCCESS) {\n        // Initialization failed. Take recovery action.\n    }\n    nrf_drv_pwm_simple_playback(&m_pwm2, &m_haptic_seq, 1, 0);\n}\nvoid haptic_motor_stop(void)\n{\n\n    nrf_drv_pwm_stop(&m_pwm2, false);\n    nrf_gpio_pin_write(0, 0);\n}\n\n\n/**\n * @brief      { main funciton, set GPIO, init BT stack, SystTick, for ever loop }\n *\n * @return     { none }\n * @par\n */\nint main(void)\n{\n    uint32_t err_code;\n    drv_speaker_init_t speaker_init;\n    speaker_init.evt_handler = drv_speaker_evt_handler;\n    // bool     erase_bonds;\n\n    // debug\n    nrf_gpio_cfg_output(28);\n    PowerSystem(true);\n    // debug\n\n    // Initialize.\n    err_code = app_timer_init();\n    APP_ERROR_CHECK(err_code);\n    log_init();\n    ble_stack_init();\n    gap_params_init();\n    gatt_init();\n    services_init();\n    advertising_init();\n    conn_params_init();\n    NRF_LOG_INFO(\"UART Start!\");\n    err_code = ble_advertising_start(&m_advertising, BLE_ADV_MODE_FAST);\n    APP_ERROR_CHECK(err_code);\n\n    //debug\n    InitSongStruct();\n    drv_speaker_init(&speaker_init);\n    SysTick_Config(SystemCoreClock / 1000); //1ms\n    //debug\n    // Enter main loop.\n    for (;;) {\n        UNUSED_RETURN_VALUE(NRF_LOG_PROCESS());\n        //power_manage();\n    }\n}\n\n/**\n * @}\n */\n",
 			"file": "main.c",
+			"file_size": 32309,
+			"file_write_time": 131643141789256009,
 			"settings":
 			{
-				"buffer_size": 30119,
+				"buffer_size": 31355,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "ws2812b_driver/ws2812b_drive.h",
+			"file": "SongPatterns.h",
 			"settings":
 			{
-				"buffer_size": 1257,
+				"buffer_size": 2033,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "LedPatterns.h",
+			"file": "SongPatterns.c",
 			"settings":
 			{
-				"buffer_size": 1093,
+				"buffer_size": 1312,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "project.h",
+			"contents": "/*\n  Copyright (c) 2010 - 2017, Nordic Semiconductor ASA\n  All rights reserved.\n\n  Redistribution and use in source and binary forms, with or without modification,\n  are permitted provided that the following conditions are met:\n\n  1. Redistributions of source code must retain the above copyright notice, this\n     list of conditions and the following disclaimer.\n\n  2. Redistributions in binary form, except as embedded into a Nordic\n     Semiconductor ASA integrated circuit in a product or a software update for\n     such product, must reproduce the above copyright notice, this list of\n     conditions and the following disclaimer in the documentation and/or other\n     materials provided with the distribution.\n\n  3. Neither the name of Nordic Semiconductor ASA nor the names of its\n     contributors may be used to endorse or promote products derived from this\n     software without specific prior written permission.\n\n  4. This software, with or without modification, must only be used with a\n     Nordic Semiconductor ASA integrated circuit.\n\n  5. Any software provided in binary form under this license must not be reverse\n     engineered, decompiled, modified and/or disassembled.\n\n  THIS SOFTWARE IS PROVIDED BY NORDIC SEMICONDUCTOR ASA \"AS IS\" AND ANY EXPRESS\n  OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\n  OF MERCHANTABILITY, NONINFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE ARE\n  DISCLAIMED. IN NO EVENT SHALL NORDIC SEMICONDUCTOR ASA OR CONTRIBUTORS BE\n  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\n  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\n  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\n  OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n */\n\n#include \"drv_Buzzer.h\"\n#include \"nrf_gpio.h\"\n#include \"nrf_drv_pwm.h\"\n#include \"nrf_delay.h\"\n#include \"app_util_platform.h\"\n#include \"math.h\"\n#include \"arm_math.h\"\n#include \"app_scheduler.h\"\n#include \"nrf_delay.h\"\n#include \"sounds.h\"\n//#define  NRF_LOG_MODULE_NAME \"drv_speaker   \"\n#include \"nrf_log.h\"\n#include \"macros_common.h\"\n\n#define SEQ_REPEATES 7 // 8kHz sample rate\n#define SPEAKER_VOLUME VOLUME\n\nstatic nrf_drv_pwm_t m_speaker_pwm = NRF_DRV_PWM_INSTANCE(0);\n\n#define PACKET_SIZE  273\n\n#define RAM_BUF_SIZE              MAX(625, ((PACKET_SIZE*8) + 1) / 2) // Equals 625*2=1250 8-bit PCM samples and 1 period of 16bit samples of a sine wave at 100Hz.\n#define RAM_BUF_FREE_SIZE_WARNING (PACKET_SIZE*2)\n#define RAM_BUF_FREE_SIZE_RESUME  (PACKET_SIZE*3)\n\nstatic uint16_t ram_buf[RAM_BUF_SIZE] = {0};\n\n#define SEQ_BUF_SIZE 20\n\nstatic drv_speaker_init_t s_params;\n\ntypedef struct\n{\n    uint16_t           seq0_buf[SEQ_BUF_SIZE];\n    uint16_t           seq1_buf[SEQ_BUF_SIZE];\n    uint8_t          * p_dat;\n    uint32_t           dat_head;\n    uint32_t           dat_tail;\n    uint32_t           buf_size;\n    nrf_pwm_sequence_t seq0;\n    nrf_pwm_sequence_t seq1;\n    bool               is_activ;\n    bool               ramp_down_started;\n    bool               buffer_warning;\n}pwm_pcm_t;\n\nstatic pwm_pcm_t s_pcm;\nstatic const uint8_t ramp_down_dat[] = {0x7d, 0x76, 0x6f, 0x69, 0x62, 0x5c, 0x55, 0x4e, 0x48, 0x41, 0x3b, 0x34, 0x2e, 0x27, 0x20, 0x1a, 0x13, 0x0d, 0x06, 0x00};\n\n\n\nstatic void ramp_down(uint16_t * p_seq_buf, nrf_pwm_sequence_t * p_seq)\n{\n    NRF_LOG_DEBUG(\"ramp_down!\\r\\n\");\n    for (uint32_t i = 0; i < SEQ_BUF_SIZE; i++)\n    {\n        p_seq_buf[i] = ramp_down_dat[i];\n    }\n\n    p_seq->values.p_common = p_seq_buf;\n    p_seq->length          = SEQ_BUF_SIZE;\n    p_seq->repeats         = SEQ_REPEATES;\n    p_seq->end_delay       = 0;\n\n    (void)nrf_drv_pwm_simple_playback(&m_speaker_pwm, p_seq, 1, NRF_DRV_PWM_FLAG_STOP);\n}\n\n\nstatic uint32_t seq0_buffer_update(void)\n{\n    uint16_t buf_size;\n    uint32_t pwm_flag;\n    uint32_t free_size;\n\n    if (s_pcm.dat_head == s_pcm.dat_tail)\n    {\n        // Buffer empty\n        if(s_pcm.ramp_down_started ==  false)\n        {\n            ramp_down(s_pcm.seq0_buf, &s_pcm.seq0);\n            s_pcm.ramp_down_started = true;\n        }\n\n        s_pcm.is_activ = false;\n        return 0;\n    }\n\n    buf_size = SEQ_BUF_SIZE;\n    pwm_flag = (NRF_DRV_PWM_FLAG_SIGNAL_END_SEQ0 | NRF_DRV_PWM_FLAG_NO_EVT_FINISHED);\n\n    for (uint32_t i = 0; i < SEQ_BUF_SIZE; i++)\n    {\n        if (s_pcm.dat_head == s_pcm.dat_tail)\n        {\n            // Buffer empty\n            buf_size = i;\n            pwm_flag = NRF_DRV_PWM_FLAG_STOP;\n            break;\n        }\n        s_pcm.seq0_buf[i] = (uint16_t)s_pcm.p_dat[s_pcm.dat_head];\n        s_pcm.dat_head = (s_pcm.dat_head + 1) % s_pcm.buf_size;\n    }\n\n    if (s_pcm.buffer_warning == true)\n    {\n        free_size = (s_pcm.dat_tail < s_pcm.dat_head)\n                    ? s_pcm.dat_head - s_pcm.dat_tail\n                    : s_pcm.buf_size - s_pcm.dat_tail + s_pcm.dat_head;\n\n        if (free_size >= RAM_BUF_FREE_SIZE_RESUME)\n        {\n            s_pcm.buffer_warning = false;\n            s_params.evt_handler(DRV_SPEAKER_EVT_BUFFER_READY);\n        }\n    }\n\n    s_pcm.seq0.values.p_common = s_pcm.seq0_buf;\n    s_pcm.seq0.length          = buf_size;\n    s_pcm.seq0.repeats         = SEQ_REPEATES;\n    s_pcm.seq0.end_delay       = 0;\n\n    return pwm_flag;\n}\n\n\nstatic uint32_t seq1_buffer_update(void)\n{\n    uint16_t buf_size;\n    uint32_t pwm_flag;\n    uint32_t free_size;\n\n    if (s_pcm.dat_head == s_pcm.dat_tail)\n    {\n        // Buffer empty\n        if(s_pcm.ramp_down_started ==  false)\n        {\n            ramp_down(s_pcm.seq1_buf, &s_pcm.seq1);\n            s_pcm.ramp_down_started = true;\n        }\n\n        s_pcm.is_activ = false;\n        return 0;\n    }\n\n    buf_size = SEQ_BUF_SIZE;\n    pwm_flag = (NRF_DRV_PWM_FLAG_SIGNAL_END_SEQ1 | NRF_DRV_PWM_FLAG_NO_EVT_FINISHED);\n\n    for (uint32_t i = 0; i < SEQ_BUF_SIZE; i++)\n    {\n        if (s_pcm.dat_head == s_pcm.dat_tail)\n        {\n            // Buffer empty\n            buf_size = i;\n            pwm_flag = NRF_DRV_PWM_FLAG_STOP;\n            break;\n        }\n        s_pcm.seq1_buf[i] = (uint16_t)s_pcm.p_dat[s_pcm.dat_head];\n        s_pcm.dat_head = (s_pcm.dat_head + 1) % s_pcm.buf_size;\n    }\n\n    if (s_pcm.buffer_warning == true)\n    {\n        free_size = (s_pcm.dat_tail < s_pcm.dat_head)\n                    ? s_pcm.dat_head - s_pcm.dat_tail\n                    : s_pcm.buf_size - s_pcm.dat_tail + s_pcm.dat_head;\n\n        if (free_size >= RAM_BUF_FREE_SIZE_RESUME)\n        {\n            s_pcm.buffer_warning = false;\n            s_params.evt_handler(DRV_SPEAKER_EVT_BUFFER_READY);\n        }\n    }\n\n    s_pcm.seq1.values.p_common = s_pcm.seq1_buf;\n    s_pcm.seq1.length          = buf_size;\n    s_pcm.seq1.repeats         = SEQ_REPEATES;\n    s_pcm.seq1.end_delay       = 0;\n\n    return pwm_flag;\n}\n\nstatic void pwm_handler(nrf_drv_pwm_evt_type_t event_type)\n{\n    switch (event_type)\n    {\n        case NRF_DRV_PWM_EVT_STOPPED:\n            NRF_LOG_DEBUG(\"NRF_DRV_PWM_EVT_STOPPED\\r\\n\");\n            s_params.evt_handler(DRV_SPEAKER_EVT_FINISHED);\n            break;\n        case NRF_DRV_PWM_EVT_FINISHED:\n            NRF_LOG_DEBUG(\"NRF_DRV_PWM_EVT_FINISHED - %d\\r\\n\", s_pcm.ramp_down_started);\n            s_pcm.ramp_down_started = false;\n            break;\n        case NRF_DRV_PWM_EVT_END_SEQ0:\n            (void)seq0_buffer_update();\n            break;\n        case NRF_DRV_PWM_EVT_END_SEQ1:\n            (void)seq1_buffer_update();\n            break;\n        default:\n            break;\n    }\n}\n\n\nuint32_t drv_speaker_flash_pcm_play(uint8_t const * const p_sound, uint32_t size)\n{\n    uint32_t pwm_flags;\n\n    NULL_PARAM_CHECK(p_sound);\n\n    s_pcm.p_dat    = (uint8_t *)p_sound;\n    s_pcm.dat_head  = 0;\n    s_pcm.dat_tail = (size - 1);\n    s_pcm.buf_size = size;\n\n    pwm_flags = seq0_buffer_update();\n    pwm_flags |= seq1_buffer_update();\n\n    \n\n    (void)nrf_drv_pwm_complex_playback(&m_speaker_pwm, &s_pcm.seq0, &s_pcm.seq1, 1, (pwm_flags | NRF_DRV_PWM_FLAG_LOOP));\n\n    #if defined(THINGY_HW_v0_8_0)\n        nrf_gpio_pin_set(SPEAKER_VOLUME);\n    #endif\n\n    return NRF_SUCCESS;\n}\n\n\nuint32_t drv_speaker_ble_pcm_play(uint8_t * p_sound, uint32_t length)\n{\n    static uint32_t buffered_samples = 0;\n\n    NULL_PARAM_CHECK(p_sound);\n\n    if (s_pcm.is_activ)\n    {\n        uint32_t free_size;\n\n        CRITICAL_REGION_ENTER();\n        free_size = (s_pcm.dat_tail < s_pcm.dat_head)\n                    ? s_pcm.dat_head - s_pcm.dat_tail\n                    : s_pcm.buf_size - s_pcm.dat_tail + s_pcm.dat_head;\n        CRITICAL_REGION_EXIT();\n\n        if ( length > free_size)\n        {\n            NRF_LOG_DEBUG(\"drv_speaker_ble_pcm_play: NRF_ERROR_NO_MEM\\r\\n\");\n            // Buffer is FULL\n            return NRF_ERROR_NO_MEM;\n        }\n\n        for (uint32_t i = 0; i < length; i++)\n        {\n            CRITICAL_REGION_ENTER();\n            s_pcm.p_dat[s_pcm.dat_tail] = p_sound[i];\n            s_pcm.dat_tail = (s_pcm.dat_tail + 1) % s_pcm.buf_size;\n            CRITICAL_REGION_EXIT();\n        }\n\n        if (((free_size-length) <= RAM_BUF_FREE_SIZE_WARNING) && s_pcm.buffer_warning == false)\n        {\n            s_pcm.buffer_warning = true;\n            s_params.evt_handler(DRV_SPEAKER_EVT_BUFFER_WARNING);\n        }\n\n    }\n    else\n    {\n        uint32_t pwm_flags;\n        if (buffered_samples < PACKET_SIZE)\n        {\n            if (buffered_samples == 0)\n            {\n                CRITICAL_REGION_ENTER();\n                s_pcm.p_dat    = (uint8_t *)ram_buf;\n                s_pcm.dat_head  = 0;\n                s_pcm.dat_tail = 0;\n                s_pcm.buf_size = RAM_BUF_SIZE*2;\n                CRITICAL_REGION_EXIT();\n            }\n\n            for (uint32_t i = 0; i < length; i++)\n            {\n                CRITICAL_REGION_ENTER();\n                s_pcm.p_dat[s_pcm.dat_tail] = p_sound[i];\n                s_pcm.dat_tail = (s_pcm.dat_tail + 1) % s_pcm.buf_size;\n                CRITICAL_REGION_EXIT();\n            }\n            buffered_samples += length;\n        }\n        else\n        {\n            for (uint32_t i = 0; i < length; i++)\n            {\n                CRITICAL_REGION_ENTER();\n                s_pcm.p_dat[s_pcm.dat_tail] = p_sound[i];\n                s_pcm.dat_tail = (s_pcm.dat_tail + 1) % s_pcm.buf_size;\n                CRITICAL_REGION_EXIT();\n            }\n\n            pwm_flags = seq0_buffer_update();\n            pwm_flags |= seq1_buffer_update();\n\n            \n\n            (void)nrf_drv_pwm_complex_playback(&m_speaker_pwm, &s_pcm.seq0, &s_pcm.seq1, 1, (pwm_flags | NRF_DRV_PWM_FLAG_LOOP));\n\n            #if defined(THINGY_HW_v0_8_0)\n                nrf_gpio_pin_set(SPEAKER_VOLUME);\n            #endif\n\n            s_pcm.is_activ = true;\n            buffered_samples = 0;\n        }\n    }\n\n    return NRF_SUCCESS;\n}\n\n\nuint32_t drv_speaker_sample_play(uint8_t sample_id)\n{\n    uint8_t const * p_sound;\n    uint32_t        len;\n\n    NRF_LOG_DEBUG(\"drv_speaker_sample_play: %d\\r\\n\", sample_id);\n\n    switch(sample_id)\n    {\n        case 0:\n            p_sound = sound_0;\n            len     = sizeof(sound_0);\n            break;\n\n        case 1:\n            p_sound = sound_1;\n            len     = sizeof(sound_1);\n            break;\n\n        case 2:\n            p_sound = sound_2;\n            len     = sizeof(sound_2);\n            break;\n\n        case 3:\n            p_sound = sound_3;\n            len     = sizeof(sound_3);\n            break;\n\n        case 4:\n            p_sound = sound_4;\n            len     = sizeof(sound_4);\n            break;\n\n        case 5:\n            p_sound = sound_5;\n            len     = sizeof(sound_5);\n            break;\n\n        case 6:\n            p_sound = sound_6;\n            len     = sizeof(sound_6);\n            break;\n\n        case 7:\n            p_sound = sound_7;\n            len     = sizeof(sound_7);\n            break;\n\n        case 8:\n            p_sound = sound_8;\n            len     = sizeof(sound_8);\n            break;\n\n        default:\n            return NRF_ERROR_INVALID_PARAM;\n\n    }\n\n    return drv_speaker_flash_pcm_play(p_sound, len);\n}\n\n\nuint32_t drv_speaker_tone_start(uint16_t freq_hz, uint32_t duration_ms, uint8_t volume)\n{\n    float period;\n    uint32_t num;\n    uint32_t loop;\n\n    if ((freq_hz < 100) || (volume > 100))\n    {\n        return NRF_ERROR_NOT_SUPPORTED;\n    }\n\n    if ((volume <= 0) || (duration_ms <= 0))\n    {\n        \n        (void)nrf_drv_pwm_stop(&m_speaker_pwm, true);\n\n        return NRF_SUCCESS;\n    }\n\n    //NRF_LOG_DEBUG(\"drv_speaker_tone_start: %dHz - %dms - %d vol\\r\\n\", freq_hz, duration_ms, volume);\n\n    period = 1.0f / freq_hz;\n    num  = (uint32_t)(period / 16.0e-6f);\n    loop = (uint32_t)((duration_ms / 1000.0f) / period);\n\n    for (uint32_t i = 0; i < num; i++)\n    {\n        ram_buf[i] = (uint16_t)(((float)volume * 125.0f * arm_sin_f32(2.0f * PI * freq_hz * i * 16.0e-6f - PI/2) / 100.0f) + 125.0f);\n    }\n\n    nrf_pwm_sequence_t const seq =\n    {\n        .values.p_common = ram_buf,\n        .length          = num,\n        .repeats         = 0,\n        .end_delay       = 0\n    };\n\n\n    (void)nrf_drv_pwm_simple_playback(&m_speaker_pwm, &seq, loop, NRF_DRV_PWM_FLAG_STOP);\n\n \n\n    return NRF_SUCCESS;\n}\n\n\nuint32_t drv_speaker_init(drv_speaker_init_t *p_params)\n{\n    uint32_t err_code;\n\n    NULL_PARAM_CHECK(p_params);\n    NULL_PARAM_CHECK(p_params->evt_handler);\n\n    memcpy(&s_params, p_params, sizeof(drv_speaker_init_t));\n\n    s_pcm.is_activ          = false;\n    s_pcm.ramp_down_started = false;\n\n\n    nrf_drv_pwm_config_t const pwm_config =\n    {\n        .output_pins =\n        {\n            2,                    // channel 0\n            NRF_DRV_PWM_PIN_NOT_USED,   // channel 1\n            NRF_DRV_PWM_PIN_NOT_USED,   // channel 2\n            NRF_DRV_PWM_PIN_NOT_USED,   // channel 3\n        },\n        .irq_priority = APP_IRQ_PRIORITY_LOW,\n        .base_clock   = NRF_PWM_CLK_16MHz,\n        .count_mode   = NRF_PWM_MODE_UP,\n        .top_value    = 250,\n        .load_mode    = NRF_PWM_LOAD_COMMON,\n        .step_mode    = NRF_PWM_STEP_AUTO\n    };\n    err_code = nrf_drv_pwm_init(&m_speaker_pwm, &pwm_config, pwm_handler);\n    APP_ERROR_CHECK(err_code);\n\n    return NRF_SUCCESS;\n}\n",
+			"file": "drv_Buzzer.c",
+			"file_size": 14289,
+			"file_write_time": 131632519475387105,
 			"settings":
 			{
-				"buffer_size": 488,
-				"encoding": "UTF-8",
+				"buffer_size": 14291,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "pca10040/s132/armgcc/Makefile",
+			"settings":
+			{
+				"buffer_size": 12966,
 				"line_ending": "Unix"
 			}
 		}
@@ -160,11 +164,11 @@
 			],
 			[
 				"Packages/Makefile/Make.sublime-build",
-				"All"
+				"Flash App"
 			]
 		]
 	],
-	"build_varint": "All",
+	"build_varint": "Flash App",
 	"command_palette":
 	{
 		"height": 392.0,
@@ -229,16 +233,34 @@
 	"expanded_folders":
 	[
 		"/home/dani/workspace/nrf5x/TEST",
+		"/home/dani/workspace/nrf5x/TEST/i2s_ws2812b_drive",
 		"/home/dani/workspace/nrf5x/TEST/pca10040",
 		"/home/dani/workspace/nrf5x/TEST/pca10040/s132",
-		"/home/dani/workspace/nrf5x/TEST/pca10040/s132/armgcc"
+		"/home/dani/workspace/nrf5x/TEST/pca10040/s132/armgcc",
+		"/home/dani/workspace/nrf5x/TEST/pca10040/s132/config"
 	],
 	"file_history":
 	[
+		"/home/dani/.cache/.fr-16rh33/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
+		"/home/dani/.cache/.fr-434QWm/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
+		"/home/dani/.cache/.fr-Au1vDU/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
+		"/home/dani/.cache/.fr-xFj0lX/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
+		"/home/dani/.cache/.fr-ohTpD6/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
+		"/home/dani/workspace/nrf5x/TEST/LedPatterns.h",
+		"/home/dani/workspace/nrf5x/TEST/LedPatterns.c",
+		"/home/dani/.cache/.fr-3DtbQU/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/LedPatterns.c",
+		"/home/dani/.cache/.fr-5EwD9M/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
+		"/home/dani/.cache/.fr-OhSDSh/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
+		"/home/dani/workspace/nrf5x/TEST/ws2812b_driver/ws2812b_drive.h",
+		"/home/dani/workspace/nrf5x/TEST/i2s_ws2812b_drive/i2s_ws2812b_drive.c",
+		"/home/dani/workspace/nrf5x/TEST/pca10040/s132/armgcc/Makefile",
+		"/home/dani/workspace/nrf5x/TEST/pca10040/s132/config/sdk_config.h",
+		"/home/dani/workspace/nrf5x/TEST/project.h",
+		"/home/dani/workspace/nrf5x/TEST/SongPatterns.c",
+		"/home/dani/workspace/nrf5x/TEST/SongPatterns.h",
 		"/home/dani/.cache/.fr-GKp6ye/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
 		"/home/dani/.cache/.fr-UaqcfQ/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/i2s_ws2812b_drive/i2s_ws2812b_drive.c",
 		"/home/dani/.cache/.fr-7D0Dfv/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/LedPatterns.c",
-		"/home/dani/workspace/nrf5x/TEST/pca10040/s132/armgcc/Makefile",
 		"/home/dani/.cache/.fr-2LkFfk/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
 		"/home/dani/.cache/.fr-TbOfGx/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/LedPatterns.c",
 		"/home/dani/.cache/.fr-qlaakt/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
@@ -264,9 +286,6 @@
 		"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/examples/ble_peripheral/ble_app_uart/main.c",
 		"/home/dani/workspace/nrf5x/TEST/main.c",
 		"/home/dani/workspace/nrf5x/TEST/Adafruit_NeoPixel.h",
-		"/home/dani/workspace/nrf5x/TEST/project.h",
-		"/home/dani/workspace/nrf5x/TEST/SongPatterns.c",
-		"/home/dani/workspace/nrf5x/TEST/SongPatterns.h",
 		"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/examples/peripheral/pwm_library/main.c",
 		"/home/dani/.cache/.fr-GHHwhE/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
 		"/home/dani/.cache/.fr-B1F3Zt/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
@@ -292,7 +311,6 @@
 		"/home/dani/workspace/nrf5x/Nordic-Thingy52-FW-master/project/pca20020_s132/main.c",
 		"/home/dani/workspace/nrf5x/Nordic-Thingy52-FW-master/source/modules/m_ble.c",
 		"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/pwm/nrf_drv_pwm.h",
-		"/home/dani/workspace/nrf5x/TEST/pca10040/s132/config/sdk_config.h",
 		"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/hal/nrf_pwm.h",
 		"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/config/sdk_config.h",
 		"/home/dani/workspace/nrf5x/TEST/sounds.h",
@@ -302,8 +320,6 @@
 		"/home/dani/workspace/nrf5x/TEST/README.md",
 		"/home/dani/.cache/.fr-vHVGWl/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/main.c",
 		"/home/dani/.cache/.fr-QPnyMM/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/SongPatterns.c",
-		"/home/dani/workspace/nrf5x/TEST/LedPatterns.c",
-		"/home/dani/workspace/nrf5x/TEST/LedPatterns.h",
 		"/home/dani/.cache/.fr-cL490X/nRF5_SDK_11.0.0_89a8197/examples/ble_peripheral/ble_app_uart/buzzer_driver/drv_speaker.c",
 		"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a/components/drivers_nrf/timer/nrf_drv_timer.c",
 		"/home/dani/workspace/nrf5x/TEST/Tone.c",
@@ -341,6 +357,7 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"/home/dani/workspace/nrf5x/TEST",
 			"/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a"
 		]
 	},
@@ -349,6 +366,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"NUM_LEDS",
 			"showStrip();",
 			"flag_song_runnig",
 			"PWM_ENABLED",
@@ -381,208 +399,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "LedPatterns.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12704,
-						"regions":
-						{
-						},
-						"selection":
-						[
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										2136,
-										2137
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/round_bracket.png",
-										"region.yellowish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										2110,
-										2111
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "main.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 30119,
+						"buffer_size": 31355,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								24811,
-								24811
+								26220,
+								26220
 							]
 						],
 						"settings":
@@ -593,83 +422,10 @@
 							{
 								"close":
 								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
 									"1":
 									[
-										24839,
-										24840
+										26822,
+										26823
 									]
 								},
 								"icon":
@@ -684,114 +440,9 @@
 								{
 									"1":
 									[
-										24775,
-										24776
+										26188,
+										26189
 									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 10397.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "ws2812b_driver/ws2812b_drive.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1257,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								940,
-								940
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
 								},
 								"unmatched":
 								{
@@ -799,247 +450,56 @@
 							},
 							"bracket_highlighter.clone_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1228,
-										1234
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/hash.png",
-										"region.yellowish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										232,
-										239
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 133.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "LedPatterns.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1093,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								930,
-								930
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1052,24 +512,24 @@
 								{
 									"1":
 									[
-										1067,
-										1073
+										26687,
+										26688
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/hash.png",
-										"region.yellowish"
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
 									]
 								},
 								"open":
 								{
 									"1":
 									[
-										232,
-										239
+										26218,
+										26219
 									]
 								},
 								"unmatched":
@@ -1078,86 +538,88 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"syntax": "Packages/C++/C++.sublime-syntax"
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 11360.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "project.h",
+					"buffer": 1,
+					"file": "SongPatterns.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 488,
+						"buffer_size": 2033,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								216,
-								216
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1170,8 +632,8 @@
 								{
 									"1":
 									[
-										438,
-										444
+										2008,
+										2014
 									]
 								},
 								"icon":
@@ -1196,61 +658,61 @@
 							},
 							"bracket_highlighter.clone_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
 							"bracket_highlighter.locations":
 							{
@@ -1258,24 +720,24 @@
 								{
 									"1":
 									[
-										215,
-										216
+										2008,
+										2014
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
+										"Packages/BracketHighlighter/icons/hash.png",
+										"region.yellowish"
 									]
 								},
 								"open":
 								{
 									"1":
 									[
-										195,
-										196
+										0,
+										7
 									]
 								},
 								"unmatched":
@@ -1284,66 +746,660 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "SongPatterns.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1312,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1124,
+								1124
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1254,
+										1255
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1050,
+										1051
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
-								"bh_c_define_content"
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"syntax": "Packages/C++/C++.sublime-syntax"
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1254,
+										1255
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1050,
+										1051
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "drv_Buzzer.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14291,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12595,
+								12595
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										13301,
+										13302
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										12285,
+										12286
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										13303,
+										13304
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										12285,
+										12286
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6480.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "pca10040/s132/armgcc/Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12966,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": -0.0,
+						"translation.y": 3285.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,

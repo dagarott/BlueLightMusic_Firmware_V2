@@ -46,7 +46,7 @@ void i2s_ws2812b_drive_set_buff(rgb_led_t * rgb_led, uint8_t *p_xfer, uint16_t x
 	}
 }
 
-static void i2s_ws2812b_drive_handler(uint32_t const * p_data_received,
+void i2s_ws2812b_drive_handler(uint32_t const * p_data_received,
                          uint32_t       * p_data_to_send,
                          uint16_t         number_of_words)
 {

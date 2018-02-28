@@ -59,6 +59,7 @@ SRC_FILES += \
   $(PROJ_DIR)/SongPatterns.c \
   $(PROJ_DIR)/ws2812b_driver/ws2812b_drive.c \
   $(PROJ_DIR)/i2s_ws2812b_drive/i2s_ws2812b_drive.c \
+  $(SDK_ROOT)/components/drivers_nrf/i2s/nrf_drv_i2s.c \
   $(SDK_ROOT)/components/drivers_nrf/timer/nrf_drv_timer.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT_Syscalls_GCC.c \
@@ -82,6 +83,7 @@ INC_FOLDERS += \
   $(SDK_ROOT)/components/drivers_nrf/comp \
   $(SDK_ROOT)/components/drivers_nrf/twi_master \
   $(SDK_ROOT)/components/drivers_nrf/timer \
+  $(SDK_ROOT)/components/drivers_nrf/i2s \
   $(SDK_ROOT)/components/ble/ble_services/ble_ancs_c \
   $(SDK_ROOT)/components/ble/ble_services/ble_ias_c \
   $(SDK_ROOT)/components/libraries/pwm \

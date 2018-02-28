@@ -132,12 +132,13 @@ static ble_uuid_t m_adv_uuids[] = /**< Universally unique service identifier. */
 { { BLE_UUID_NUS_SERVICE, NUS_SERVICE_UUID_TYPE } };
 
 //debug
-uint8_t  ws2812bpattern = FADE;
-uint8_t  songpattern = 2;
+uint8_t  ws2812bpattern = 0;
+uint8_t  songpattern = 0;
 uint16_t delaysong = 0;
-bool  flag_song_run = 1;
-bool  flag_haptic_running = 0;
-bool  flag_haptic_enable = 0;
+bool  flag_song_run = false;
+bool  flag_haptic_running = false;
+bool  flag_haptic_enable = false;
+bool  flag_off_leds=true;
 song_param_t record[NUM_SONGS];
 
 nrf_pwm_values_common_t m_duty_value = 250;
@@ -204,23 +205,65 @@ static void nus_data_handler(ble_nus_evt_t* p_evt)
 {
 
     if (p_evt->type == BLE_NUS_EVT_RX_DATA) {
-        uint32_t err_code;
+        //uint32_t err_code;
 
-        NRF_LOG_DEBUG("Received data from BLE NUS. Writing data on UART.");
-        NRF_LOG_HEXDUMP_DEBUG(p_evt->params.rx_data.p_data, p_evt->params.rx_data.length);
+        //NRF_LOG_DEBUG("Received data from BLE NUS. Writing data on UART.");
+        //NRF_LOG_HEXDUMP_DEBUG(p_evt->params.rx_data.p_data, p_evt->params.rx_data.length);
 
-        for (uint32_t i = 0; i < p_evt->params.rx_data.length; i++) {
-            do {
-                err_code = app_uart_put(p_evt->params.rx_data.p_data[i]);
-                if ((err_code != NRF_SUCCESS) && (err_code != NRF_ERROR_BUSY)) {
-                    NRF_LOG_ERROR("Failed receiving NUS message. Error 0x%x. ", err_code);
-                    APP_ERROR_CHECK(err_code);
-                }
-            } while (err_code == NRF_ERROR_BUSY);
-        }
-        if (p_evt->params.rx_data.p_data[p_evt->params.rx_data.length - 1] == '\r') {
-            while (app_uart_put('\n') == NRF_ERROR_BUSY)
-                ;
+        //for (uint32_t i = 0; i < p_evt->params.rx_data.length; i++) {
+            //do {
+                //err_code = app_uart_put(p_evt->params.rx_data.p_data[i]);
+                //if ((err_code != NRF_SUCCESS) && (err_code != NRF_ERROR_BUSY)) {
+                //    NRF_LOG_ERROR("Failed receiving NUS message. Error 0x%x. ", err_code);
+                //    APP_ERROR_CHECK(err_code);
+                //}
+            //} while (err_code == NRF_ERROR_BUSY);
+        //}
+        //if (p_evt->params.rx_data.p_data[p_evt->params.rx_data.length - 1] == '\r') {
+        //    while (app_uart_put('\n') == NRF_ERROR_BUSY)
+        //       ;
+        //}
+        
+        switch(p_evt->params.rx_data.p_data[0]) {
+    case FADE:
+        ws2812bpattern = FADE;
+        break;
+    case CYCLON:
+        ws2812bpattern = CYCLON;
+        break;
+    case FLASHLED:
+        ws2812bpattern = FLASHLED;
+        break;
+    case FLASHFADE:
+        ws2812bpattern = FLASHFADE;
+        break;
+    case WIPE:
+        ws2812bpattern = WIPE;
+        break;
+    case RING:
+        ws2812bpattern = RING;
+        break;
+    case OFFLEDS:
+        flag_off_leds = true;
+        break;
+    case ONLEDS:
+        flag_off_leds = false;
+        break;
+    case SONG1:
+        delaysong = 0; 
+        songpattern = 0; //first song
+        flag_song_run=true; // enable songs
+        break;
+    case SONG2:
+        delaysong = 0; 
+        songpattern = 1; //second song
+        flag_song_run=true; // enable songs
+        break;
+    case SONG3:
+        delaysong = 0; 
+        songpattern = 2; //n-song
+        flag_song_run=true; // enable songs
+        break;
         }
     }
 }
@@ -690,6 +733,7 @@ void SysTick_Handler(void)
     static uint16_t delayws2812b = 0;
     static uint16_t delayhaptic = 0;
 
+    if(!flag_off_leds) {
     if (delayws2812b == 0) {
 
         switch (ws2812bpattern) {
@@ -721,11 +765,12 @@ void SysTick_Handler(void)
         default:
             break;
         }
-    } else {
+    } else 
         delayws2812b--;
-    }
-
-    if (flag_song_run == 1) {
+    } else if(flag_off_leds)
+        OffLeds();
+    /*songs part*/
+    if (flag_song_run == true) {
         if (delaysong == 0) {
 
             if (songpattern == 0) {
@@ -738,15 +783,17 @@ void SysTick_Handler(void)
 
             if (delaysong == END_SONG)
             {
-                flag_song_run = 0;
+                flag_song_run = false;
                 delaysong=0;
+                songpattern = 3;
             }
         } else {
             delaysong--;
         }
+        // drv_speaker_sample_play(0);
     }
 
-    if (flag_haptic_enable == 1) {
+    if (flag_haptic_enable == true) {
         if (delayhaptic == 0) {
             haptic_motor_start();
             flag_haptic_running = 1;
@@ -755,8 +802,8 @@ void SysTick_Handler(void)
             delayhaptic++;
         else if (delayhaptic == 1500) {
             haptic_motor_stop();
-            flag_haptic_running = 0;
-            flag_haptic_enable = 0;
+            flag_haptic_running = false;
+            flag_haptic_enable = false;
             delayhaptic = 0;
         }
 

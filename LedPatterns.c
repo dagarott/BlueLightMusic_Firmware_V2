@@ -7,7 +7,7 @@
  */
 
 #include "LedPatterns.h"
-#include "Adafruit_NeoPixel.h"
+
 
 
 
@@ -16,6 +16,12 @@
 #define first_green (127)*/
 
 rgb_led_t led_array[NUM_LEDS];
+
+void OffLeds(void)
+{
+    SetAll(0, 0, 0);
+    i2s_ws2812b_drive_xfer(led_array, NUM_LEDS, I2S_STDO_PIN);
+}
 
 void SetPixel(uint8_t pixel, uint8_t red, uint8_t green, uint8_t blue)
 {

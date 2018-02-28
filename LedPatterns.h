@@ -11,7 +11,9 @@
 
 #include <stdlib.h>
 #include <stdint.h>
+#include "project.h"
 
+//User setting 
 #define OFFLEDS '0'
 #define ONLEDS '1'
 #define FADE '2'
@@ -24,15 +26,14 @@
  
 #define DELAYFADE 2     //255_up/down_values)*2*1ms_Systick_time=1020ms
 #define DELAYCYCLON 80
-#define DELAYFLASHLED 500
+#define DELAYFLASHLED 100
 #define DELAYFLASHFADE 1
 #define DELAYWIPE 5
 #define DELAYBOUNCE 10
 #define DELAYRING 250
 #define DELAYRINGBOUNCE 350
 
-//User setting 
-#define NUM_LEDS 3
+
 
 void showStrip();
 void OffLeds(void);
