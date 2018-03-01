@@ -37,15 +37,15 @@
 //tO AVOID ERROR WITH LINKER, ARRAYs MUST BE DECLARED AS "STATIC CONST"
 static const uint16_t song1[num_notes_song1] = { C, C, G, G, A, A, G, F, F, E, E, D, D,
     C }; // insert notes of song in array
-static const uint8_t length_song1[num_notes_song1] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1,
+static const uint8_t length_note_song1[num_notes_song1] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1,
     2 }; // relative length of each note
 static const uint16_t song2[num_notes_song2] = { B, A, G, A, B, B, B, A, A, A, B, B, B, B, A, G, A, B, B, B, A, A, B, A,
     G, G };
-static const uint8_t length_song2[num_notes_song2] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1,
+static const uint8_t length_note_song2[num_notes_song2] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1,
     1, 1, 2, 2 };
 static const uint16_t song3[num_notes_song3] = { E, E, E, E, E, E, E, G, C, D, E, F, F, F, F, F, E, E, E, E, D, D, E, D,
     G };
-static const uint8_t length_song3[num_notes_song3] = { 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+static const uint8_t length_note_song3[num_notes_song3] = { 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     1, 2, 2 };
 
 typedef struct {
@@ -61,6 +61,7 @@ extern song_param_t (*ptr_songs);
 
 
 void InitSongStruct(void);
-uint16_t PlayMusic(song_param_t* ptr_array_struct);
+//uint16_t PlayMusic(song_param_t* ptr_array_struct);
+uint16_t PlayMusic(const uint16_t p_sound[], uint8_t size, const uint8_t p_length_note[]);
 
 #endif // SONGPATTERNS_H

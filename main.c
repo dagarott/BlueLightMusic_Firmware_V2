@@ -135,7 +135,8 @@ static ble_uuid_t m_adv_uuids[] = /**< Universally unique service identifier. */
 uint8_t  ws2812bpattern = 0;
 uint8_t  songpattern = 0;
 uint16_t delaysong = 0;
-bool  flag_song_run = false;
+bool  flag_song_enable = false;
+bool  flag_song_running = false;
 bool  flag_haptic_running = false;
 bool  flag_haptic_enable = false;
 bool  flag_off_leds=true;
@@ -250,19 +251,28 @@ static void nus_data_handler(ble_nus_evt_t* p_evt)
         flag_off_leds = false;
         break;
     case SONG1:
-        delaysong = 0; 
-        songpattern = 0; //first song
-        flag_song_run=true; // enable songs
+        
+        if(!flag_song_running)
+        {
+            songpattern = 0; //first song
+            flag_song_enable=true; // enable songs
+        }
         break;
     case SONG2:
-        delaysong = 0; 
-        songpattern = 1; //second song
-        flag_song_run=true; // enable songs
+        
+        if(!flag_song_running)
+        {
+            songpattern = 1; //second song
+            flag_song_enable=true; // enable songs
+        }
         break;
     case SONG3:
-        delaysong = 0; 
-        songpattern = 2; //n-song
-        flag_song_run=true; // enable songs
+        
+        if(!flag_song_running)
+        {
+            songpattern = 2; //third song
+            flag_song_enable=true; // enable songs
+        }
         break;
         }
     }
@@ -770,28 +780,36 @@ void SysTick_Handler(void)
     } else if(flag_off_leds)
         OffLeds();
     /*songs part*/
-    if (flag_song_run == true) {
+    if (flag_song_enable == true) {
         if (delaysong == 0) {
 
             if (songpattern == 0) {
-                delaysong = PlayMusic(&record[0]);
+                //delaysong = PlayMusic(&record[0]);
+                delaysong=PlayMusic(song1,num_notes_song1,length_note_song1);
+                flag_song_running=true;
             } else if (songpattern == 1) {
-                delaysong = PlayMusic(&record[1]);
+                //delaysong = PlayMusic(&record[1]);
+                delaysong=PlayMusic(song2,num_notes_song2,length_note_song2);
+                flag_song_running=true;
             } else if (songpattern == 2) {
-                delaysong = PlayMusic(&record[2]);
+                //delaysong = PlayMusic(&record[2]);
+                delaysong=PlayMusic(song3,num_notes_song3,length_note_song3);
+                flag_song_running=true;
             }
 
             if (delaysong == END_SONG)
             {
-                flag_song_run = false;
+                flag_song_enable = false;
+                flag_song_running=false;
                 delaysong=0;
-                songpattern = 3;
+                songpattern = NUM_SONGS+1;
             }
         } else {
             delaysong--;
         }
         // drv_speaker_sample_play(0);
     }
+    
 
     if (flag_haptic_enable == true) {
         if (delayhaptic == 0) {
@@ -943,7 +961,6 @@ int main(void)
     APP_ERROR_CHECK(err_code);
 
     //debug
-    InitSongStruct();
     drv_speaker_init(&speaker_init);
     SysTick_Config(SystemCoreClock / 1000); //1ms
     //debug
