@@ -131,24 +131,27 @@ static uint16_t m_ble_nus_max_data_len = BLE_GATT_ATT_MTU_DEFAULT -
 static ble_uuid_t m_adv_uuids[] = /**< Universally unique service identifier. */
 { { BLE_UUID_NUS_SERVICE, NUS_SERVICE_UUID_TYPE } };
 
-//debug
+
+/* digital Leds parameters */
 uint8_t  ws2812bpattern = 0;
+bool  flag_off_leds=true;
+/* Songs paramaters */
 uint8_t  songpattern = 0;
 uint16_t delaysong = 0;
 bool  flag_song_enable = false;
 bool  flag_song_running = false;
+song_param_t record[NUM_SONGS];
+/* Haptic motor paramters */
+#define HATPIC_ON 'B'
 bool  flag_haptic_running = false;
 bool  flag_haptic_enable = false;
-bool  flag_off_leds=true;
-song_param_t record[NUM_SONGS];
-
-nrf_pwm_values_common_t m_duty_value = 250;
+nrf_pwm_values_common_t m_duty_value = 500;
 static nrf_drv_pwm_t m_pwm2 = NRF_DRV_PWM_INSTANCE(1);
-
 void haptic_motor_start(void);
 void haptic_motor_stop(void);
-//song_param_t(*ptr_songs);
-//debug
+
+
+
 /**@brief Function for assert macro callback.
  *
  * @details This function will be called in case of an assert in the SoftDevice.
@@ -274,7 +277,16 @@ static void nus_data_handler(ble_nus_evt_t* p_evt)
             flag_song_enable=true; // enable songs
         }
         break;
+
+    case HATPIC_ON:
+        flag_haptic_enable = true;
+        break;
+
+    default:
+        break;
         }
+
+    
     }
 }
 /**@snippet [Handling the data received over BLE] */
@@ -810,15 +822,14 @@ void SysTick_Handler(void)
         // drv_speaker_sample_play(0);
     }
     
-
     if (flag_haptic_enable == true) {
         if (delayhaptic == 0) {
             haptic_motor_start();
             flag_haptic_running = 1;
             delayhaptic++;
-        } else if (delayhaptic < 1500) //1.5 sec
+        } else if (delayhaptic < 1000) //1.5 sec
             delayhaptic++;
-        else if (delayhaptic == 1500) {
+        else if (delayhaptic == 1000) {
             haptic_motor_stop();
             flag_haptic_running = false;
             flag_haptic_enable = false;
@@ -910,7 +921,7 @@ void haptic_motor_start(void)
         .irq_priority = APP_IRQ_PRIORITY_LOW,
         .base_clock   = NRF_PWM_CLK_16MHz,
         .count_mode   = NRF_PWM_MODE_UP,
-        .top_value    = 500,    //1kHz
+        .top_value    = 1000,    //1kHz
         .load_mode    = NRF_PWM_LOAD_COMMON,
         .step_mode    = NRF_PWM_STEP_AUTO
     };
