@@ -37,18 +37,17 @@
  */
 
 #include "drv_Buzzer.h"
-#include "nrf_gpio.h"
-#include "nrf_drv_pwm.h"
-#include "nrf_delay.h"
-#include "app_util_platform.h"
-#include "math.h"
-#include "arm_math.h"
-#include "app_scheduler.h"
-#include "nrf_delay.h"
-#include "sounds.h"
-//#define  NRF_LOG_MODULE_NAME "drv_speaker   "
-#include "nrf_log.h"
-#include "macros_common.h"
+// #include "nrf_gpio.h"
+// #include "nrf_drv_pwm.h"
+// #include "nrf_delay.h"
+// #include "app_util_platform.h"
+// #include "math.h"
+// #include "arm_math.h"
+// #include "app_scheduler.h"
+// #include "nrf_delay.h"
+// //#define  NRF_LOG_MODULE_NAME "drv_speaker   "
+// #include "nrf_log.h"
+// #include "macros_common.h"
 
 #define SEQ_REPEATES 7 // 8kHz sample rate
 #define SPEAKER_VOLUME VOLUME
@@ -359,67 +358,67 @@ uint32_t drv_speaker_ble_pcm_play(uint8_t * p_sound, uint32_t length)
 }
 
 
-uint32_t drv_speaker_sample_play(uint8_t sample_id)
-{
-    uint8_t const * p_sound;
-    uint32_t        len;
+// uint32_t drv_speaker_sample_play(uint8_t sample_id)
+// {
+//     uint8_t const * p_sound;
+//     uint32_t        len;
 
-    NRF_LOG_DEBUG("drv_speaker_sample_play: %d\r\n", sample_id);
+//     NRF_LOG_DEBUG("drv_speaker_sample_play: %d\r\n", sample_id);
 
-    switch(sample_id)
-    {
-        case 0:
-            p_sound = sound_0;
-            len     = sizeof(sound_0);
-            break;
+//     switch(sample_id)
+//     {
+//         case 0:
+//             p_sound = sound_0;
+//             len     = sizeof(sound_0);
+//             break;
 
-        case 1:
-            p_sound = sound_1;
-            len     = sizeof(sound_1);
-            break;
+//         case 1:
+//             p_sound = sound_1;
+//             len     = sizeof(sound_1);
+//             break;
 
-        case 2:
-            p_sound = sound_2;
-            len     = sizeof(sound_2);
-            break;
+//         case 2:
+//             p_sound = sound_2;
+//             len     = sizeof(sound_2);
+//             break;
 
-        case 3:
-            p_sound = sound_3;
-            len     = sizeof(sound_3);
-            break;
+//         case 3:
+//             p_sound = sound_3;
+//             len     = sizeof(sound_3);
+//             break;
 
-        case 4:
-            p_sound = sound_4;
-            len     = sizeof(sound_4);
-            break;
+//         case 4:
+//             p_sound = sound_4;
+//             len     = sizeof(sound_4);
+//             break;
 
-        case 5:
-            p_sound = sound_5;
-            len     = sizeof(sound_5);
-            break;
+//         case 5:
+//             p_sound = sound_5;
+//             len     = sizeof(sound_5);
+//             break;
 
-        case 6:
-            p_sound = sound_6;
-            len     = sizeof(sound_6);
-            break;
+//         case 6:
+//             p_sound = sound_6;
+//             len     = sizeof(sound_6);
+//             break;
 
-        case 7:
-            p_sound = sound_7;
-            len     = sizeof(sound_7);
-            break;
+//         case 7:
+//             p_sound = sound_7;
+//             len     = sizeof(sound_7);
+//             break;
 
-        case 8:
-            p_sound = sound_8;
-            len     = sizeof(sound_8);
-            break;
+//         case 8:
+//             p_sound = sound_8;
+//             len     = sizeof(sound_8);
+//             break;
 
-        default:
-            return NRF_ERROR_INVALID_PARAM;
+//         default:
+//             return NRF_ERROR_INVALID_PARAM;
 
-    }
+//     }
 
-    return drv_speaker_flash_pcm_play(p_sound, len);
-}
+//     return drv_speaker_flash_pcm_play(p_sound, len);
+// }
 
 
 uint32_t drv_speaker_tone_start(uint16_t freq_hz, uint32_t duration_ms, uint8_t volume)
@@ -502,4 +501,9 @@ uint32_t drv_speaker_init(drv_speaker_init_t *p_params)
     APP_ERROR_CHECK(err_code);
 
     return NRF_SUCCESS;
+}
+
+void drv_speaker_stop(void)
+{
+    (void)nrf_drv_pwm_stop(&m_speaker_pwm, true);
 }

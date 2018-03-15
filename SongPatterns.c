@@ -59,7 +59,7 @@
 //     }
 // }
 
-uint16_t PlayMusic(const uint16_t p_sound[], uint8_t size, const uint8_t p_length_note[])
+uint16_t PlayMusic(const uint16_t p_sound[], uint8_t size, const uint8_t p_length_note[], uint16_t tempo_song)
 {
 
     static uint8_t j = 0;
@@ -69,7 +69,7 @@ uint16_t PlayMusic(const uint16_t p_sound[], uint8_t size, const uint8_t p_lengt
 
         drv_speaker_tone_start(p_sound[j], (200 * p_length_note[j]), 50);
         j++;
-        return (tempo_song1);
+        return (tempo_song);
 
     } else {
         j = 0;

@@ -53,7 +53,6 @@ SRC_FILES += \
   $(SDK_ROOT)/components/libraries/bsp/bsp_nfc.c \
   $(SDK_ROOT)/components/drivers_nrf/pwm/nrf_drv_pwm.c \
   $(PROJ_DIR)/main.c \
-  $(PROJ_DIR)/Adafruit_NeoPixel.c \
   $(PROJ_DIR)/LedPatterns.c \
   $(PROJ_DIR)/drv_Buzzer.c \
   $(PROJ_DIR)/SongPatterns.c \

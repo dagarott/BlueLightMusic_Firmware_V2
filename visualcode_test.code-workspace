@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/home/dani/workspace/nrf5x/nRF5_SDK_14.2.0_17b948a"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"app_timer.h": "c",
+			"songpatterns.h": "c",
+			"drv_buzzer.h": "c"
+		}
+	}
+}

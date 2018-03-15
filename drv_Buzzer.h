@@ -49,6 +49,19 @@
 #define __DRV_SPEAKER_H__
 
 #include <stdint.h>
+#include "nrf_gpio.h"
+#include "nrf_drv_pwm.h"
+#include "nrf_delay.h"
+#include "app_util_platform.h"
+#include "math.h"
+#include "arm_math.h"
+#include "app_scheduler.h"
+#include "nrf_delay.h"
+//#define  NRF_LOG_MODULE_NAME "drv_speaker   "
+#include "nrf_log.h"
+#include "macros_common.h"
+
+
 
 /**@brief Speaker driver event types.
  */
@@ -120,6 +133,8 @@ uint32_t drv_speaker_ble_pcm_play(uint8_t * p_sound, uint32_t length);
  * @retval Other codes from underlying drivers.
  */
 uint32_t drv_speaker_sample_play(uint8_t sample_id);
+
+void drv_speaker_stop(void);
 
 #endif
 

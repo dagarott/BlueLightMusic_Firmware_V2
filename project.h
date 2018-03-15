@@ -7,7 +7,6 @@
 #include "nrf_drv_gpiote.h"
 #include "nrf_gpiote.h"
 #include "app_pwm.h"
-#include "Adafruit_NeoPixel.h"
 #include "LedPatterns.h"
 #include "ws2812b_drive.h"
 #include "i2s_ws2812b_drive.h"
