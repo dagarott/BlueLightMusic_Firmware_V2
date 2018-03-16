@@ -1,9 +1,10 @@
 OpenWindow="Source Files", DockArea=LEFT, x=0, y=1, w=121, h=416, FilterBarShown=1, 
-OpenWindow="Watched Data", DockArea=RIGHT, x=0, y=1, w=104, h=313, FilterBarShown=0, 
-OpenWindow="Breakpoints", DockArea=LEFT, x=0, y=0, w=121, h=266, FilterBarShown=0, 
+OpenWindow="Console", DockArea=BOTTOM, x=0, y=0, w=725, h=112, FilterBarShown=0, 
+OpenWindow="Watched Data", DockArea=RIGHT, x=0, y=1, w=104, h=350, FilterBarShown=0, 
+OpenWindow="Breakpoints", DockArea=LEFT, x=0, y=0, w=121, h=350, FilterBarShown=0, 
 OpenWindow="Functions", DockArea=LEFT, x=0, y=1, w=121, h=416, FilterBarShown=1, 
-OpenWindow="Terminal", DockArea=BOTTOM, x=0, y=0, w=1600, h=97, FilterBarShown=0, 
-OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=104, h=386, FilterBarShown=0, ExecCountersShown=0
+OpenWindow="Terminal", DockArea=BOTTOM, x=1, y=0, w=549, h=112, FilterBarShown=0, 
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=104, h=433, FilterBarShown=0, ExecCountersShown=0
 OpenWindow="Source", ExecCountersShown=1
 OpenToolbar="Debug", Floating=0, x=0, y=0
 TableHeader="Source Files", SortCol="File", SortOrder="ASCENDING", VisibleCols=["File";"Status";"Size";"#Insts";"Path"], ColWidths=[165;66;49;65;1092]
