@@ -105,13 +105,13 @@
 #define CONN_SUP_TIMEOUT \
     MSEC_TO_UNITS(       \
         4000, UNIT_10_MS) /**< Connection supervisory timeout (4 seconds), Supervision Timeout uses 10 ms units. */
-#define FIRST_CONN_PARAMS_UPDATE_DELAY                                                                                                           \
-    APP_TIMER_TICKS(5000) /**< Time from initiating event (connect or start of notification) to first time \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+#define FIRST_CONN_PARAMS_UPDATE_DELAY                                                                                                               \
+    APP_TIMER_TICKS(5000) /**< Time from initiating event (connect or start of notification) to first time \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
                              sd_ble_gap_conn_param_update is called (5 seconds). */
 #define NEXT_CONN_PARAMS_UPDATE_DELAY \
     APP_TIMER_TICKS(                  \
         30000)                         /**< Time between each call to sd_ble_gap_conn_param_update after the first call (30 seconds). */
-#define MAX_CONN_PARAMS_UPDATE_COUNT 3 /**< Number of attempts before giving up the connection parameter negotiation. \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+#define MAX_CONN_PARAMS_UPDATE_COUNT 3 /**< Number of attempts before giving up the connection parameter negotiation. \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
                                         */
 
 #define DEAD_BEEF \
@@ -152,10 +152,10 @@ void haptic_motor_stop(void);
 #define PIN_OUT_POWER 28
 #define POWER_OFF 'C'
 #define START 'D'
-bool flag_shutdown_enable = false;
+/* bool flag_shutdown_enable = false;
 bool flag_poweron_enable = false;
 bool flag_system_running = false;
-uint16_t pressedButtonCount = 0;
+uint16_t pressedButtonCount = 0; */
 /*  BT data reception parameters*/
 #define START_FRAME '['
 #define END_FRAME ']'
@@ -177,6 +177,23 @@ static void PowerSystem(uint8_t OnOff)
 
         nrf_gpio_pin_write(28, 0);
     }
+}
+void gpio_init(void)
+{
+    // uint32_t err_code;
+
+    nrf_gpio_cfg_output(PIN_OUT_POWER);
+    nrf_gpio_cfg_sense_input(PIN_IN_POWER_DOWN, NRF_GPIO_PIN_PULLUP, NRF_GPIO_PIN_SENSE_HIGH);
+
+    // nrf_drv_gpiote_in_config_t in_config = GPIOTE_CONFIG_IN_SENSE_HITOLO(false);
+    // in_config.pull = NRF_GPIO_PIN_PULLUP;
+    // err_code = nrf_drv_gpiote_in_init(PIN_IN_POWER_DOWN, &in_config, in_pin_handler);
+    // APP_ERROR_CHECK(err_code);
+    // if (err_code != NRF_SUCCESS)
+    // {
+    //     // Initialization failed. Take recovery action.
+    // }
+    // nrf_drv_gpiote_in_event_enable(PIN_IN_POWER_DOWN, true);
 }
 
 /**@brief Function for assert macro callback.
@@ -315,11 +332,12 @@ static void nus_data_handler(ble_nus_evt_t *p_evt)
                 break;
 
             case HATPIC_ON:
-                if(flag_haptic_running==false)flag_haptic_enable = true;
+                if (flag_haptic_running == false)
+                    flag_haptic_enable = true;
                 break;
             case POWER_OFF:
                 //PowerSystem(false);
-                songpattern = POWER_OFF; //third song
+                songpattern = POWER_OFF; //shutdown song
                 drv_speaker_stop();
                 flag_song_enable = true; // enable songs
                 break;
@@ -800,6 +818,11 @@ void SysTick_Handler(void)
     static uint16_t delayws2812b = 0;
     static uint16_t delayhaptic = 0;
 
+    //static bool flag_shutdown_enable = false;
+    //static bool flag_poweron_enable = false;
+    static bool flag_system_running = false;
+    static uint16_t pressedButtonCount = 0;
+
     if (!flag_off_leds)
     {
         if (delayws2812b == 0)
@@ -894,12 +917,16 @@ void SysTick_Handler(void)
                 delaysong = 0;
                 if (songpattern == POWER_OFF)
                 {
-                    flag_shutdown_enable = true;
+                    //flag_shutdown_enable = true;
+                    PowerSystem(false);
                 }
 
                 else if (songpattern == START)
                 {
-                    flag_poweron_enable = true;
+                    //flag_poweron_enable = true;
+                    PowerSystem(true);
+                    flag_system_running = true;
+                    gpio_init(); //start to sense power button input
                 }
 
                 songpattern = NUM_SONGS + 1;
@@ -911,31 +938,35 @@ void SysTick_Handler(void)
         }
         // drv_speaker_sample_play(0);
     }
-
+    /* 
     if (flag_shutdown_enable)
     {
         flag_shutdown_enable = false;
+        flag_system_running = false;
         PowerSystem(false);
-    }
+    } */
 
-    if (((nrf_gpio_pin_read(PIN_IN_POWER_DOWN)) == false) & (flag_shutdown_enable == false) & (flag_system_running == true))
+    //if (((nrf_gpio_pin_read(PIN_IN_POWER_DOWN)) == false) & (flag_shutdown_enable == false) & (flag_system_running == true))
+    if (((nrf_gpio_pin_read(PIN_IN_POWER_DOWN)) == false) & (flag_system_running == true))
     {
         pressedButtonCount++;
         if (pressedButtonCount == 2000)
         {
             pressedButtonCount = 0;
+            flag_system_running = false;
             songpattern = POWER_OFF;
-            drv_speaker_stop();
+            delaysong = 0;
             flag_song_enable = true; // enable songs
+            drv_speaker_stop();
         }
     }
 
-    if ((flag_poweron_enable == true) & (flag_system_running == false))
+    /* if ((flag_poweron_enable == true) & (flag_system_running == false))
     {
 
         PowerSystem(true);
         flag_system_running = true;
-    }
+    } */
 
     if (flag_haptic_enable == true)
     {
@@ -952,155 +983,130 @@ void SysTick_Handler(void)
 
         else if (delayhaptic == 1000)
         {
-            delayhaptic=0;
+            delayhaptic = 0;
             haptic_motor_stop();
             flag_haptic_running = false;
             flag_haptic_enable = false;
         }
     }
 }
-    static void drv_speaker_evt_handler(drv_speaker_evt_t evt)
-    {
-        switch (evt)
-        {
-        case DRV_SPEAKER_EVT_FINISHED:
-        {
-            // debug_printf(0, "drv_speaker_evt_handler: drv_speaker_evt_finished\r\n");
-            //(void)ble_tss_spkr_stat_set(&m_tss, ble_tss_spkr_stat_finished);
-        }
-        break;
-
-        case DRV_SPEAKER_EVT_BUFFER_WARNING:
-        {
-            // debug_printf(0, "drv_speaker_evt_handler: drv_speaker_evt_buffer_warning\r\n");
-            //(void)ble_tss_spkr_stat_set(&m_tss, ble_tss_spkr_stat_buffer_warning);
-        }
-        break;
-        //
-        case DRV_SPEAKER_EVT_BUFFER_READY:
-        {
-            // debug_printf(0, "drv_speaker_evt_handler: drv_speaker_evt_buffer_ready\r\n");
-            //(void)ble_tss_spkr_stat_set(&m_tss, ble_tss_spkr_stat_buffer_ready);
-        }
-        break;
-        //
-        default:
-            APP_ERROR_CHECK_BOOL(false);
-            break;
-        }
-    }
-    void pwm_ready_callback(uint32_t pwm_id) // PWM callback function
-    {
-        //static volatile bool ready_flag;            // A flag indicating PWM status.
-        //ready_flag = true;
-    }
-
-    nrf_pwm_sequence_t const m_haptic_seq = {
-        .values.p_common = &m_duty_value,
-        .length = NRF_PWM_VALUES_LENGTH(m_duty_value),
-        .repeats = 1,
-        .end_delay = 0,
-    };
-
-    void haptic_motor_start(void)
-    {
-        uint32_t err_code;
-
-        nrf_drv_pwm_config_t const config0 = {
-            .output_pins =
-
-                {
-                    NRF_DRV_PWM_PIN_NOT_USED,     // channel 0
-                    0 | NRF_DRV_PWM_PIN_INVERTED, // channel 1
-                    NRF_DRV_PWM_PIN_NOT_USED,     // channel 2
-                    NRF_DRV_PWM_PIN_NOT_USED,     // channel 3
-                },
-            .irq_priority = APP_IRQ_PRIORITY_LOW,
-            .base_clock = NRF_PWM_CLK_16MHz,
-            .count_mode = NRF_PWM_MODE_UP,
-            .top_value = 1000, //1kHz
-            .load_mode = NRF_PWM_LOAD_COMMON,
-            .step_mode = NRF_PWM_STEP_AUTO};
-        err_code = nrf_drv_pwm_init(&m_pwm2, &config0, NULL);
-        if (err_code != NRF_SUCCESS)
-        {
-            // Initialization failed. Take recovery action.
-        }
-        nrf_drv_pwm_simple_playback(&m_pwm2, &m_haptic_seq, 1, 0);
-    }
-    void haptic_motor_stop(void)
-    {
-
-        nrf_drv_pwm_stop(&m_pwm2, false);
-        nrf_gpio_pin_write(0, 0);
-    }
-
-    /* void in_pin_handler(nrf_drv_gpiote_pin_t pin, n rf_gpiote_polarity_t action)
+static void drv_speaker_evt_handler(drv_speaker_evt_t evt)
 {
-    //Disable power-down button to prevent System-off wakeup
-	nrf_drv_gpiote_in_uninit(PIN_IN_POWER_DOWN);           
-    nrf_drv_gpiote_in_event_disable(PIN_IN_POWER_DOWN); 
-    flag_shutdown_enable = true;
-} */
-    void gpio_init(void)
+    switch (evt)
     {
-        // uint32_t err_code;
-
-        nrf_gpio_cfg_output(PIN_OUT_POWER);
-        nrf_gpio_cfg_sense_input(PIN_IN_POWER_DOWN, NRF_GPIO_PIN_PULLUP, NRF_GPIO_PIN_SENSE_HIGH);
-
-        // nrf_drv_gpiote_in_config_t in_config = GPIOTE_CONFIG_IN_SENSE_HITOLO(false);
-        // in_config.pull = NRF_GPIO_PIN_PULLUP;
-        // err_code = nrf_drv_gpiote_in_init(PIN_IN_POWER_DOWN, &in_config, in_pin_handler);
-        // APP_ERROR_CHECK(err_code);
-        // if (err_code != NRF_SUCCESS)
-        // {
-        //     // Initialization failed. Take recovery action.
-        // }
-        // nrf_drv_gpiote_in_event_enable(PIN_IN_POWER_DOWN, true);
+    case DRV_SPEAKER_EVT_FINISHED:
+    {
+        // debug_printf(0, "drv_speaker_evt_handler: drv_speaker_evt_finished\r\n");
+        //(void)ble_tss_spkr_stat_set(&m_tss, ble_tss_spkr_stat_finished);
     }
+    break;
 
-    /**
+    case DRV_SPEAKER_EVT_BUFFER_WARNING:
+    {
+        // debug_printf(0, "drv_speaker_evt_handler: drv_speaker_evt_buffer_warning\r\n");
+        //(void)ble_tss_spkr_stat_set(&m_tss, ble_tss_spkr_stat_buffer_warning);
+    }
+    break;
+    //
+    case DRV_SPEAKER_EVT_BUFFER_READY:
+    {
+        // debug_printf(0, "drv_speaker_evt_handler: drv_speaker_evt_buffer_ready\r\n");
+        //(void)ble_tss_spkr_stat_set(&m_tss, ble_tss_spkr_stat_buffer_ready);
+    }
+    break;
+    //
+    default:
+        APP_ERROR_CHECK_BOOL(false);
+        break;
+    }
+}
+void pwm_ready_callback(uint32_t pwm_id) // PWM callback function
+{
+    //static volatile bool ready_flag;            // A flag indicating PWM status.
+    //ready_flag = true;
+}
+
+nrf_pwm_sequence_t const m_haptic_seq = {
+    .values.p_common = &m_duty_value,
+    .length = NRF_PWM_VALUES_LENGTH(m_duty_value),
+    .repeats = 1,
+    .end_delay = 0,
+};
+
+void haptic_motor_start(void)
+{
+    uint32_t err_code;
+
+    nrf_drv_pwm_config_t const config0 = {
+        .output_pins =
+
+            {
+                NRF_DRV_PWM_PIN_NOT_USED,     // channel 0
+                0 | NRF_DRV_PWM_PIN_INVERTED, // channel 1
+                NRF_DRV_PWM_PIN_NOT_USED,     // channel 2
+                NRF_DRV_PWM_PIN_NOT_USED,     // channel 3
+            },
+        .irq_priority = APP_IRQ_PRIORITY_LOW,
+        .base_clock = NRF_PWM_CLK_16MHz,
+        .count_mode = NRF_PWM_MODE_UP,
+        .top_value = 1000, //1kHz
+        .load_mode = NRF_PWM_LOAD_COMMON,
+        .step_mode = NRF_PWM_STEP_AUTO};
+    err_code = nrf_drv_pwm_init(&m_pwm2, &config0, NULL);
+    if (err_code != NRF_SUCCESS)
+    {
+        // Initialization failed. Take recovery action.
+    }
+    nrf_drv_pwm_simple_playback(&m_pwm2, &m_haptic_seq, 1, 0);
+}
+void haptic_motor_stop(void)
+{
+
+    nrf_drv_pwm_stop(&m_pwm2, false);
+    nrf_gpio_pin_write(0, 0);
+}
+
+/**
  * @brief      { main funciton, set GPIO, init BT stack, SystTick, for ever loop }
  *
  * @return     { none }
  * @par
  */
-    int main(void)
+int main(void)
+{
+    uint32_t err_code;
+    drv_speaker_init_t speaker_init;
+    speaker_init.evt_handler = drv_speaker_evt_handler;
+    // bool     erase_bonds;
+
+    // Initialize.
+    //gpio_init();
+    //PowerSystem(true);
+    songpattern = START;
+    flag_song_enable = true; // enable songs
+    err_code = app_timer_init();
+    APP_ERROR_CHECK(err_code);
+    log_init();
+    ble_stack_init();
+    gap_params_init();
+    gatt_init();
+    services_init();
+    advertising_init();
+    conn_params_init();
+    NRF_LOG_INFO("UART Start!");
+    err_code = ble_advertising_start(&m_advertising, BLE_ADV_MODE_FAST);
+    APP_ERROR_CHECK(err_code);
+    drv_speaker_init(&speaker_init);
+    SysTick_Config(SystemCoreClock / 1000); //1ms
+
+    // Enter main loop.
+    for (;;)
     {
-        uint32_t err_code;
-        drv_speaker_init_t speaker_init;
-        speaker_init.evt_handler = drv_speaker_evt_handler;
-        // bool     erase_bonds;
-
-        // Initialize.
-        gpio_init();
-        //PowerSystem(true);
-        songpattern = START;
-        flag_song_enable = true; // enable songs
-        err_code = app_timer_init();
-        APP_ERROR_CHECK(err_code);
-        log_init();
-        ble_stack_init();
-        gap_params_init();
-        gatt_init();
-        services_init();
-        advertising_init();
-        conn_params_init();
-        NRF_LOG_INFO("UART Start!");
-        err_code = ble_advertising_start(&m_advertising, BLE_ADV_MODE_FAST);
-        APP_ERROR_CHECK(err_code);
-        drv_speaker_init(&speaker_init);
-        SysTick_Config(SystemCoreClock / 1000); //1ms
-
-        // Enter main loop.
-        for (;;)
-        {
-            UNUSED_RETURN_VALUE(NRF_LOG_PROCESS());
-            //power_manage();
-        }
+        UNUSED_RETURN_VALUE(NRF_LOG_PROCESS());
+        //power_manage();
     }
+}
 
-    /**
+/**
  * @}
  */

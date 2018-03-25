@@ -28,7 +28,7 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=9
+current_page=12
 FILE_NAME_0=12530;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FNordic-Thingy52-FW-master%2Fproject%2Fpca20020_s132%2Fmain.c;0;4
 FILE_NAME_1=23674;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FNordic-Thingy52-FW-master%2Fsource%2Fdrivers%2Fdrv_ext_light.c;0;4
 FILE_NAME_2=6648;C;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FNordic-Thingy52-FW-master%2Fsource%2Fmodules%2Fm_ble_flash.c;0;4
@@ -39,6 +39,9 @@ FILE_NAME_6=11553;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FnRF5_S
 FILE_NAME_7=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2FAndroid%20projects%2FAndroid-nRF-UART_original%2F.gitignore;0;4
 FILE_NAME_8=0;XML;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2FAndroid%20projects%2FAndroid-nRF-UART_original%2Fapp%2Fsrc%2Fmain%2Fres%2Fdrawable-hdpi%2Fbutton_shape.xml;0;4
 FILE_NAME_9=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2FRadioHead%2FRH_NRF24.cpp;0;4
+FILE_NAME_10=838;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FnRF5_SDK_14.2.0_17b948a%2Fexternal%2Fmicro-ecc%2Fbuild_all.sh;0;4
+FILE_NAME_11=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FnRF5_SDK_14.2.0_17b948a%2Fexamples%2Fdfu%2Fbootloader_secure_ble%2Freadme.txt;0;4
+FILE_NAME_12=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fdani%2Fworkspace%2Fnrf5x%2FNordic-Thingy52-FW-master%2Fproject%2Fbootloader_secure%2Freadme.txt;0;4
 
 [VTE]
 last_dir=/home/dani

@@ -1,13 +1,13 @@
-OpenWindow="Source Files", DockArea=LEFT, x=0, y=1, w=121, h=416, FilterBarShown=1, 
-OpenWindow="Console", DockArea=BOTTOM, x=0, y=0, w=725, h=112, FilterBarShown=0, 
-OpenWindow="Watched Data", DockArea=RIGHT, x=0, y=1, w=104, h=350, FilterBarShown=0, 
-OpenWindow="Breakpoints", DockArea=LEFT, x=0, y=0, w=121, h=350, FilterBarShown=0, 
-OpenWindow="Functions", DockArea=LEFT, x=0, y=1, w=121, h=416, FilterBarShown=1, 
-OpenWindow="Terminal", DockArea=BOTTOM, x=1, y=0, w=549, h=112, FilterBarShown=0, 
-OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=104, h=433, FilterBarShown=0, ExecCountersShown=0
+OpenWindow="Source Files", DockArea=LEFT, x=0, y=1, w=121, h=335, FilterBarShown=1, 
+OpenWindow="Console", DockArea=BOTTOM, x=0, y=0, w=907, h=234, FilterBarShown=0, 
+OpenWindow="Watched Data", DockArea=RIGHT, x=0, y=1, w=104, h=206, FilterBarShown=0, 
+OpenWindow="Breakpoints", DockArea=LEFT, x=0, y=0, w=121, h=210, FilterBarShown=0, 
+OpenWindow="Functions", DockArea=LEFT, x=0, y=1, w=121, h=335, FilterBarShown=1, 
+OpenWindow="Terminal", DockArea=BOTTOM, x=1, y=0, w=687, h=234, FilterBarShown=0, 
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=104, h=356, FilterBarShown=0, ExecCountersShown=0
 OpenWindow="Source", ExecCountersShown=1
 OpenToolbar="Debug", Floating=0, x=0, y=0
 TableHeader="Source Files", SortCol="File", SortOrder="ASCENDING", VisibleCols=["File";"Status";"Size";"#Insts";"Path"], ColWidths=[165;66;49;65;1092]
-TableHeader="Watched Data", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Value";"Location";"Size";"Refresh";"Type"], ColWidths=[188;325;84;49;72;52]
+TableHeader="Watched Data", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Value";"Location";"Size";"Refresh";"Type"], ColWidths=[93;84;84;49;72;52]
 TableHeader="Breakpoints", SortCol="State", SortOrder="ASCENDING", VisibleCols=["State";"Location";"Permitted Impl.";"Actual Impl.";"Context";"Task Filter";"Skip #";"Condition"], ColWidths=[59;224;119;97;340;86;65;84]
 TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Source"], ColWidths=[215;76;49;65;224]
